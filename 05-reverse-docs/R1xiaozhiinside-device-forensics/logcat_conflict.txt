@@ -1,0 +1,657 @@
+V/WindowManagerService(  479): Adding window Window{16bb2428 u0 com.phicomm.speaker.device/com.phicomm.speaker.device.ui.MainActivity} at 1 of 3 (before Window{3febf337 u0 Starting com.phicomm.speaker.device})
+D/DeviceCenterHandler(12330): [ lineNumber =322 ] onLocationChange info:{"type":4,"name":"中国浙江省嘉兴市海宁市东堤路","country":"中国","province":"浙江省","city":"嘉兴","cityCode":"334","destrict":"海宁市","address":"中国浙江省嘉兴市海宁市东堤路","lat":30.383869,"lng":120.417212}
+E/DeviceCenterHandler(12330): [ lineNumber =329 ] onLocationChange ANTEngineConfig ctx is null
+D/NativeANTEngineConfig(12330): [ lineNumber =-1 ] ==>>setOption option:WAKEUP_OPT_THRESHOLD_VALUE,value:-13.3
+D/NativeANTEngineConfig(12330): [ lineNumber =-1 ] ==>>setOption option:ASR_OPT_WAKEUP_MODEL_ID,value:54
+E/JNIMsg  (12330): Conf fild open failed!
+E/JNITag  (12330): ""==ScenarioName; Load Conf failed!! : ConfPath:[unidrive_nlu_offline.conf]	ScenarioName:[]	ScenarioName.length:0
+E/ExampleApp(12408): [ lineNumber =92 ] processName:com.phicomm.speaker.device:remote
+D/ViewRootImpl(12330): onAttachToWindow register content observer attrs=WM.LayoutParams{(0,0)(fillxfill)mPosX=0mPosY=0mHScale=1.0mVScale=1.0 align=UNDEFINE taskId=37 sim=#100 ty=1 fl=#81810100 wanim=0x1030383 surfaceInsets=Rect(0, 0 - 0, 0) needsMenuKey=2packageName=com.phicomm.speaker.devicetoken=android.os.BinderProxy@3fdaccaf}
+D/WindowManagerService(  479): Window{16bb2428 u0 com.phicomm.speaker.device/com.phicomm.speaker.device.ui.MainActivity}  ==========setInputFocusLw ==========  =======
+D/ViewRootImpl(12330): 720<<<<<< BACK FROM relayoutWM.LayoutParams{(0,0)(fillxfill)mPosX=0mPosY=0mHScale=1.0mVScale=1.0 align=UNDEFINE taskId=37 sim=#120 ty=1 fl=#81810100 wanim=0x1030383 surfaceInsets=Rect(0, 0 - 0, 0) needsMenuKey=2packageName=com.phicomm.speaker.devicetoken=android.os.BinderProxy@3fdaccaf}
+I/[Gralloc](12330):  ion device open success! fd = 47
+I/ActivityManagerService(  479): Displayed com.phicomm.speaker.device/.ui.MainActivity: +1s113ms
+W/DeviceId(12408): galaxy lib host missing meta-data,make sure you know the right way to integrate galaxy
+W/DeviceId(12408): galaxy lib host missing meta-data,make sure you know the right way to integrate galaxy
+W/DeviceId(12408): galaxy lib host missing meta-data,make sure you know the right way to integrate galaxy
+I/art     (12408): Rejecting re-init on previously-failed class java.lang.Class<com.baidu.location.b.d$a>
+I/art     (12408): Rejecting re-init on previously-failed class java.lang.Class<com.baidu.location.b.d$a>
+I/art     (12408): Rejecting re-init on previously-failed class java.lang.Class<com.baidu.location.b.d$a>
+I/art     (12408): Rejecting re-init on previously-failed class java.lang.Class<com.baidu.location.b.d$a>
+I/art     (12408): Rejecting re-init on previously-failed class java.lang.Class<com.baidu.location.b.d$a>
+I/[Gralloc](  479):  ion device closed! fd = 178
+W/USCTTS_ENGINE(12330): [Warning -75001]: Read marked file failed
+W/USCTTS_ENGINE(12330): [Warning -75002]: Read user dict failed
+I/DeviceInfoUtil(12330): DeviceInfoUtil setDeviceSn = 98BB9936CD6B
+D/USC     (12330): USCactivate params is {"appKey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","appSecret":"ce47edf14d955ff59767aceb99441b58","activate":"true","deviceSn":"98BB9936CD6B"}
+I/DeviceInfoUtil(12330): DeviceInfoUtil udidContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg"}]}
+I/DeviceInfoUtil(12330): DeviceInfoUtil getUDIDFromSdcard : appkey = rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6, udid = LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil(12330): DeviceInfoUtil getUDID deviceSn = 98BB9936CD6B
+I/DeviceInfoUtil(12330): DeviceInfoUtil getUDID from sdcard= LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil(12330): build udid by deviceSn, appkey = rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6, OS = 00, deviceSn = 98BB9936CD6B
+I/DeviceInfoUtil(12330): build udid by deviceSn, appkeyHashCode = -1249703818
+I/DeviceInfoUtil(12330): build udid by deviceSn, deviceContent = -12497038180098BB9936CD6B
+I/DeviceInfoUtil(12330): build udid by deviceSn, udid = LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil(12330): DeviceInfoUtil isUdidMatchDeviceSn = true
+I/DeviceInfoUtil(12330): DeviceInfoUtil setUDIDToSb deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_e0b56135-6726-4f6e-b21d-3f1e331c6689"}]}
+I/DeviceInfoUtil(12330): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_e0b56135-6726-4f6e-b21d-3f1e331c6689"}]}
+I/DeviceInfoUtil(12330): getTokenInfo token = dd_e0b56135-6726-4f6e-b21d-3f1e331c6689
+I/DeviceInfoUtil(12330): DeviceInfoUtil setDeviceSn = 98BB9936CD6B
+I/DeviceInfoUtil(12330): DeviceUtil getAppVersion= V3.2.5.2-
+I/DeviceInfoUtil(12330): DeviceUtil getAppPackageName= com.phicomm.speaker.device
+I/DeviceInfoUtil(12330): DeviceUtil getWifiSSID= GECOOSAP
+I/DeviceInfoUtil(12330): DeviceUtil operator= 没有手机卡
+I/DeviceInfoUtil(12330): DeviceUtil getBSSID= dc:d8:7c:41:02:5f
+I/DeviceInfoUtil(12330): DeviceInfoUtil udidContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg"}]}
+I/DeviceInfoUtil(12330): DeviceInfoUtil getUDIDFromSdcard : appkey = rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6, udid = LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil(12330): DeviceInfoUtil getUDID deviceSn = 98BB9936CD6B
+I/DeviceInfoUtil(12330): DeviceInfoUtil getUDID from sdcard= LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil(12330): build udid by deviceSn, appkey = rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6, OS = 00, deviceSn = 98BB9936CD6B
+I/DeviceInfoUtil(12330): build udid by deviceSn, appkeyHashCode = -1249703818
+I/DeviceInfoUtil(12330): build udid by deviceSn, deviceContent = -12497038180098BB9936CD6B
+I/DeviceInfoUtil(12330): build udid by deviceSn, udid = LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil(12330): DeviceInfoUtil isUdidMatchDeviceSn = true
+I/DeviceInfoUtil(12330): DeviceInfoUtil setUDIDToSb deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_e0b56135-6726-4f6e-b21d-3f1e331c6689"}]}
+I/baidu_location_service(12408): LocationAuthManager Authentication Error errorcode = 230 , msg = {"status":230,"message":"APP Mcode码校验失败","user_permission":0,"ak_permission":0,"up":-1,"ap":-1}
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/USC     (12330): ModelData , partCopy : model = wakeup
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+E/android.os.Debug(12472): failed to load memtrack module: -2
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/NativeANTEngine(12330): [ lineNumber =-1 ] speechUnderstander init with jsonStr : {"activate":"true","deviceSn":"98BB9936CD6B"}
+E/USC     (12330): activate errorCode = dc_0002
+I/DeviceInfoUtil(12330): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_e0b56135-6726-4f6e-b21d-3f1e331c6689"}]}
+I/DeviceInfoUtil(12330): getTokenInfo token = dd_e0b56135-6726-4f6e-b21d-3f1e331c6689
+I/DeviceInfoUtil(12330): DeviceInfoUtil setDeviceSn = 98BB9936CD6B
+I/DeviceInfoUtil(12330): DeviceUtil getBSSID= dc:d8:7c:41:02:5f
+D/NativeANTEngineConfig(12330): [ lineNumber =-1 ] ==>>setOption option:ASR_OPT_WAKEUP_MODEL_ID,value:54
+D/NativeANTEngineConfig(12330): [ lineNumber =-1 ] ASR_OPT_WAKEUP_MODEL_ID:54
+D/USC     (12330): SpeechUnderstanderInterfaceset wakeup modelId 54
+I/DeviceInfoUtil(12330): DeviceInfoUtil udidContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg"}]}
+I/DeviceInfoUtil(12330): DeviceInfoUtil getUDIDFromSdcard : appkey = rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6, udid = LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil(12330): DeviceInfoUtil getUDID deviceSn = 98BB9936CD6B
+I/DeviceInfoUtil(12330): DeviceInfoUtil getUDID from sdcard= LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil(12330): build udid by deviceSn, appkey = rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6, OS = 00, deviceSn = 98BB9936CD6B
+I/DeviceInfoUtil(12330): build udid by deviceSn, appkeyHashCode = -1249703818
+I/DeviceInfoUtil(12330): build udid by deviceSn, deviceContent = -12497038180098BB9936CD6B
+I/DeviceInfoUtil(12330): build udid by deviceSn, udid = LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil(12330): DeviceInfoUtil isUdidMatchDeviceSn = true
+I/DeviceInfoUtil(12330): DeviceInfoUtil setUDIDToSb deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_e0b56135-6726-4f6e-b21d-3f1e331c6689"}]}
+D/NativeANTEngine(12330): [ lineNumber =-1 ] setWakeupWord0,words=["小讯小讯","进入配网模式","交接手续"]playBeep:false
+D/NativeANTEngine(12330): [ lineNumber =-1 ] setWakeupWord0
+D/USC     (12330): SpeechUnderstanderInterface: setWakeupWord
+D/USC     (12330): Recognizer.loadModel queue add /data/data/com.phicomm.speaker.device/files/YunZhiSheng/asrfix/wakeup.dat wakeup
+D/USC     (12330): Recognizer.loadModel reseting /data/data/com.phicomm.speaker.device/files/YunZhiSheng/asrfix/wakeup.dat wakeup
+D/USC     (12330): ModelData : getVocabString --> vocab = <Domain_wakeup_words_slot>
+D/USC     (12330): </Domain_wakeup_words_slot>
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf file Path:	/data/data/com.phicomm.speaker.device/files/unisound/nlu/unidrive_main_nlu_offline.conf
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_previous_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_PREV", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" }
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_next_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_NEXT", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp"}
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_continue_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_PLAY", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" }
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_pause_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_PAUSE", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" }
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_stop_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_STOP", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" }
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_close_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_CLOSE", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" }
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_change_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_CHANGE", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp"}
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_switch_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_SWITCH", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp"}
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_collect_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_BOOKMARK", "deviceType": "OBJ_MUSIC" } ] } }, "history": "cn.yunzhisheng.setting.mp"}
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_download_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_DOWNLOAD", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp"}
+D/JNIMsg_DebugDumpOut(12330): OfflenNlu_LoadConf, I am loading conf:	Domain_wakeup_words_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.wakeupword", "code": "WAKEUP_WORD", "semantic": { "intent": { "name": "%_Domain_wakeup_words_slot%" } } }
+W/YZSGrammarCompiler(12330): In-complete slots(asr_wakeup_words_slot)
+W/YZSGrammarCompiler(12330): In-complete slots(asr_wakeup_words_slot)
+E/LoadWakeupPcmRunnable(12330): [ lineNumber =-1 ] open assets file sweet/hi_1.pcm error: Directory 'system/unisound/audio/wakeup/sweet' could not be created
+E/LoadWakeupPcmRunnable(12330): [ lineNumber =-1 ] open assets file sweet/im_here.pcm error: Directory 'system/unisound/audio/wakeup/sweet' could not be created
+E/LoadWakeupPcmRunnable(12330): [ lineNumber =-1 ] open assets file sweet/im_here_1.pcm error: Directory 'system/unisound/audio/wakeup/sweet' could not be created
+E/LoadWakeupPcmRunnable(12330): [ lineNumber =-1 ] open assets file sweet/please_say.pcm error: Directory 'system/unisound/audio/wakeup/sweet' could not be created
+E/LoadWakeupPcmRunnable(12330): [ lineNumber =-1 ] open assets file sweet/hi.pcm error: Directory 'system/unisound/audio/wakeup/sweet' could not be created
+E/LoadWakeupPcmRunnable(12330): [ lineNumber =-1 ] open assets file sweet/please_say_1.pcm error: Directory 'system/unisound/audio/wakeup/sweet' could not be created
+E/LoadWakeupPcmRunnable(12330): [ lineNumber =-1 ] open assets file sweet/hi_2.pcm error: Directory 'system/unisound/audio/wakeup/sweet' could not be created
+E/LoadWakeupPcmRunnable(12330): [ lineNumber =-1 ] open assets file sweet/im_here_2.pcm error: Directory 'system/unisound/audio/wakeup/sweet' could not be created
+E/LoadWakeupPcmRunnable(12330): [ lineNumber =-1 ] open assets file sweet/please_say_2.pcm error: Directory 'system/unisound/audio/wakeup/sweet' could not be created
+D/USC     (12330): Recognizer.loadModel queue add /data/data/com.phicomm.speaker.device/files/YunZhiSheng/asrfix/jsgf_model/unidrive_main.dat command
+D/USC     (12330): Recognizer.loadModel reseting /data/data/com.phicomm.speaker.device/files/YunZhiSheng/asrfix/jsgf_model/unidrive_main.dat command
+D/UserPerferenceUtil(12330): [ lineNumber =442 ] -->>getWakeupWord wakeupWord:[Ljava.lang.Object;@372b1d10
+D/DeviceCenterHandler(12330): [ lineNumber =281 ] -->>onASREventEngineInitDone
+D/DeviceCenterHandler(12330): [ lineNumber =284 ] engine init done, udid is LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+D/DeviceCenterHandler(12330): [ lineNumber =109 ] --->>initHardware current device isBinded:true
+D/DeviceCenterHandler(12330): [ lineNumber =343 ] --->>onNetConnected aliveTransportChannel:com.unisound.ant.device.mqtt.AliveTransportChannel@2a967009
+D/DeviceCenterHandler(12330): [ lineNumber =345 ] current wifi is connected:true
+E/android.os.Debug(12495): failed to load memtrack module: -2
+D/MqttTransportChannel(12330): [ lineNumber =311 ] query mqtt connection info, params = ChannelParams{mHBServerIp='null', mHBServerPort=0, udid='LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg', mHBOwnerId='LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg_owner', mSRServerIp='10.10.11.2', mSRServerPort=8090, mSRDeviceId='LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg', mSROwnerId='LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg_owner', connAccessId='null', appKey='rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6', appSecret='ce47edf14d955ff59767aceb99441b58', tcDeviceId='kDzBV2xaZnShsidc6FD+swkDpKV54renxqDEH+OmemY=', token='null'}
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onASREventEngineInitDone:DeviceCenterHandler
+D/UserPerferenceUtil(12330): [ lineNumber =442 ] -->>getWakeupWord wakeupWord:[Ljava.lang.Object;@2826a20e
+D/UserPerferenceUtil(12330): [ lineNumber =442 ] -->>getWakeupWord wakeupWord:[Ljava.lang.Object;@2a7742f
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+D/SysPrivateService(  479): get BootProp from {pid:12330,uid:10008,processName:com.phicomm.speaker.device} Success fxotamode=
+D/PhicommDeviceStatusProcessor(12330): [onReceived device status = 0, prevStatus = 0]
+D/NativeANTEngine(12330): [ lineNumber =-1 ] wakeUpEventSetWakeUpWordDone
+D/NativeANTEngine(12330): [ lineNumber =-1 ] set wakeup word done, need start wakeup = true, current thread is main
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterWakeup isIdle:true, current thread = main
+D/USC     (12330): USCstart recognition tag is wakeup
+I/DeviceInfoUtil(12330): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_e0b56135-6726-4f6e-b21d-3f1e331c6689"}]}
+I/DeviceInfoUtil(12330): getTokenInfo token = dd_e0b56135-6726-4f6e-b21d-3f1e331c6689
+I/DeviceInfoUtil(12330): DeviceUtil tokenJson is {"deviceToken":"dd_e0b56135-6726-4f6e-b21d-3f1e331c6689","activateVersion":"v3.1"}
+D/UNI_4MIC(12330): [UNI_4MIC]:<INFO> pcm_device=0
+D/USC     (12330): modelTag =>wakeup
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommDataStatisticHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommReminderHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommAlarmHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultMemoRingingHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DeviceCenterHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultANTLaunchHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultWeatherHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultStockHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommExternalMusicHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommMusicHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommMusicScheduleHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultNoteHandler
+I/DefaultSettingHandler(12330): [ lineNumber =102 ] onWakeupEventSetWakeupwordDone eventReceived:false
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultSettingHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultChatHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultGuideHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultIlleageChatHandler
+D/USC     (12330): FixRecognitionThread:jac::start model=wakeup,modelId=54
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultSmartHomeHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultUnSupportHandler
+D/USC     (12330): saveTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d"}]}
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+D/DefaultMusicHandler(12330): [ lineNumber =1272 ] -->>onServiceConnected ComponentName :ComponentInfo{com.phicomm.speaker.device/com.unisound.vui.handler.session.music.MusicService}
+D/USC     (12330): AudioSourceImplopenIn uni4micHalJNI status = 0
+E/android.os.Debug(12529): failed to load memtrack module: -2
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+E/android.os.Debug(12552): failed to load memtrack module: -2
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+E/android.os.Debug(12566): failed to load memtrack module: -2
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+E/android.os.Debug(12584): failed to load memtrack module: -2
+E/android.os.Debug(12596): failed to load memtrack module: -2
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+E/android.os.Debug(12620): failed to load memtrack module: -2
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+E/android.os.Debug(12634): failed to load memtrack module: -2
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+E/android.os.Debug(12648): failed to load memtrack module: -2
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+E/android.os.Debug(12662): failed to load memtrack module: -2
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+E/android.os.Debug(12677): failed to load memtrack module: -2
+I/ActivityStackSupervisor(  479): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 1000 on display 0
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/USC     (12330): wakeupLength = 0
+D/USC     (12330): handleWakeupWordBuffer UtteranceTime = 990
+D/USC     (12330): dropWakeupPcmFromByteLength =>38080
+D/USC     (12330): dropWakeup wakeupCacheList.size() =>150
+D/USC     (12330): dropWakeup enabled = 90
+D/USC     (12330): dropWakeup end wakeupCacheList.size() =>60
+D/USC     (12330): SpeechUnderstandInterface doWakeupResult => 1296 <s> <_NAME> 小讯小讯 </_NAME> </s> 
+D/NativeANTEngine(12330): [ lineNumber =-1 ] type:3201;onResult:{"local_asr":[{"engine_mode":"wakeup","result_type":"full","recognition_result":"  小讯小讯   ","score":2.02,"utteranceTime":990,"outRecordingTime":25140,"delayTime":190}]}
+D/NLUDispatcher(12330): [ lineNumber =369 ] onWakeupResult:{"local_asr":[{"engine_mode":"wakeup","result_type":"full","recognition_result":"  小讯小讯   ","score":2.02,"utteranceTime":990,"outRecordingTime":25140,"delayTime":190}]}
+D/NLUDispatcher(12330): [ lineNumber =380 ] isMainWakeupWord : wakeupResult:小讯小讯;success core:2.02
+D/PhicommDataStatisticHandler(12330): [ lineNumber =-1 ] sendMainWakeupStatisticToPhicomm: 
+D/PhicommLightListener(12330): [----------onWakeupSuccess---------- 处理前角度 = 35]
+D/DeviceCenterHandler(12330): [ lineNumber =457 ] Continues onWakeupEventRecognitionSuccess
+D/PhicommLightListener(12330): [----------onWakeupSuccess---------- 处理后角度 = 35 light index : 17]
+D/DefaultUnSupportHandler(12330): [ lineNumber =-1 ] -doInterrupt-false; errorTime = 0
+D/DefaultANTLaunchHandler(12330): [ lineNumber =-1 ] playWakeupTips
+D/PhicommDataStatisticHandler(12330): [ lineNumber =-1 ] sendStatisticInfoToPhicomm: {"data":{"wakeupWord":"小讯小讯","wakeupType":1},"from":"unisound","key":"wakeup","msgId":"8315f366-1938-486e-8be4-44f9647d06a3"}
+D/AudioHardwareTiny(  209): Device     : 0x80402
+D/alsa_route(  209): route_info->sound_card 2, route_info->devices 0  
+D/USC     (12330): AudioSourceImplcloseIn uni4micHalJNI stop = 0, close = 0
+D/NativeANTEngine(12330): [ lineNumber =-1 ] tts play end ,isInSetWakeUpWord:false
+D/DeviceCenterHandler(12330): [ lineNumber =415 ] -->>onTTSEventPlayingEnd ctx.engine().getEngineState=0
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onTTSEventPlayingEnd:DeviceCenterHandler
+D/PhicommBindStatusHandler(12330): [ lineNumber =62 ] query device bound status
+D/PhicommBindStatusHandler(12330): [device is bound]
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterASR isWakeUp:false
+I/DeviceInfoUtil(12330): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d"}]}
+I/DeviceInfoUtil(12330): getTokenInfo token = dd_5070897a-fe66-4d6e-952b-aeb207884c8d
+I/DeviceInfoUtil(12330): DeviceUtil tokenJson is {"deviceToken":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d","activateVersion":"v3.1"}
+D/USC     (12330): collected_info = PN=com.phicomm.speaker.device:OS=0:CR=0:NT=1:MD=rk322x-box:SV=v3.10.77-phicomm,c6a7b7c5:RPT=0:SID=:NPT=:IP=192.168.2.5:EC=0	0:0:0
+D/USC     (12330): NetRecognition --> Start NluParams : returnType=json;city=嘉兴;gps=30.383869,120.417212;time=2026-10-08 16:59:02;scenario=musicDefault;screen=;dpi=;history=;udid=LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg;ver=3.0;appver=;oneshotKeyProperty=wakeup;
+D/USC     (12330): juc init external setting traficParams = returnType=json;city=嘉兴;gps=null;time=2026-10-08 16:59:02;screen=;dpi=;history=;udid=LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg;ver=3.0;appver=;oneshotKeyProperty=wakeup;filterName=nlu2;additionalService=athenaAppService;scenario=musicDefault;wakeupword=小讯小讯;appendLength=2;audioUrl=true;mac=98BB9936CD6B;
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+D/USC     (12330): AudioSourceImplopenIn uni4micHalJNI status = 0
+D/USC     (12330): NetRecognition --> onRecognitionResult=>resultType=NET; recognitionResult={"returnCode":0,"uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"}}; sessionId=807795417c4da04d5da74d8f032a53ea; isVarialbe=false; isLast=false; utterranceStartTime=0; utteranceEndTime=0; utteranceTime=0; recordingTime=0; delayTime=0; score=0.0
+D/USC     (12330): addToTotalASRResult={"returnCode":0,"uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"}}
+I/USC     (12330): format onResult -> result = {"returnCode":0,"uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"}}
+D/NativeANTEngine(12330): [ lineNumber =-1 ] type:1201;onResult:{"net_asr":[{"engine_mode":"mix","result_type":"partial","last_result":false,"recognition_result":"{\"returnCode\":0,\"uniCarRet\":{\"result\":{},\"returnCode\":609,\"message\":\"http post reuqest error\"}}","sessionID":"807795417c4da04d5da74d8f032a53ea"}]}
+D/NLUDispatcher(12330): [ lineNumber =336 ] onASRResultNet:{"net_asr":[{"engine_mode":"mix","result_type":"partial","last_result":false,"recognition_result":"{\"returnCode\":0,\"uniCarRet\":{\"result\":{},\"returnCode\":609,\"message\":\"http post reuqest error\"}}","sessionID":"807795417c4da04d5da74d8f032a53ea"}]}
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(12745): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(12828): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(12906): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/USC     (12330): NetRecognition --> Stop NluParams : returnType=json;city=嘉兴;gps=30.383869,120.417212;time=2026-10-08 16:59:07;scenario=musicDefault;screen=;dpi=;history=;udid=LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg;ver=3.0;appver=;oneshotKeyProperty=wakeup;
+D/USC     (12330): AudioSourceImplcloseIn uni4micHalJNI stop = 0, close = 0
+D/USC     (12330): addToTotalASRResult={"returnCode":0,"uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"}}
+I/USC     (12330): format onResult -> result = {"returnCode":0,"uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"}}
+E/JNIMsg  (12330): Asr input format error
+E/JNITag  (12330): ""==ScenarioName; getnlujson failed!! : Asr:[[504 #NULL]]	ScenarioName:[]	ScenarioName.length:0
+D/USC     (12330): SpeechUnderstanderInterface : recognizeResult.item = {"rc":"1","service":"cn.yunzhisheng.error"} , times=  0
+D/DefaultMusicHandler(12330): [ lineNumber =882 ] acceptInboundEvent0 service:cn.yunzhisheng.error
+I/DefaultSettingHandler(12330): [ lineNumber =72 ] acceptInboundEvent0 evt = {"code":"-63551","isLocalNLU":false,"isNeedAbandonNlu":false,"isQueenMessage":false,"rc":0,"service":"cn.yunzhisheng.error","time":0}
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] -resetErrorTime-
+D/DefaultUnSupportHandler(12330): [ lineNumber =-1 ] -doInterrupt-false; errorTime = 0
+D/UserPerferenceUtil(12330): [ lineNumber =442 ] -->>getWakeupWord wakeupWord:[Ljava.lang.Object;@315a50f7
+D/NativeANTEngine(12330): [ lineNumber =-1 ] wakeUpEventSetWakeUpWordDone
+D/NativeANTEngine(12330): [ lineNumber =-1 ] set wakeup word done, need start wakeup = true, current thread is main
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterWakeup isIdle:true, current thread = main
+D/USC     (12330): USCstart recognition tag is wakeup
+I/DeviceInfoUtil(12330): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d"}]}
+I/DeviceInfoUtil(12330): getTokenInfo token = dd_5070897a-fe66-4d6e-952b-aeb207884c8d
+I/DeviceInfoUtil(12330): DeviceUtil tokenJson is {"deviceToken":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d","activateVersion":"v3.1"}
+D/USC     (12330): modelTag =>wakeup
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommDataStatisticHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommReminderHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommAlarmHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultMemoRingingHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DeviceCenterHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultANTLaunchHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultWeatherHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultStockHandler
+D/USC     (12330): FixRecognitionThread:jac::start model=wakeup,modelId=54
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommExternalMusicHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommMusicHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommMusicScheduleHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultNoteHandler
+I/DefaultSettingHandler(12330): [ lineNumber =102 ] onWakeupEventSetWakeupwordDone eventReceived:false
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultSettingHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultChatHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultGuideHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultIlleageChatHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultSmartHomeHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultUnSupportHandler
+D/DefaultUnSupportHandler(12330): [ lineNumber =-1 ] unsupport = cn.yunzhisheng.error
+D/DeviceCenterHandler(12330): [ lineNumber =415 ] -->>onTTSEventPlayingEnd ctx.engine().getEngineState=1
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onTTSEventPlayingEnd:DeviceCenterHandler
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+D/USC     (12330): AudioSourceImplopenIn uni4micHalJNI status = 0
+D/USC     (12330): AudioSourceImplcloseIn uni4micHalJNI stop = 0, close = 0
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] -resetErrorTime-
+D/UserPerferenceUtil(12330): [ lineNumber =442 ] -->>getWakeupWord wakeupWord:[Ljava.lang.Object;@1e29eb64
+D/NativeANTEngine(12330): [ lineNumber =-1 ] wakeUpEventSetWakeUpWordDone
+D/NativeANTEngine(12330): [ lineNumber =-1 ] set wakeup word done, need start wakeup = true, current thread is main
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterWakeup isIdle:true, current thread = main
+D/USC     (12330): USCstart recognition tag is wakeup
+I/DeviceInfoUtil(12330): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d"}]}
+I/DeviceInfoUtil(12330): getTokenInfo token = dd_5070897a-fe66-4d6e-952b-aeb207884c8d
+I/DeviceInfoUtil(12330): DeviceUtil tokenJson is {"deviceToken":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d","activateVersion":"v3.1"}
+D/USC     (12330): modelTag =>wakeup
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommDataStatisticHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommReminderHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommAlarmHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultMemoRingingHandler
+D/USC     (12330): FixRecognitionThread:jac::start model=wakeup,modelId=54
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DeviceCenterHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultANTLaunchHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultWeatherHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultStockHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommExternalMusicHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommMusicHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommMusicScheduleHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultNoteHandler
+I/DefaultSettingHandler(12330): [ lineNumber =102 ] onWakeupEventSetWakeupwordDone eventReceived:false
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultSettingHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultChatHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultGuideHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultIlleageChatHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultSmartHomeHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultUnSupportHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] -resetErrorTime-
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+D/USC     (12330): AudioSourceImplopenIn uni4micHalJNI status = 0
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(12998): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13077): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13158): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13238): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13318): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13396): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13474): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13555): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13633): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13712): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13802): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13883): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(13961): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(14039): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(14117): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(14195): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(14276): failed to load memtrack module: -2
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+E/android.os.Debug(14369): failed to load memtrack module: -2
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(14447): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(14525): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(14603): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/USC     (12330): wakeupLength = 0
+D/USC     (12330): handleWakeupWordBuffer UtteranceTime = 1020
+D/USC     (12330): dropWakeupPcmFromByteLength =>39040
+D/USC     (12330): dropWakeup wakeupCacheList.size() =>150
+D/USC     (12330): dropWakeup enabled = 89
+D/USC     (12330): dropWakeup end wakeupCacheList.size() =>61
+D/USC     (12330): SpeechUnderstandInterface doWakeupResult => 4617 <s> <_NAME> 小讯小讯 </_NAME> </s> 
+D/NativeANTEngine(12330): [ lineNumber =-1 ] type:3201;onResult:{"local_asr":[{"engine_mode":"wakeup","result_type":"full","recognition_result":"  小讯小讯   ","score":1.69,"utteranceTime":1020,"outRecordingTime":91520,"delayTime":220}]}
+D/NLUDispatcher(12330): [ lineNumber =369 ] onWakeupResult:{"local_asr":[{"engine_mode":"wakeup","result_type":"full","recognition_result":"  小讯小讯   ","score":1.69,"utteranceTime":1020,"outRecordingTime":91520,"delayTime":220}]}
+D/NLUDispatcher(12330): [ lineNumber =380 ] isMainWakeupWord : wakeupResult:小讯小讯;success core:1.69
+D/DeviceCenterHandler(12330): [ lineNumber =457 ] Continues onWakeupEventRecognitionSuccess
+D/PhicommDataStatisticHandler(12330): [ lineNumber =-1 ] sendMainWakeupStatisticToPhicomm: 
+D/DefaultUnSupportHandler(12330): [ lineNumber =-1 ] -doInterrupt-false; errorTime = 0
+D/DefaultANTLaunchHandler(12330): [ lineNumber =-1 ] playWakeupTips
+D/PhicommLightListener(12330): [----------onWakeupSuccess---------- 处理前角度 = 45]
+D/PhicommLightListener(12330): [----------onWakeupSuccess---------- 处理后角度 = 45 light index : 16]
+D/PhicommDataStatisticHandler(12330): [ lineNumber =-1 ] sendStatisticInfoToPhicomm: {"data":{"wakeupWord":"小讯小讯","wakeupType":1},"from":"unisound","key":"wakeup","msgId":"837fceed-4dd2-4812-8c5b-a06b577fbcb3"}
+D/AudioHardwareTiny(  209): Device     : 0x80402
+D/alsa_route(  209): route_info->sound_card 2, route_info->devices 0  
+D/USC     (12330): AudioSourceImplcloseIn uni4micHalJNI stop = 0, close = 0
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/NativeANTEngine(12330): [ lineNumber =-1 ] tts play end ,isInSetWakeUpWord:false
+D/DeviceCenterHandler(12330): [ lineNumber =415 ] -->>onTTSEventPlayingEnd ctx.engine().getEngineState=0
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onTTSEventPlayingEnd:DeviceCenterHandler
+D/PhicommBindStatusHandler(12330): [ lineNumber =62 ] query device bound status
+D/PhicommBindStatusHandler(12330): [device is bound]
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterASR isWakeUp:false
+I/DeviceInfoUtil(12330): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d"}]}
+I/DeviceInfoUtil(12330): getTokenInfo token = dd_5070897a-fe66-4d6e-952b-aeb207884c8d
+I/DeviceInfoUtil(12330): DeviceUtil tokenJson is {"deviceToken":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d","activateVersion":"v3.1"}
+D/USC     (12330): collected_info = PN=com.phicomm.speaker.device:OS=0:CR=0:NT=1:MD=rk322x-box:SV=v3.10.77-phicomm,c6a7b7c5:RPT=130:SID=807795417c4da04d5da74d8f032a53ea:NPT=0:IP=192.168.2.5:EC=0	0:0:0
+D/USC     (12330): NetRecognition --> Start NluParams : returnType=json;city=嘉兴;gps=30.383869,120.417212;time=2026-10-08 16:59:55;scenario=musicDefault;screen=;dpi=;history=;udid=LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg;ver=3.0;appver=;oneshotKeyProperty=wakeup;
+D/USC     (12330): juc init external setting traficParams = returnType=json;city=嘉兴;gps=null;time=2026-10-08 16:59:55;screen=;dpi=;history=;udid=LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg;ver=3.0;appver=;oneshotKeyProperty=wakeup;filterName=nlu2;additionalService=athenaAppService;scenario=musicDefault;wakeupword=小讯小讯;appendLength=2;audioUrl=true;mac=98BB9936CD6B;
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+D/USC     (12330): AudioSourceImplopenIn uni4micHalJNI status = 0
+D/USC     (12330): NetRecognition --> onRecognitionResult=>resultType=NET; recognitionResult={"returnCode":0,"uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"}}; sessionId=c9bc2025c6749e5bb0d80ef9f65d7ef4; isVarialbe=false; isLast=false; utterranceStartTime=0; utteranceEndTime=0; utteranceTime=0; recordingTime=0; delayTime=0; score=0.0
+D/USC     (12330): addToTotalASRResult={"returnCode":0,"uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"}}
+I/USC     (12330): format onResult -> result = {"returnCode":0,"uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"}}
+D/NativeANTEngine(12330): [ lineNumber =-1 ] type:1201;onResult:{"net_asr":[{"engine_mode":"mix","result_type":"partial","last_result":false,"recognition_result":"{\"returnCode\":0,\"uniCarRet\":{\"result\":{},\"returnCode\":609,\"message\":\"http post reuqest error\"}}","sessionID":"c9bc2025c6749e5bb0d80ef9f65d7ef4"}]}
+D/NLUDispatcher(12330): [ lineNumber =336 ] onASRResultNet:{"net_asr":[{"engine_mode":"mix","result_type":"partial","last_result":false,"recognition_result":"{\"returnCode\":0,\"uniCarRet\":{\"result\":{},\"returnCode\":609,\"message\":\"http post reuqest error\"}}","sessionID":"c9bc2025c6749e5bb0d80ef9f65d7ef4"}]}
+E/android.os.Debug(14694): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/USC     (12330): SpeechUnderstanderInterface : recognizeResult.item = { "rc": 0, "text": "请暂停", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_PAUSE", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" } , times=  0
+D/NativeANTEngine(12330): [ lineNumber =-1 ] type:1202;onResult:{"local_asr":[{"engine_mode":"mix","result_type":"full","recognition_result":"{ \"rc\": 0, \"text\": \"请暂停\", \"service\": \"cn.yunzhisheng.setting.mp\", \"code\": \"SETTING_EXEC\", \"semantic\": { \"intent\": { \"operations\": [ { \"operator\": \"ACT_PAUSE\", \"deviceType\": \"OBJ_MEDIA_PLAYER\" } ] } }, \"history\": \"cn.yunzhisheng.setting.mp\" }","score":-19.11}]}
+D/NLUDispatcher(12330): [ lineNumber =311 ] onASRResultLocal:{"local_asr":[{"engine_mode":"mix","result_type":"full","recognition_result":"{ \"rc\": 0, \"text\": \"请暂停\", \"service\": \"cn.yunzhisheng.setting.mp\", \"code\": \"SETTING_EXEC\", \"semantic\": { \"intent\": { \"operations\": [ { \"operator\": \"ACT_PAUSE\", \"deviceType\": \"OBJ_MEDIA_PLAYER\" } ] } }, \"history\": \"cn.yunzhisheng.setting.mp\" }","score":-19.11}]}
+E/android.os.Debug(14775): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(14853): failed to load memtrack module: -2
+D/USC     (12330): NetRecognition --> Stop NluParams : returnType=json;city=嘉兴;gps=30.383869,120.417212;time=2026-10-08 17:00:00;scenario=musicDefault;screen=;dpi=;history=;udid=LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg;ver=3.0;appver=;oneshotKeyProperty=wakeup;
+D/USC     (12330): AudioSourceImplcloseIn uni4micHalJNI stop = 0, close = 0
+D/USC     (12330): SpeechUnderstanderInterface : recognizeResult.item = { "rc": 0, "text": "收藏", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_BOOKMARK", "deviceType": "OBJ_MUSIC" } ] } }, "history": "cn.yunzhisheng.setting.mp"} , times=  0
+D/NativeANTEngine(12330): [ lineNumber =-1 ] type:1202;onResult:{"local_asr":[{"engine_mode":"mix","result_type":"full","recognition_result":"{ \"rc\": 0, \"text\": \"收藏\", \"service\": \"cn.yunzhisheng.setting.mp\", \"code\": \"SETTING_EXEC\", \"semantic\": { \"intent\": { \"operations\": [ { \"operator\": \"ACT_BOOKMARK\", \"deviceType\": \"OBJ_MUSIC\" } ] } }, \"history\": \"cn.yunzhisheng.setting.mp\"}","score":-51.28}]}
+D/NLUDispatcher(12330): [ lineNumber =311 ] onASRResultLocal:{"local_asr":[{"engine_mode":"mix","result_type":"full","recognition_result":"{ \"rc\": 0, \"text\": \"收藏\", \"service\": \"cn.yunzhisheng.setting.mp\", \"code\": \"SETTING_EXEC\", \"semantic\": { \"intent\": { \"operations\": [ { \"operator\": \"ACT_BOOKMARK\", \"deviceType\": \"OBJ_MUSIC\" } ] } }, \"history\": \"cn.yunzhisheng.setting.mp\"}","score":-51.28}]}
+D/USC     (12330): NetRecognition --> onRecognitionResult=>resultType=NET; recognitionResult={"code":"ANSWER","matchType":"ONLY_NEED_WORD_STRING_TEMPLATE","originIntent":{"nluSlotInfos":[]},"confidence":0.99,"modelIntentClsScore":{},"history":"cn.yunzhisheng.calendar","source":"nlu","uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"},"asr_recongize":"现在几点。","rc":0,"general":{"style":"calendar","text":"当前时间：16点59分","type":"T"},"returnCode":0,"audioUrl":"http://asrv3.hivoice.cn/trafficRouter/r/cC4GfM","retTag":"nlu","service":"cn.yunzhisheng.chat","nluProcessTime":"96","text":"现在几点","responseId":"0b68cbe88eae4160a2c729e68420b798"}; sessionId=c9bc2025c6749e5bb0d80ef9f65d7ef4; isVarialbe=false; isLast=true; utterranceStartTime=0; utteranceEndTime=0; utteranceTime=0; recordingTime=0; delayTime=0; score=0.0
+D/USC     (12330): addToTotalASRResult={"returnCode":0,"uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"}}现在几点。
+I/USC     (12330): format onResult -> result = {"returnCode":0,"uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"}}现在几点。
+D/NativeANTEngine(12330): [ lineNumber =-1 ] type:1201;onResult:{"net_nlu":[{"code":"ANSWER","matchType":"ONLY_NEED_WORD_STRING_TEMPLATE","originIntent":{"nluSlotInfos":[]},"confidence":0.99,"modelIntentClsScore":{},"history":"cn.yunzhisheng.calendar","source":"nlu","uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"},"rc":0,"general":{"style":"calendar","text":"当前时间：16点59分","type":"T"},"returnCode":0,"audioUrl":"http://asrv3.hivoice.cn/trafficRouter/r/cC4GfM","service":"cn.yunzhisheng.chat","nluProcessTime":"96","text":"现在几点","responseId":"0b68cbe88eae4160a2c729e68420b798"}]}
+D/NLUDispatcher(12330): [ lineNumber =336 ] onASRResultNet:{"net_nlu":[{"code":"ANSWER","matchType":"ONLY_NEED_WORD_STRING_TEMPLATE","originIntent":{"nluSlotInfos":[]},"confidence":0.99,"modelIntentClsScore":{},"history":"cn.yunzhisheng.calendar","source":"nlu","uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"},"rc":0,"general":{"style":"calendar","text":"当前时间：16点59分","type":"T"},"returnCode":0,"audioUrl":"http://asrv3.hivoice.cn/trafficRouter/r/cC4GfM","service":"cn.yunzhisheng.chat","nluProcessTime":"96","text":"现在几点","responseId":"0b68cbe88eae4160a2c729e68420b798"}]}
+D/NativeANTEngine(12330): [ lineNumber =-1 ] type:1201;onResult:{"net_asr":[{"engine_mode":"mix","result_type":"full","last_result":true,"recognition_result":"{\"returnCode\":0,\"uniCarRet\":{\"result\":{},\"returnCode\":609,\"message\":\"http post reuqest error\"}}现在几点。","sessionID":"c9bc2025c6749e5bb0d80ef9f65d7ef4"}],"net_nlu":[{"code":"ANSWER","matchType":"ONLY_NEED_WORD_STRING_TEMPLATE","originIntent":{"nluSlotInfos":[]},"confidence":0.99,"modelIntentClsScore":{},"history":"cn.yunzhisheng.calendar","source":"nlu","uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"},"rc":0,"general":{"style":"calendar","text":"当前时间：16点59分","type":"T"},"returnCode":0,"audioUrl":"http://asrv3.hivoice.cn/trafficRouter/r/cC4GfM","service":"cn.yunzhisheng.chat","nluProcessTime":"96","text":"现在几点","responseId":"0b68cbe88eae4160a2c729e68420b798"}]}
+D/NLUDispatcher(12330): [ lineNumber =336 ] onASRResultNet:{"net_asr":[{"engine_mode":"mix","result_type":"full","last_result":true,"recognition_result":"{\"returnCode\":0,\"uniCarRet\":{\"result\":{},\"returnCode\":609,\"message\":\"http post reuqest error\"}}现在几点。","sessionID":"c9bc2025c6749e5bb0d80ef9f65d7ef4"}],"net_nlu":[{"code":"ANSWER","matchType":"ONLY_NEED_WORD_STRING_TEMPLATE","originIntent":{"nluSlotInfos":[]},"confidence":0.99,"modelIntentClsScore":{},"history":"cn.yunzhisheng.calendar","source":"nlu","uniCarRet":{"result":{},"returnCode":609,"message":"http post reuqest error"},"rc":0,"general":{"style":"calendar","text":"当前时间：16点59分","type":"T"},"returnCode":0,"audioUrl":"http://asrv3.hivoice.cn/trafficRouter/r/cC4GfM","service":"cn.yunzhisheng.chat","nluProcessTime":"96","text":"现在几点","responseId":"0b68cbe88eae4160a2c729e68420b798"}]}
+I/DefaultSettingHandler(12330): [ lineNumber =72 ] acceptInboundEvent0 evt = {"asrResult":"{\"net_asr\":[{\"engine_mode\":\"mix\",\"result_type\":\"full\",\"last_result\":true,\"recognition_result\":\"{\\\"returnCode\\\":0,\\\"uniCarRet\\\":{\\\"result\\\":{},\\\"returnCode\\\":609,\\\"message\\\":\\\"http post reuqest error\\\"}}现在几点。\",\"sessionID\":\"c9bc2025c6749e5bb0d80ef9f65d7ef4\"}],\"net_nlu\":[{\"code\":\"ANSWER\",\"matchType\":\"ONLY_NEED_WORD_STRING_TEMPLATE\",\"originIntent\":{\"nluSlotInfos\":[]},\"confidence\":0.99,\"modelIntentClsScore\":{},\"history\":\"cn.yunzhisheng.calendar\",\"source\":\"nlu\",\"uniCarRet\":{\"result\":{},\"returnCode\":609,\"message\":\"http post reuqest error\"},\"rc\":0,\"general\":{\"style\":\"calendar\",\"text\":\"当前时间：16点59分\",\"type\":\"T\"},\"returnCode\":0,\"audioUrl\":\"http://asrv3.hivoice.cn/trafficRouter/r/cC4GfM\",\"service\":\"cn.yunzhisheng.chat\",\"nluProcessTime\":\"96\",\"text\":\"现在几点\",\"responseId\":\"0b68cbe88eae4160a2c729e68420b798\"}]}","code":"ANSWER","general":{"style":"calendar","text":"当前时间：16点59分","type":"T"},"history":"cn.yunzhisheng.calendar","isLocalNLU":false,"isNeedAbandonNlu":false,"isQueenMessage":false,"rc":0,"responseId":"0b68cbe88eae4160a2c729e68420b798","service":"cn.yunzhisheng.chat","text":"现在几点","time":0}
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] -resetErrorTime-
+D/DefaultUnSupportHandler(12330): [ lineNumber =-1 ] -doInterrupt-false; errorTime = 0
+D/UserPerferenceUtil(12330): [ lineNumber =442 ] -->>getWakeupWord wakeupWord:[Ljava.lang.Object;@5e542fc
+D/NativeANTEngine(12330): [ lineNumber =-1 ] wakeUpEventSetWakeUpWordDone
+D/NativeANTEngine(12330): [ lineNumber =-1 ] set wakeup word done, need start wakeup = true, current thread is main
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterWakeup isIdle:true, current thread = main
+D/USC     (12330): USCstart recognition tag is wakeup
+I/DeviceInfoUtil(12330): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d"}]}
+I/DeviceInfoUtil(12330): getTokenInfo token = dd_5070897a-fe66-4d6e-952b-aeb207884c8d
+I/DeviceInfoUtil(12330): DeviceUtil tokenJson is {"deviceToken":"dd_5070897a-fe66-4d6e-952b-aeb207884c8d","activateVersion":"v3.1"}
+D/USC     (12330): modelTag =>wakeup
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommDataStatisticHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommReminderHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommAlarmHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultMemoRingingHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DeviceCenterHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultANTLaunchHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultWeatherHandler
+D/USC     (12330): FixRecognitionThread:jac::start model=wakeup,modelId=54
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultStockHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommExternalMusicHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommMusicHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommMusicScheduleHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultNoteHandler
+I/DefaultSettingHandler(12330): [ lineNumber =102 ] onWakeupEventSetWakeupwordDone eventReceived:false
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultSettingHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultChatHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultGuideHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultIlleageChatHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultSmartHomeHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultUnSupportHandler
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterWakeup isIdle:false, current thread = main
+D/AudioHardwareTiny(  209): Device     : 0x80402
+D/alsa_route(  209): route_info->sound_card 2, route_info->devices 0  
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+W/libc    (12330): pthread_create sched_setscheduler call failed: Operation not permitted
+D/DeviceCenterHandler(12330): [ lineNumber =424 ] -->>onTTSEventSynthesizerStart
+D/USC     (12330): AudioSourceImplopenIn uni4micHalJNI status = 0
+D/DeviceStateMgr(12330): [ lineNumber =-1 ] --->>reportLocalAsrLog content:com.unisound.ant.device.bean.VoiceChatMessage@10c192e8
+D/HttpReportUtils(12330): [ lineNumber =-1 ] httpReportASRLog, url = http://aios-home.hivoice.cn:19999/rest/v1/api/terminal_syslog, params = {"data":{"head":{"udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","appKey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","timestamp":"1791450001"},"body":{"messageBody":{"dialog":{"dstService":"deviceManagement","dstState":"2","sendToCloudResponse":{"actionTimestamp":1791450001052},"sendToTerminalResponse":{"actionTimestamp":1791450001052}},"dstService":{"accelerate":{"command":"synInfo","valuse":"onlineAsrLog"},"dstServiceName":"deviceManagement","dstState":"settingOver","parameter":{"createTime":"2026-10-08 17:00:00","isUserEdited":false,"logId":"92aa30aa-d1f2-4449-8e4c-ee6ea27059e9","msg":"{\"net_asr\":[{\"last_result\":true,\"sessionID\":\"c9bc2025c6749e5bb0d80ef9f65d7ef4\",\"engine_mode\":\"mix\",\"recognition_result\":\"{\\\"returnCode\\\":0,\\\"uniCarRet\\\":{\\\"result\\\":{},\\\"returnCode\\\":609,\\\"message\\\":\\\"http post reuqest error\\\"}}现在几点。\",\"result_type\":\"full\"}],\"net_nlu\":[{\"code\":\"ANSWER\",\"general\":{\"style\":\"calendar\",\"text\":\"当前时间：16点59分\",\"type\":\"T\"},\"history\":\"cn.yunzhisheng.calendar\",\"isLocalNLU\":false,\"isNeedAbandonNlu\":false,\"isQueenMessage\":false,\"rc\":0,\"responseId\":\"0b68cbe88eae4160a2c729e68420b798\",\"service\":\"cn.yunzhisheng.chat\",\"text\":\"现在几点\",\"time\":0}],\"tts_data\":\"当前时间：16点59分\"}"}}},"messageType":"synInfo","version":"V3.2.5.2-"}},"signature":"43BFF128C6F9857AECBC385FE8BB73E0"}
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/HttpUtils(12330): [ lineNumber =-1 ] http post error : Unable to resolve host "aios-home.hivoice.cn": No address associated with hostname
+D/HttpReportUtils(12330): [ lineNumber =-1 ] httpReportASRLog failure, response is null!
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(14947): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/NativeANTEngine(12330): [ lineNumber =-1 ] tts play end ,isInSetWakeUpWord:false
+D/DeviceCenterHandler(12330): [ lineNumber =415 ] -->>onTTSEventPlayingEnd ctx.engine().getEngineState=1
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onTTSEventPlayingEnd:DeviceCenterHandler
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterWakeup isIdle:false, current thread = main
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] -resetErrorTime-
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15028): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15106): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15188): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15269): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15347): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15425): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15506): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15584): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15666): failed to load memtrack module: -2
+E/DEBUG   (  199): AM write failure (32 / Broken pipe)
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15760): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for upnp:rootdevice
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for upnp:rootdevice
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for upnp:rootdevice
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15847): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/Neptune (  961): [ReadLine] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(__result)]
+D/Neptune (  961): [Read] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(res)]
+D/Neptune (  961): [ReadLine] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(__result)]
+D/Neptune (  961): [Read] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(res)]
+D/Neptune (  961): [ReadLine] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(__result)]
+D/Neptune (  961): [Read] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(res)]
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(15925): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16003): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16084): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16162): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16240): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16318): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16399): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+E/android.os.Debug(16492): failed to load memtrack module: -2
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16570): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16648): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16731): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16812): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16890): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(16968): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(17049): failed to load memtrack module: -2
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/android.os.Debug(17127): failed to load memtrack module: -2
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for upnp:rootdevice
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for upnp:rootdevice
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for upnp:rootdevice
+D/Neptune (  961): [ReadLine] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(__result)]
+D/Neptune (  961): [Read] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(res)]
+D/Neptune (  961): [ReadLine] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(__result)]
+D/Neptune (  961): [Read] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(res)]
+D/Neptune (  961): [ReadLine] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(__result)]
+D/Neptune (  961): [Read] WARNING: NPT_CHECK failed, result=-20400 (NPT_ERROR_CONNECTION_RESET) [(res)]

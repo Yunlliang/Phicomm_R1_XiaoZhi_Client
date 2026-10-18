@@ -1,0 +1,190 @@
+--------- beginning of system
+--------- beginning of crash
+--------- beginning of main
+I/R1CLIENT(15730): micTelem t=2045s rms[252,236,253,248,218,213,205,208,209,204,207,211,213,219,220,219,215,206,223,206,220,204,210,202,211,208,200,202,207,203] peak=1024
+I/R1CLIENT(15730): micTelem t=2050s rms[295,271,309,537,541,389,252,236,253,248,218,213,205,208,209,204,207,211,213,219,220,219,215,206,223,206,220,204,210,202] peak=1760
+I/R1CLIENT(15730): alive 2060s (tts=true mic=true sess=IDLE)
+I/R1CLIENT(15730): micTelem t=2056s rms[224,246,268,332,363,312,295,271,309,537,541,389,252,236,253,248,218,213,205,208,209,204,207,211,213,219,220,219,215,206] peak=1760
+I/R1CLIENT(15730): micTelem t=2062s rms[208,206,210,215,234,228,224,246,268,332,363,312,295,271,309,537,541,389,252,236,253,248,218,213,205,208,209,204,207,211] peak=1760
+I/XZ      (19881): self-host so: start=6172164 len=312804
+I/XZ      (19881): libr1opus.so self-hosted -> files/ ok=true len=312804
+I/R1CLIENT(19881): loadLibrary r1opus failed, try absolute paths
+I/R1CLIENT(19881): not found: /data/app/cn.workbuddy.r1client-3/lib/libr1opus.so
+I/R1CLIENT(19881): not found: /data/app/cn.workbuddy.r1client-3/lib/armeabi-v7a/libr1opus.so
+W/R1CLIENT(19881): load /data/data/com.phicomm.speaker.device/files/libr1opus.so failed: java.lang.UnsatisfiedLinkError: dlopen failed: couldn't map "/data/data/com.phicomm.speaker.device/files/libr1opus.so" segment 1: Permission denied
+E/R1CLIENT(19881): load r1opus failed (all paths)
+I/XZ      (19881): r1client nativeLibraryDir=/data/app/cn.workbuddy.r1client-1/lib/arm
+E/XZ      (19881): opus init failed (will keep building other parts)
+E/XZ      (19881): java.lang.UnsatisfiedLinkError: No implementation found for long cn.workbuddy.r1client.OpusCodec.nativeEncoderCreate(int, int, int) (tried Java_cn_workbuddy_r1client_OpusCodec_nativeEncoderCreate and Java_cn_workbuddy_r1client_OpusCodec_nativeEncoderCreate__III)
+E/XZ      (19881): 	at cn.workbuddy.r1client.OpusCodec.nativeEncoderCreate(Native Method)
+E/XZ      (19881): 	at cn.workbuddy.r1client.OpusCodec.openEncoder(OpusCodec.java:65)
+E/XZ      (19881): 	at cn.workbuddy.r1client.XzBootstrap.buildPipeline(XzBootstrap.java:221)
+E/XZ      (19881): 	at cn.workbuddy.r1client.XzBootstrap.access$000(XzBootstrap.java:23)
+E/XZ      (19881): 	at cn.workbuddy.r1client.XzBootstrap$1.run(XzBootstrap.java:56)
+E/XZ      (19881): 	at java.lang.Thread.run(Thread.java:818)
+I/R1CLIENT(19881): msgcenter manager class = android.os.MessageDispatchManager
+I/R1CLIENT(19881): receiver iface resolved: android.os.MessageDispatchManager$MessageReceiver
+I/R1CLIENT(19881): wakeup bridge REGISTERED on type=33554432 via public void android.os.MessageDispatchManager.registerMessageReceiver(android.os.MessageDispatchManager$MessageReceiver,int) ret=null
+I/XZ      (19881): WakeupBridge register=true
+I/R1CLIENT(19881): TtsPlayer started, minBuf=4096(fixed) buf=16384
+I/XZ      (19881): tts init ok=true
+I/R1CLIENT(19881): device identity: synthesized esp32-oui mac 24:0a:c4:87:58:29
+I/R1CLIENT(19881): OTA POST https://api.tenclass.net/xiaozhi/ota/
+I/R1CLIENT(19881): OTA req body: {"version":2,"language":"zh-CN","flash_size":8388608,"minimum_free_heap_size":8312316,"mac_address":"24:0a:c4:87:58:29","uuid":"c1545b4c-12ad-42b9-9988-553dd8143598","chip_model_name":"esp32s3","chip_info":{"model":9,"cores":2,"revision":2,"features":18},"application":{"name":"xiaozhi-esp32","version":"2.4.2","compile_time":"2025-09-01T12:00:00Z","idf_version":"v5.4.1","elf_sha256":"ababababababababababababababababababababababababababababababababab"},"partition_table":[{"label":"nvs","type":1,"subtype":2,"address":36864,"size":24576},{"label":"otadata","type":1,"subtype":0,"address":57344,"size":8192},{"label":"app","type":0,"subtype":0,"address":65536,"size":6553600},{"label":"model","type":1,"subtype":1,"address":6619136,"size":10289152}],"ota":{"label":"app"},"board":{"type":"bread-compact-wifi"}}
+I/XZ      (19881): xz audio cfg: aec=false gain=16 src_vrec=false src_uni4mic=true
+I/R1CLIENT(19881): media mute=false (startup reset)
+I/R1CLIENT(19881): OTA resp code=200
+I/R1CLIENT(19881): OTA resp body: {"server_time":{"timestamp":1791458689813,"timezone_offset":480},"firmware":{"version":"2.4.2","url":""},"mqtt":{"endpoint":"api.tenclass.net","client_id":"GID_test@@@24_0a_c4_87_58_29@@@c1545b4c-12ad-42b9-9988-553dd8143598","username":"eyJpcCI6IjM5LjE3Mi4yNDguODYiLCJjIjowfQ==","password":"8Tkf36KL9QdEPx5DxKLGz9fylj6Ce1jZquR+3jHXSbQ=","publish_topic":"device-server","subscribe_topic":"null"},"websocket":{"url":"wss://api.tenclass.net/xiaozhi/v1/","token":"test-token"},"activation":{"code":"394939","message":"xiaozhi.me\n394939","challenge":"065081f1-fab4-4a6d-998b-7a82fb5d9e54"}}
+I/R1CLIENT(19881): OTA ws url: wss://api.tenclass.net/xiaozhi/v1/
+I/R1CLIENT(19881): ws url set from OTA: wss://api.tenclass.net/xiaozhi/v1/
+I/XZ      (19881): got token from OTA: test-token
+I/XZ      (20089): libr1opus.so already self-hosted at files/ (312804B)
+I/R1CLIENT(20089): loadLibrary r1opus failed, try absolute paths
+I/R1CLIENT(20089): not found: /data/app/cn.workbuddy.r1client-3/lib/libr1opus.so
+I/R1CLIENT(20089): not found: /data/app/cn.workbuddy.r1client-3/lib/armeabi-v7a/libr1opus.so
+W/R1CLIENT(20089): load /data/data/com.phicomm.speaker.device/files/libr1opus.so failed: java.lang.UnsatisfiedLinkError: dlopen failed: couldn't map "/data/data/com.phicomm.speaker.device/files/libr1opus.so" segment 1: Permission denied
+E/R1CLIENT(20089): load r1opus failed (all paths)
+I/XZ      (20089): r1client nativeLibraryDir=/data/app/cn.workbuddy.r1client-1/lib/arm
+E/XZ      (20089): opus init failed (will keep building other parts)
+E/XZ      (20089): java.lang.UnsatisfiedLinkError: No implementation found for long cn.workbuddy.r1client.OpusCodec.nativeEncoderCreate(int, int, int) (tried Java_cn_workbuddy_r1client_OpusCodec_nativeEncoderCreate and Java_cn_workbuddy_r1client_OpusCodec_nativeEncoderCreate__III)
+E/XZ      (20089): 	at cn.workbuddy.r1client.OpusCodec.nativeEncoderCreate(Native Method)
+E/XZ      (20089): 	at cn.workbuddy.r1client.OpusCodec.openEncoder(OpusCodec.java:65)
+E/XZ      (20089): 	at cn.workbuddy.r1client.XzBootstrap.buildPipeline(XzBootstrap.java:221)
+E/XZ      (20089): 	at cn.workbuddy.r1client.XzBootstrap.access$000(XzBootstrap.java:23)
+E/XZ      (20089): 	at cn.workbuddy.r1client.XzBootstrap$1.run(XzBootstrap.java:56)
+E/XZ      (20089): 	at java.lang.Thread.run(Thread.java:818)
+I/R1CLIENT(20089): msgcenter manager class = android.os.MessageDispatchManager
+I/R1CLIENT(20089): receiver iface resolved: android.os.MessageDispatchManager$MessageReceiver
+I/R1CLIENT(20089): wakeup bridge REGISTERED on type=33554432 via public void android.os.MessageDispatchManager.registerMessageReceiver(android.os.MessageDispatchManager$MessageReceiver,int) ret=null
+I/XZ      (20089): WakeupBridge register=true
+I/R1CLIENT(20089): TtsPlayer started, minBuf=4096(fixed) buf=16384
+I/XZ      (20089): tts init ok=true
+I/R1CLIENT(20089): OTA POST https://api.tenclass.net/xiaozhi/ota/
+I/R1CLIENT(20089): OTA req body: {"version":2,"language":"zh-CN","flash_size":8388608,"minimum_free_heap_size":8312316,"mac_address":"24:0a:c4:87:58:29","uuid":"c1545b4c-12ad-42b9-9988-553dd8143598","chip_model_name":"esp32s3","chip_info":{"model":9,"cores":2,"revision":2,"features":18},"application":{"name":"xiaozhi-esp32","version":"2.4.2","compile_time":"2025-09-01T12:00:00Z","idf_version":"v5.4.1","elf_sha256":"ababababababababababababababababababababababababababababababababab"},"partition_table":[{"label":"nvs","type":1,"subtype":2,"address":36864,"size":24576},{"label":"otadata","type":1,"subtype":0,"address":57344,"size":8192},{"label":"app","type":0,"subtype":0,"address":65536,"size":6553600},{"label":"model","type":1,"subtype":1,"address":6619136,"size":10289152}],"ota":{"label":"app"},"board":{"type":"bread-compact-wifi"}}
+I/XZ      (20089): xz audio cfg: aec=false gain=16 src_vrec=false src_uni4mic=true
+I/R1CLIENT(20089): media mute=false (startup reset)
+I/R1CLIENT(20089): OTA resp code=200
+I/R1CLIENT(20089): OTA resp body: {"server_time":{"timestamp":1791458723353,"timezone_offset":480},"firmware":{"version":"2.4.2","url":""},"mqtt":{"endpoint":"api.tenclass.net","client_id":"GID_test@@@24_0a_c4_87_58_29@@@c1545b4c-12ad-42b9-9988-553dd8143598","username":"eyJpcCI6IjM5LjE3Mi4yNDguODYiLCJjIjowfQ==","password":"8Tkf36KL9QdEPx5DxKLGz9fylj6Ce1jZquR+3jHXSbQ=","publish_topic":"device-server","subscribe_topic":"null"},"websocket":{"url":"wss://api.tenclass.net/xiaozhi/v1/","token":"test-token"},"activation":{"code":"394939","message":"xiaozhi.me\n394939","challenge":"7f44a472-7def-4126-ac17-68ee00a18c3d"}}
+I/R1CLIENT(20089): OTA ws url: wss://api.tenclass.net/xiaozhi/v1/
+I/R1CLIENT(20089): ws url set from OTA: wss://api.tenclass.net/xiaozhi/v1/
+I/XZ      (20089): got token from OTA: test-token
+I/XZ      (20089): xz alive 30s (tts=true mic=false sess=IDLE bus=true)
+I/XZ      (20089): xz alive 60s (tts=true mic=false sess=IDLE bus=true)
+I/XZ      (20089): xz alive 90s (tts=true mic=false sess=IDLE bus=true)
+I/XZ      (20089): xz alive 120s (tts=true mic=false sess=IDLE bus=true)
+I/XZ      (20089): xz alive 150s (tts=true mic=false sess=IDLE bus=true)
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=3 arg2=-1 val={"data":{"wakeupWord":"小讯小讯","wakeupType":1},"from":"unisound","key":"wakeup","msgId":"add106fc-4f91-4e28-90d2-29ddbbd7b350"}
+I/R1CLIENT(20089): *** BUS WAKEUP: 小讯小讯
+I/R1CLIENT(20089): wakeup src=bus:小讯小讯 state=IDLE
+I/R1CLIENT(20089): wake ack cue played (260ms), mic echo dropped 0ms
+I/R1CLIENT(20089): playback started, buffered=260ms, waited=1ms
+I/R1CLIENT(20089): session start -> CONNECTING (mic acquire + ws connect in parallel)
+I/R1CLIENT(20089): connecting wss://api.tenclass.net/xiaozhi/v1/
+I/R1CLIENT(20089): uni4mic init(1) -> 0
+I/R1CLIENT(20089): uni4mic board=UNI_4MIC_HAL_ANDROID_V1.1 dbg=0 closeAlgo=0 wakeUp=0
+I/R1CLIENT(20089): uni4mic openAudioIn(2) -> handle=-1178661136 (0xffffffffb9bf0ef0)
+I/R1CLIENT(20089): uni4mic startRecorder -> 0
+I/R1CLIENT(20089): AudioCapture started: 16000Hz/out-mono rawCh=2 take=avg **SRC=UNI4MIC-HAL** (board=UNI_4MIC_HAL_ANDROID_V1.1 handle=-1178661136) aec=false gain=16 sessBind=false, 60ms mono, minBuf=4096(fixed)
+I/R1CLIENT(20089): mic ACQUIRED (attempt=1) -> unisound KWS paused, session owns the mic
+I/R1CLIENT(20089): uniIO(5s): reads=2 idle=0 bytes=4800 pace=64000B/s | readMs=34/100 workMs=2 (r34%/w2%) | down=1 tel=1 feed=0
+I/R1CLIENT(20089): ws open
+I/R1CLIENT(20089): hello sent: {"type":"hello","version":1,"features":{"mcp":true},"transport":"websocket","audio_params":{"format":"opus","sample_rate":16000,"channels":1,"frame_duration":60}}
+I/R1CLIENT(20089): ws connected
+I/R1CLIENT(20089): <- {"type":"hello","version":1,"transport":"websocket","audio_params":{"format":"opus","sample_rate":24000,"channels":1,"frame_duration":60},"session_id":"0d8404ef"}
+I/R1CLIENT(20089): handshake done, session_id=0d8404ef
+I/R1CLIENT(20089): handshake done -> LISTENING
+I/R1CLIENT(20089): <- {"type":"mcp","payload":{"jsonrpc":"2.0","method":"initialize","id":1,"params":{"protocolVersion":"2024-11-05","capabilities":{"vision":{"url":"http://api.xiaozhi.me/vision/explain","token":"0d8404ef-23a4-479d-b197-3813bf1afda1"}},"clientInfo":{"name":"xiaozhi-mqtt-client","version":"1.0.0"}}},"session_id":"0d8404ef"}
+I/R1CLIENT(20089): lat: wake->handshake = 411ms
+I/R1CLIENT(20089): flush pending: empty (mic opened after handshake?)
+I/R1CLIENT(20089): <- {"type":"mcp","payload":{"jsonrpc":"2.0","method":"notifications/initialized"},"session_id":"0d8404ef"}
+I/R1CLIENT(20089): <- {"type":"mcp","payload":{"jsonrpc":"2.0","method":"tools/list","id":2,"params":{}},"session_id":"0d8404ef"}
+I/R1CLIENT(20089): TTS drained (frames=1 silenceMs=300 maxGapMs=0)
+I/R1CLIENT(20089): TTS hold-silence 4000ms
+I/R1CLIENT(20089): micTelem t=0s rms[83] peak=384
+I/R1CLIENT(20089): TTS hold-silence end -> real silence
+I/R1CLIENT(20089): uniIO(5s): reads=134 idle=0 bytes=321600 pace=64000B/s | readMs=1125/5027 workMs=224 (r22%/w4%) | down=126 tel=92 feed=5
+I/R1CLIENT(20089): micTelem t=6s rms[70,72,73,71,74,71,83] peak=384
+I/R1CLIENT(20089): uniIO(5s): reads=135 idle=0 bytes=324000 pace=64000B/s | readMs=1073/5077 workMs=221 (r21%/w4%) | down=124 tel=91 feed=5
+I/R1CLIENT(20089): micTelem t=12s rms[68,68,70,71,105,72,70,72,73,71,74,71,83] peak=1760
+I/XZ      (20089): xz alive 180s (tts=true mic=true sess=LISTENING bus=true)
+I/R1CLIENT(20089): uniIO(5s): reads=134 idle=0 bytes=321600 pace=64000B/s | readMs=1065/5013 workMs=223 (r21%/w4%) | down=125 tel=93 feed=5
+I/R1CLIENT(20089): micTelem t=18s rms[75,69,69,70,68,72,68,68,70,71,105,72,70,72,73,71,74,71,83] peak=1760
+I/R1CLIENT(20089): uniIO(5s): reads=135 idle=0 bytes=324000 pace=64000B/s | readMs=1066/5055 workMs=220 (r21%/w4%) | down=124 tel=91 feed=5
+I/R1CLIENT(20089): micTelem t=24s rms[77,72,73,74,76,73,75,69,69,70,68,72,68,68,70,71,105,72,70,72,73,71,74,71,83] peak=1760
+I/R1CLIENT(20089): no TTS within 25s (state=LISTENING) maxRms=0 voicedFrames=0 -> closing session, mic goes back to unisound
+I/R1CLIENT(20089): ws closed: no-tts-timeout
+I/R1CLIENT(20089): session end voice: maxRms=0 voicedFrames=0 (voicedFrames=0 & maxRms 低 = 全程没人说话)
+I/R1CLIENT(20089): back to IDLE
+I/R1CLIENT(20089): media mute=true (usc error prompt cover)
+I/R1CLIENT(20089): uni4mic stopRecorder -> 0, closeAudioIn -> 0
+I/R1CLIENT(20089): uni4mic release -> 0
+I/R1CLIENT(20089): AudioCapture stopped
+I/R1CLIENT(20089): mic RELEASED -> unisound KWS back on duty
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=3 arg2=-1 val={"data":{"text":"启动录音失败","tts":"抱歉，暂时还帮不到你","service":"cn.yunzhisheng.illegal"},"from":"unisound","key":"dialog","msgId":"8b531357-3b29-423c-8f59-c012c602f52c"}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/XZ      (20089): xz alive 210s (tts=true mic=false sess=IDLE bus=true)
+I/R1CLIENT(20089): media mute=false (45s timer)
+I/XZ      (20089): xz alive 240s (tts=true mic=false sess=IDLE bus=true)
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=6 arg2=0 val={"key":"r1_ambient_light","data":{"action":"play","switcher":"on","date":1791458969925,"mac":"98:BB:99:36:CD:6B"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=2 arg2=0 val={"key":"playway_wifi","data":{"type":2,"begin":"1791458965540","end":"1791458977175"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=6 arg2=0 val={"key":"r1_ambient_light","data":{"action":"play","switcher":"on","date":1791458977338,"mac":"98:BB:99:36:CD:6B"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=2 arg2=0 val={"key":"playway_wifi","data":{"type":2,"begin":"1791458977345","end":"1791458984629"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=6 arg2=0 val={"key":"r1_ambient_light","data":{"action":"play","switcher":"on","date":1791458984814,"mac":"98:BB:99:36:CD:6B"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/XZ      (20089): xz alive 270s (tts=true mic=false sess=IDLE bus=true)
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=2 arg2=0 val={"key":"playway_wifi","data":{"type":2,"begin":"1791458984827","end":"1791458995333"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=6 arg2=0 val={"key":"r1_ambient_light","data":{"action":"play","switcher":"on","date":1791458995514,"mac":"98:BB:99:36:CD:6B"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=2 arg2=0 val={"key":"playway_wifi","data":{"type":2,"begin":"1791458995531","end":"1791459002820"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=6 arg2=0 val={"key":"r1_ambient_light","data":{"action":"play","switcher":"on","date":1791459002979,"mac":"98:BB:99:36:CD:6B"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=2 arg2=0 val={"key":"playway_wifi","data":{"type":2,"begin":"1791459002986","end":"1791459010273"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=6 arg2=0 val={"key":"r1_ambient_light","data":{"action":"play","switcher":"on","date":1791459010471,"mac":"98:BB:99:36:CD:6B"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=2 arg2=0 val={"key":"playway_wifi","data":{"type":2,"begin":"1791459010505","end":"1791459020953"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=6 arg2=0 val={"key":"r1_ambient_light","data":{"action":"play","switcher":"on","date":1791459021108,"mac":"98:BB:99:36:CD:6B"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/XZ      (20089): xz alive 300s (tts=true mic=false sess=IDLE bus=true)
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=2 arg2=0 val={"key":"playway_wifi","data":{"type":2,"begin":"1791459021116","end":"1791459031621"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=6 arg2=0 val={"key":"r1_ambient_light","data":{"action":"play","switcher":"on","date":1791459031781,"mac":"98:BB:99:36:CD:6B"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=2 arg2=0 val={"key":"playway_wifi","data":{"type":2,"begin":"1791459031785","end":"1791459035938"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=6 arg2=0 val={"key":"r1_ambient_light","data":{"action":"play","switcher":"on","date":1791459036161,"mac":"98:BB:99:36:CD:6B"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=2 arg2=0 val={"key":"playway_wifi","data":{"type":2,"begin":"1791459036171","end":"1791459040296"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/R1CLIENT(20089): [wakeup-bus] notifyMsg what=33554432 arg1=6 arg2=0 val={"key":"r1_ambient_light","data":{"action":"play","switcher":"on","date":1791459040453,"mac":"98:BB:99:36:CD:6B"}}
+I/R1CLIENT(20089): [wakeup-bus] not a wakeup event, ignored
+I/XZ      (23020): libr1opus.so already self-hosted at files/ (312804B)
+I/R1CLIENT(23020): loadLibrary r1opus failed, try absolute paths
+I/R1CLIENT(23020): loaded r1opus from /data/app/cn.workbuddy.r1client-1/lib/arm/libr1opus.so
+I/XZ      (23020): r1client nativeLibraryDir=/data/app/cn.workbuddy.r1client-1/lib/arm
+I/R1CLIENT(23020): opus encoder = -1194883800
+I/R1CLIENT(23020): opus decoder = -1194839624
+I/XZ      (23020): opus enc=true dec=true
+I/R1CLIENT(23020): msgcenter manager class = android.os.MessageDispatchManager
+I/R1CLIENT(23020): receiver iface resolved: android.os.MessageDispatchManager$MessageReceiver
+I/R1CLIENT(23020): wakeup bridge REGISTERED on type=33554432 via public void android.os.MessageDispatchManager.registerMessageReceiver(android.os.MessageDispatchManager$MessageReceiver,int) ret=null
+I/XZ      (23020): WakeupBridge register=true
+I/R1CLIENT(23020): TtsPlayer started, minBuf=4096(fixed) buf=16384
+I/XZ      (23020): tts init ok=true
+I/R1CLIENT(23020): OTA POST https://api.tenclass.net/xiaozhi/ota/
+I/R1CLIENT(23020): OTA req body: {"version":2,"language":"zh-CN","flash_size":8388608,"minimum_free_heap_size":8312316,"mac_address":"24:0a:c4:87:58:29","uuid":"c1545b4c-12ad-42b9-9988-553dd8143598","chip_model_name":"esp32s3","chip_info":{"model":9,"cores":2,"revision":2,"features":18},"application":{"name":"xiaozhi-esp32","version":"2.4.2","compile_time":"2025-09-01T12:00:00Z","idf_version":"v5.4.1","elf_sha256":"ababababababababababababababababababababababababababababababababab"},"partition_table":[{"label":"nvs","type":1,"subtype":2,"address":36864,"size":24576},{"label":"otadata","type":1,"subtype":0,"address":57344,"size":8192},{"label":"app","type":0,"subtype":0,"address":65536,"size":6553600},{"label":"model","type":1,"subtype":1,"address":6619136,"size":10289152}],"ota":{"label":"app"},"board":{"type":"bread-compact-wifi"}}
+I/XZ      (23020): xz audio cfg: aec=false gain=16 src_vrec=false src_uni4mic=true
+I/R1CLIENT(23020): media mute=false (startup reset)
+I/R1CLIENT(23020): OTA resp code=200
+I/R1CLIENT(23020): OTA resp body: {"server_time":{"timestamp":1791459075402,"timezone_offset":480},"firmware":{"version":"2.4.2","url":""},"mqtt":{"endpoint":"api.tenclass.net","client_id":"GID_test@@@24_0a_c4_87_58_29@@@c1545b4c-12ad-42b9-9988-553dd8143598","username":"eyJpcCI6IjM5LjE3Mi4yNDguODYiLCJjIjowfQ==","password":"8Tkf36KL9QdEPx5DxKLGz9fylj6Ce1jZquR+3jHXSbQ=","publish_topic":"device-server","subscribe_topic":"null"},"websocket":{"url":"wss://api.tenclass.net/xiaozhi/v1/","token":"test-token"},"activation":{"code":"394939","message":"xiaozhi.me\n394939","challenge":"2c0fe22b-578a-473c-bec2-0aa1217a626e"}}
+I/R1CLIENT(23020): OTA ws url: wss://api.tenclass.net/xiaozhi/v1/
+I/R1CLIENT(23020): ws url set from OTA: wss://api.tenclass.net/xiaozhi/v1/
+I/XZ      (23020): got token from OTA: test-token
+I/XZ      (23020): xz alive 30s (tts=true mic=false sess=IDLE bus=true)

@@ -1,0 +1,126 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        9ae0d2e com.phicomm.speaker.device/.ui.MainActivity
+
+Receiver Resolver Table:
+  Non-Data Actions:
+      android.net.wifi.WIFI_STATE_CHANGED:
+        6b3d0cf com.phicomm.speaker.device/com.unisound.vui.util.NetworkConnectChangedReceiver
+      android.net.conn.CONNECTIVITY_CHANGE:
+        6b3d0cf com.phicomm.speaker.device/com.unisound.vui.util.NetworkConnectChangedReceiver
+      android.net.wifi.STATE_CHANGE:
+        6b3d0cf com.phicomm.speaker.device/com.unisound.vui.util.NetworkConnectChangedReceiver
+      android.intent.action.BOOT_COMPLETED:
+        33492a5c com.phicomm.speaker.device/.Receiver.MessageReceiver
+
+Service Resolver Table:
+  Non-Data Actions:
+      com.unisound.intent.action.START_TALK:
+        374165 com.phicomm.speaker.device/.ui.service.WindowsService
+
+Key Set Manager:
+  [com.phicomm.speaker.device]
+      Signing KeySets: 1
+
+Packages:
+  Package [com.phicomm.speaker.device] (2e7bd688):
+    userId=10008 gids=[1028, 3003, 1015, 3002, 3001]
+    pkg=Package{2691ce3a com.phicomm.speaker.device}
+    codePath=/data/app/com.phicomm.speaker.device-2
+    resourcePath=/data/app/com.phicomm.speaker.device-2
+    legacyNativeLibraryDir=/data/app/com.phicomm.speaker.device-2/lib
+    primaryCpuAbi=armeabi-v7a
+    secondaryCpuAbi=null
+    versionCode=2 targetSdk=21
+    versionName=V3.2.5.2-
+    splits=[base]
+    applicationInfo=ApplicationInfo{13c6aaeb com.phicomm.speaker.device}
+    flags=[ SYSTEM DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA UPDATED_SYSTEM_APP ALLOW_BACKUP LARGE_HEAP ]
+    dataDir=/data/data/com.phicomm.speaker.device
+    supportsScreens=[small, large, xlarge, resizeable, anyDensity]
+    timeStamp=2026-10-08 19:23:43
+    firstInstallTime=2018-07-07 04:01:32
+    lastUpdateTime=2026-10-08 19:24:05
+    signatures=PackageSignatures{35c4e446 [106c9048]}
+    permissionsFixed=true haveGids=true installStatus=1
+    pkgFlags=[ SYSTEM DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA UPDATED_SYSTEM_APP ALLOW_BACKUP LARGE_HEAP ]
+    User 0:  installed=true hidden=false stopped=false notLaunched=false enabled=0
+    grantedPermissions:
+      android.permission.WRITE_SETTINGS
+      android.permission.ACCESS_FINE_LOCATION
+      android.permission.ACCESS_MOCK_LOCATION
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.CHANGE_NETWORK_STATE
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.BLUETOOTH
+      android.permission.GET_TASKS
+      android.permission.INTERNET
+      android.permission.REORDER_TASKS
+      android.permission.BLUETOOTH_ADMIN
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.WRITE_SECURE_SETTINGS
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.READ_PHONE_STATE
+      android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
+      android.permission.CALL_PHONE
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.CHANGE_CONFIGURATION
+      android.permission.KILL_BACKGROUND_PROCESSES
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.RECORD_AUDIO
+      android.permission.WAKE_LOCK
+      android.permission.READ_CONTACTS
+
+Hidden system packages:
+  Package [com.phicomm.speaker.device] (133bd334):
+    userId=10008 gids=[]
+    pkg=Package{390af55d com.phicomm.speaker.device}
+    codePath=/system/app/Unisound
+    resourcePath=/system/app/Unisound
+    legacyNativeLibraryDir=/system/app/Unisound/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    versionCode=2 targetSdk=21
+    versionName=V3.2.5.2-
+    splits=[base]
+    applicationInfo=ApplicationInfo{35afed2 com.phicomm.speaker.device}
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP LARGE_HEAP ]
+    dataDir=null
+    supportsScreens=[small, large, xlarge, resizeable, anyDensity]
+    timeStamp=2018-07-07 04:01:32
+    firstInstallTime=2018-07-07 04:01:32
+    lastUpdateTime=2026-10-07 17:11:51
+    signatures=PackageSignatures{fceaba3 []}
+    permissionsFixed=false haveGids=false installStatus=1
+    pkgFlags=[ SYSTEM ]
+    User 0:  installed=true hidden=false stopped=false notLaunched=false enabled=0
+    grantedPermissions:
+      android.permission.WRITE_SETTINGS
+      android.permission.ACCESS_FINE_LOCATION
+      android.permission.ACCESS_MOCK_LOCATION
+      android.permission.SYSTEM_ALERT_WINDOW
+      android.permission.CHANGE_NETWORK_STATE
+      android.permission.RECEIVE_BOOT_COMPLETED
+      android.permission.BLUETOOTH
+      android.permission.GET_TASKS
+      android.permission.INTERNET
+      android.permission.REORDER_TASKS
+      android.permission.BLUETOOTH_ADMIN
+      android.permission.READ_EXTERNAL_STORAGE
+      android.permission.WRITE_SECURE_SETTINGS
+      android.permission.ACCESS_COARSE_LOCATION
+      android.permission.READ_PHONE_STATE
+      android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
+      android.permission.CALL_PHONE
+      android.permission.CHANGE_WIFI_STATE
+      android.permission.ACCESS_NETWORK_STATE
+      android.permission.CHANGE_CONFIGURATION
+      android.permission.KILL_BACKGROUND_PROCESSES
+      android.permission.WRITE_EXTERNAL_STORAGE
+      android.permission.ACCESS_WIFI_STATE
+      android.permission.RECORD_AUDIO
+      android.permission.WAKE_LOCK
+      android.permission.READ_CONTACTS

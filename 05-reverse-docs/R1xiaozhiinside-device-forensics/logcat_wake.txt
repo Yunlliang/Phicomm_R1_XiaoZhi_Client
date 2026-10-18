@@ -1,0 +1,54 @@
+D/USC     (12330): wakeupLength = 0
+D/USC     (12330): handleWakeupWordBuffer UtteranceTime = 930
+D/USC     (12330): dropWakeupPcmFromByteLength =>36160
+D/USC     (12330): dropWakeup wakeupCacheList.size() =>150
+D/USC     (12330): dropWakeup enabled = 93
+D/USC     (12330): dropWakeup end wakeupCacheList.size() =>57
+D/USC     (12330): SpeechUnderstandInterface doWakeupResult => 4215 <s> <_NAME> 小讯小讯 </_NAME> </s> 
+D/NativeANTEngine(12330): [ lineNumber =-1 ] type:3201;onResult:{"local_asr":[{"engine_mode":"wakeup","result_type":"full","recognition_result":"  小讯小讯   ","score":-0.43,"utteranceTime":930,"outRecordingTime":269630,"delayTime":280}]}
+D/NLUDispatcher(12330): [ lineNumber =369 ] onWakeupResult:{"local_asr":[{"engine_mode":"wakeup","result_type":"full","recognition_result":"  小讯小讯   ","score":-0.43,"utteranceTime":930,"outRecordingTime":269630,"delayTime":280}]}
+D/NLUDispatcher(12330): [ lineNumber =380 ] isMainWakeupWord : wakeupResult:小讯小讯;success core:-0.43
+D/DeviceCenterHandler(12330): [ lineNumber =457 ] Continues onWakeupEventRecognitionSuccess
+D/PhicommLightListener(12330): [----------onWakeupSuccess---------- 处理前角度 = 45]
+D/PhicommLightListener(12330): [----------onWakeupSuccess---------- 处理后角度 = 45 light index : 16]
+D/DefaultANTLaunchHandler(12330): [ lineNumber =-1 ] playWakeupTips
+D/PhicommDataStatisticHandler(12330): [ lineNumber =-1 ] sendMainWakeupStatisticToPhicomm: 
+D/PhicommDataStatisticHandler(12330): [ lineNumber =-1 ] sendStatisticInfoToPhicomm: {"data":{"wakeupWord":"小讯小讯","wakeupType":1},"from":"unisound","key":"wakeup","msgId":"4a33016d-e698-4746-b024-56f230ad95d2"}
+D/USC     (12330): AudioSourceImplcloseIn uni4micHalJNI stop = 0, close = 0
+D/NativeANTEngine(12330): [ lineNumber =-1 ] tts play end ,isInSetWakeUpWord:false
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterASR isWakeUp:false
+D/USC     (12330): NetRecognition --> Start NluParams : returnType=json;city=嘉兴;gps=30.383869,120.417212;time=2026-10-08 17:05:20;scenario=musicDefault;screen=;dpi=;history=;udid=LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg;ver=3.0;appver=;oneshotKeyProperty=wakeup;
+D/USC     (12330): juc init external setting traficParams = returnType=json;city=嘉兴;gps=null;time=2026-10-08 17:05:20;screen=;dpi=;history=;udid=LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg;ver=3.0;appver=;oneshotKeyProperty=wakeup;filterName=nlu2;additionalService=athenaAppService;scenario=musicDefault;wakeupword=小讯小讯;appendLength=2;audioUrl=true;mac=98BB9936CD6B;
+D/USC     (12330): AudioSourceImplopenIn uni4micHalJNI status = 0
+D/USC     (12330): NetRecognition --> Stop NluParams : returnType=json;city=嘉兴;gps=30.383869,120.417212;time=2026-10-08 17:05:25;scenario=musicDefault;screen=;dpi=;history=;udid=LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg;ver=3.0;appver=;oneshotKeyProperty=wakeup;
+D/USC     (12330): AudioSourceImplcloseIn uni4micHalJNI stop = 0, close = 0
+D/UserPerferenceUtil(12330): [ lineNumber =442 ] -->>getWakeupWord wakeupWord:[Ljava.lang.Object;@7d9f3eb
+D/NativeANTEngine(12330): [ lineNumber =-1 ] wakeUpEventSetWakeUpWordDone
+D/NativeANTEngine(12330): [ lineNumber =-1 ] set wakeup word done, need start wakeup = true, current thread is main
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterWakeup isIdle:true, current thread = main
+D/USC     (12330): USCstart recognition tag is wakeup
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommDataStatisticHandler
+D/USC     (12330): modelTag =>wakeup
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommReminderHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommAlarmHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultMemoRingingHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DeviceCenterHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultANTLaunchHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultWeatherHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultStockHandler
+D/USC     (12330): FixRecognitionThread:jac::start model=wakeup,modelId=54
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommExternalMusicHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommMusicHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:PhicommMusicScheduleHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultNoteHandler
+I/DefaultSettingHandler(12330): [ lineNumber =102 ] onWakeupEventSetWakeupwordDone eventReceived:false
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultSettingHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultChatHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultGuideHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultIlleageChatHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultSmartHomeHandler
+D/SimpleUserEvent(12330): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DefaultUnSupportHandler
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterWakeup isIdle:false, current thread = main
+D/USC     (12330): AudioSourceImplopenIn uni4micHalJNI status = 0
+D/NativeANTEngine(12330): [ lineNumber =-1 ] tts play end ,isInSetWakeUpWord:false
+D/NativeANTEngine(12330): [ lineNumber =-1 ] doEnterWakeup isIdle:false, current thread = main

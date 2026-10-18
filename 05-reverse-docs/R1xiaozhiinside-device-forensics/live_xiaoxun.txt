@@ -1,0 +1,75 @@
+--------- beginning of main
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+I/mpp_log (10905): vpu_service iommu_enabled 1
+I/mpp_log (10905): using ion heap ION_HEAP_TYPE_SYSTEM
+I/vpu_api (10905): dlopen vpu lib success
+D/AndroidRuntime(10905): >>>>>> START com.android.internal.os.RuntimeInit uid 1000 <<<<<<
+D/AndroidRuntime(10905): CheckJNI is OFF
+I/AndroidRuntime(10905): JNI options: '-Xjniopts:warnonly'
+E/memtrack(10905): Couldn't load memtrack module (No such file or directory)
+E/android.os.Debug(10905): failed to load memtrack module: -2
+D/AndroidRuntime(10905): Calling main entry com.android.commands.pm.Pm
+I/art     (10905): System.exit called, status: 0
+I/AndroidRuntime(10905): VM exiting with result code 0.
+I/vpu_api (10905): dlclose vpu lib
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+I/mpp_log (10983): vpu_service iommu_enabled 1
+I/mpp_log (10983): using ion heap ION_HEAP_TYPE_SYSTEM
+I/vpu_api (10983): dlopen vpu lib success
+D/AndroidRuntime(10983): >>>>>> START com.android.internal.os.RuntimeInit uid 1000 <<<<<<
+D/AndroidRuntime(10983): CheckJNI is OFF
+I/AndroidRuntime(10983): JNI options: '-Xjniopts:warnonly'
+E/memtrack(10983): Couldn't load memtrack module (No such file or directory)
+E/android.os.Debug(10983): failed to load memtrack module: -2
+D/AndroidRuntime(10983): Calling main entry com.android.commands.pm.Pm
+I/art     (10983): System.exit called, status: 0
+I/AndroidRuntime(10983): VM exiting with result code 0.
+I/vpu_api (10983): dlclose vpu lib
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+I/mpp_log (11064): vpu_service iommu_enabled 1
+I/mpp_log (11064): using ion heap ION_HEAP_TYPE_SYSTEM
+I/vpu_api (11064): dlopen vpu lib success
+D/AndroidRuntime(11064): >>>>>> START com.android.internal.os.RuntimeInit uid 1000 <<<<<<
+D/AndroidRuntime(11064): CheckJNI is OFF
+I/AndroidRuntime(11064): JNI options: '-Xjniopts:warnonly'
+E/memtrack(11064): Couldn't load memtrack module (No such file or directory)
+E/android.os.Debug(11064): failed to load memtrack module: -2
+D/AndroidRuntime(11064): Calling main entry com.android.commands.pm.Pm
+I/art     (11064): System.exit called, status: 0
+I/AndroidRuntime(11064): VM exiting with result code 0.
+I/vpu_api (11064): dlclose vpu lib
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+I/mpp_log (11142): vpu_service iommu_enabled 1
+I/mpp_log (11142): using ion heap ION_HEAP_TYPE_SYSTEM
+I/vpu_api (11142): dlopen vpu lib success
+D/AndroidRuntime(11142): >>>>>> START com.android.internal.os.RuntimeInit uid 1000 <<<<<<
+D/AndroidRuntime(11142): CheckJNI is OFF
+I/AndroidRuntime(11142): JNI options: '-Xjniopts:warnonly'
+E/memtrack(11142): Couldn't load memtrack module (No such file or directory)
+E/android.os.Debug(11142): failed to load memtrack module: -2
+D/AndroidRuntime(11142): Calling main entry com.android.commands.pm.Pm
+I/art     (11142): System.exit called, status: 0
+I/AndroidRuntime(11142): VM exiting with result code 0.
+I/vpu_api (11142): dlclose vpu lib
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+I/mpp_log (11220): vpu_service iommu_enabled 1
+I/mpp_log (11220): using ion heap ION_HEAP_TYPE_SYSTEM
+I/vpu_api (11220): dlopen vpu lib success
+D/AndroidRuntime(11220): >>>>>> START com.android.internal.os.RuntimeInit uid 1000 <<<<<<
+D/AndroidRuntime(11220): CheckJNI is OFF
+I/AndroidRuntime(11220): JNI options: '-Xjniopts:warnonly'
+E/memtrack(11220): Couldn't load memtrack module (No such file or directory)
+E/android.os.Debug(11220): failed to load memtrack module: -2
+D/AndroidRuntime(11220): Calling main entry com.android.commands.pm.Pm
+I/art     (11220): System.exit called, status: 0
+I/AndroidRuntime(11220): VM exiting with result code 0.
+I/vpu_api (11220): dlclose vpu lib
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/WifiStateMachine(  479): WifiStateMachine CMD_START_SCAN prevent full band scan due to pkt rate
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission

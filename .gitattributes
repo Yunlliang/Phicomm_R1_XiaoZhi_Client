@@ -1,2 +1,26 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# ---- 行尾约定（2026-10-18 定）----
+# 文档：Windows 下统一 CRLF，记事本打开不串行
+*.md    text eol=crlf
+*.txt   text eol=crlf
+*.html  text eol=crlf
+
+# 脚本 / 源码：必须 LF
+# .sh 一旦被转成 CRLF，bash 会报 "syntax error near unexpected token" /
+# "\r: command not found"；.py 带 CRLF 能跑但 diff 满屏脏，统一按 LF 存。
+*.sh    text eol=lf
+*.py    text eol=lf
+*.java  text eol=lf
+*.smali text eol=lf
+*.pro   text eol=lf
+*.json  text eol=lf
+*.conf  text eol=lf
+
+# 二进制：禁止做任何行尾转换
+*.apk binary
+*.so  binary
+*.jar binary
+*.jks binary
+*.wav binary

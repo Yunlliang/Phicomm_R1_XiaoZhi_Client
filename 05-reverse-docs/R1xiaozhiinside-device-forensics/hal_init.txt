@@ -1,0 +1,209 @@
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+E/ExampleApp( 7964): [ lineNumber =92 ] processName:com.phicomm.speaker.device
+D/DeviceCenterHandler( 7964): [ lineNumber =87 ] -->>DeviceCenterHandler
+V/WindowManagerService(  479): Adding window Window{d4fac3a u0 com.phicomm.speaker.device/com.phicomm.speaker.device.ui.MainActivity} at 1 of 3 (before Window{3ff1067e u0 Starting com.phicomm.speaker.device})
+W/DeviceId( 7964): galaxy lib host missing meta-data,make sure you know the right way to integrate galaxy
+W/DeviceId( 7964): galaxy lib host missing meta-data,make sure you know the right way to integrate galaxy
+W/DeviceId( 7964): galaxy lib host missing meta-data,make sure you know the right way to integrate galaxy
+I/ActivityManagerService(  479): Start proc 8071:com.phicomm.speaker.device:remote/u0a8 for service com.phicomm.speaker.device/com.baidu.location.f
+D/ANTPrivatePreference( 7964): [ lineNumber =-1 ] [aec_debug=true]
+D/ANTPrivatePreference( 7964): [ lineNumber =-1 ] [aec_enable=true]
+D/ANTPrivatePreference( 7964): [ lineNumber =-1 ] [wakeup_aec_test=false]
+W/art     ( 8071): Failed to find OatDexFile for DexFile /data/app/com.phicomm.speaker.device-1/base.apk ( canonical path /data/app/com.phicomm.speaker.device-1/base.apk) with checksum 0x38267826 in OatFile /data/dalvik-cache/arm/data@app@com.phicomm.speaker.device-1@base.apk@classes.dex
+I/ActivityStackSupervisor(  479): START u0 {flg=0x10000000 cmp=com.phicomm.speaker.device/.ui.MainActivity} from uid 2000 on display 0
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/ViewRootImpl( 7964): onAttachToWindow register content observer attrs=WM.LayoutParams{(0,0)(fillxfill)mPosX=0mPosY=0mHScale=1.0mVScale=1.0 align=UNDEFINE taskId=39 sim=#100 ty=1 fl=#81810100 wanim=0x1030383 surfaceInsets=Rect(0, 0 - 0, 0) needsMenuKey=2packageName=com.phicomm.speaker.devicetoken=android.os.BinderProxy@11279601}
+D/WindowManagerService(  479): Window{d4fac3a u0 com.phicomm.speaker.device/com.phicomm.speaker.device.ui.MainActivity}  ==========setInputFocusLw ==========  =======
+D/ViewRootImpl( 7964): 720<<<<<< BACK FROM relayoutWM.LayoutParams{(0,0)(fillxfill)mPosX=0mPosY=0mHScale=1.0mVScale=1.0 align=UNDEFINE taskId=39 sim=#120 ty=1 fl=#81810100 wanim=0x1030383 surfaceInsets=Rect(0, 0 - 0, 0) needsMenuKey=2packageName=com.phicomm.speaker.devicetoken=android.os.BinderProxy@11279601}
+I/[Gralloc]( 7964):  ion device open success! fd = 47
+D/DeviceCenterHandler( 7964): [ lineNumber =322 ] onLocationChange info:{"type":4,"name":"中国浙江省嘉兴市海宁市东堤路","country":"中国","province":"浙江省","city":"嘉兴","cityCode":"334","destrict":"海宁市","address":"中国浙江省嘉兴市海宁市东堤路","lat":30.383866,"lng":120.417211}
+E/DeviceCenterHandler( 7964): [ lineNumber =329 ] onLocationChange ANTEngineConfig ctx is null
+I/like    ( 7964): [ lineNumber =-1 ] mCommand = 软件版本号 mOperands= OBJ_DEVICE  mOperator=ACT_QUESTION_VERSION mValue=
+I/like    ( 7964): [ lineNumber =-1 ] mCommand = 系统升级 mOperands= OBJ_DEVICE  mOperator=ACT_PHICOMM_OTA mValue=
+I/like    ( 7964): [ lineNumber =-1 ] mCommand = 问题反馈 mOperands= OBJ_DEVICE  mOperator=ACT_PHICOMM_BACKUP mValue=
+I/like    ( 7964): [ lineNumber =-1 ] mCommand = 你离线了吗 mOperands= OBJ_DEVICE  mOperator=ACT_PHICOMM_CHECK_ONLINE_STATE mValue=
+I/ActivityManagerService(  479): Displayed com.phicomm.speaker.device/.ui.MainActivity: +2s0ms
+D/NativeANTEngineConfig( 7964): [ lineNumber =-1 ] ==>>setOption option:ASR_FOURMIC_CLOSE_4MICALGORITHM,value:false
+E/ExampleApp( 8071): [ lineNumber =92 ] processName:com.phicomm.speaker.device:remote
+I/[Gralloc](  479):  ion device closed! fd = 179
+W/DeviceId( 8071): galaxy lib host missing meta-data,make sure you know the right way to integrate galaxy
+W/DeviceId( 8071): galaxy lib host missing meta-data,make sure you know the right way to integrate galaxy
+W/DeviceId( 8071): galaxy lib host missing meta-data,make sure you know the right way to integrate galaxy
+I/DeviceInfoUtil( 7964): DeviceInfoUtil setDeviceSn = 98BB9936CD6B
+D/USC     ( 7964): USCactivate params is {"appKey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","appSecret":"ce47edf14d955ff59767aceb99441b58","activate":"true","deviceSn":"98BB9936CD6B"}
+I/DeviceInfoUtil( 7964): DeviceInfoUtil udidContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg"}]}
+I/DeviceInfoUtil( 7964): DeviceInfoUtil getUDIDFromSdcard : appkey = rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6, udid = LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil( 7964): DeviceInfoUtil getUDID deviceSn = 98BB9936CD6B
+I/DeviceInfoUtil( 7964): DeviceInfoUtil getUDID from sdcard= LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil( 7964): build udid by deviceSn, appkey = rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6, OS = 00, deviceSn = 98BB9936CD6B
+I/DeviceInfoUtil( 7964): build udid by deviceSn, appkeyHashCode = -1249703818
+I/DeviceInfoUtil( 7964): build udid by deviceSn, deviceContent = -12497038180098BB9936CD6B
+I/DeviceInfoUtil( 7964): build udid by deviceSn, udid = LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil( 7964): DeviceInfoUtil isUdidMatchDeviceSn = true
+I/DeviceInfoUtil( 7964): DeviceInfoUtil setUDIDToSb deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_665ba24a-5433-49e2-a7d1-06e1fa4e29c6"}]}
+I/DeviceInfoUtil( 7964): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_665ba24a-5433-49e2-a7d1-06e1fa4e29c6"}]}
+I/DeviceInfoUtil( 7964): getTokenInfo token = dd_665ba24a-5433-49e2-a7d1-06e1fa4e29c6
+I/DeviceInfoUtil( 7964): DeviceInfoUtil setDeviceSn = 98BB9936CD6B
+I/DeviceInfoUtil( 7964): DeviceUtil getAppVersion= V3.2.5.2-
+I/DeviceInfoUtil( 7964): DeviceUtil getAppPackageName= com.phicomm.speaker.device
+I/DeviceInfoUtil( 7964): DeviceUtil getWifiSSID= GECOOSAP
+I/DeviceInfoUtil( 7964): DeviceUtil operator= 没有手机卡
+I/DeviceInfoUtil( 7964): DeviceUtil getBSSID= dc:d8:7c:41:02:5f
+I/DeviceInfoUtil( 7964): DeviceInfoUtil udidContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg"}]}
+I/DeviceInfoUtil( 7964): DeviceInfoUtil getUDIDFromSdcard : appkey = rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6, udid = LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil( 7964): DeviceInfoUtil getUDID deviceSn = 98BB9936CD6B
+I/DeviceInfoUtil( 7964): DeviceInfoUtil getUDID from sdcard= LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil( 7964): build udid by deviceSn, appkey = rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6, OS = 00, deviceSn = 98BB9936CD6B
+I/DeviceInfoUtil( 7964): build udid by deviceSn, appkeyHashCode = -1249703818
+I/DeviceInfoUtil( 7964): build udid by deviceSn, deviceContent = -12497038180098BB9936CD6B
+I/DeviceInfoUtil( 7964): build udid by deviceSn, udid = LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+I/DeviceInfoUtil( 7964): DeviceInfoUtil isUdidMatchDeviceSn = true
+I/DeviceInfoUtil( 7964): DeviceInfoUtil setUDIDToSb deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_665ba24a-5433-49e2-a7d1-06e1fa4e29c6"}]}
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/NativeANTEngine( 7964): [ lineNumber =-1 ] speechUnderstander init with jsonStr : {"activate":"true","deviceSn":"98BB9936CD6B"}
+D/USC     ( 7964): saveTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_736a48d9-be80-426a-9c5b-95b6418763ed"}]}
+D/USC     ( 7964): Recognizer.loadModel queue add /data/data/com.phicomm.speaker.device/files/YunZhiSheng/asrfix/wakeup.dat wakeup
+D/USC     ( 7964): Recognizer.loadModel reseting /data/data/com.phicomm.speaker.device/files/YunZhiSheng/asrfix/wakeup.dat wakeup
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf file Path:	/data/data/com.phicomm.speaker.device/files/unisound/nlu/unidrive_main_nlu_offline.conf
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_previous_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_PREV", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" }
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_next_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_NEXT", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp"}
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_continue_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_PLAY", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" }
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_pause_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_PAUSE", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" }
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_stop_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_STOP", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" }
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_close_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_CLOSE", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" }
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_change_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_CHANGE", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp"}
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_switch_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_SWITCH", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp"}
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_collect_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_BOOKMARK", "deviceType": "OBJ_MUSIC" } ] } }, "history": "cn.yunzhisheng.setting.mp"}
+D/JNIMsg_DebugDumpOut( 7964): OfflenNlu_LoadConf, I am loading conf:	Domain_global_setting_play_download_	{ "rc": 0, "text": "%_TEXT_%", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_DOWNLOAD", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp"}
+D/USC     ( 7964): Recognizer.loadModel queue add /data/data/com.phicomm.speaker.device/files/YunZhiSheng/asrfix/jsgf_model/unidrive_main.dat command
+D/USC     ( 7964): Recognizer.loadModel reseting /data/data/com.phicomm.speaker.device/files/YunZhiSheng/asrfix/jsgf_model/unidrive_main.dat command
+D/DeviceCenterHandler( 7964): [ lineNumber =281 ] -->>onASREventEngineInitDone
+D/DeviceCenterHandler( 7964): [ lineNumber =284 ] engine init done, udid is LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg
+D/DeviceCenterHandler( 7964): [ lineNumber =109 ] --->>initHardware current device isBinded:true
+D/DeviceCenterHandler( 7964): [ lineNumber =343 ] --->>onNetConnected aliveTransportChannel:com.unisound.ant.device.mqtt.AliveTransportChannel@2826a20e
+D/DeviceCenterHandler( 7964): [ lineNumber =345 ] current wifi is connected:true
+D/MqttTransportChannel( 7964): [ lineNumber =311 ] query mqtt connection info, params = ChannelParams{mHBServerIp='null', mHBServerPort=0, udid='LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg', mHBOwnerId='LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg_owner', mSRServerIp='10.10.11.2', mSRServerPort=8090, mSRDeviceId='LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg', mSROwnerId='LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg_owner', connAccessId='null', appKey='rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6', appSecret='ce47edf14d955ff59767aceb99441b58', tcDeviceId='kDzBV2xaZnShsidc6FD+swkDpKV54renxqDEH+OmemY=', token='null'}
+D/SimpleUserEvent( 7964): [ lineNumber =-1 ] onASREventEngineInitDone:DeviceCenterHandler
+D/SysPrivateService(  479): get BootProp from {pid:7964,uid:10008,processName:com.phicomm.speaker.device} Success fxotamode=
+D/PhicommDeviceStatusProcessor( 7964): [onReceived device status = 0, prevStatus = 0]
+I/DeviceInfoUtil( 7964): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_736a48d9-be80-426a-9c5b-95b6418763ed"}]}
+I/DeviceInfoUtil( 7964): getTokenInfo token = dd_736a48d9-be80-426a-9c5b-95b6418763ed
+I/DeviceInfoUtil( 7964): DeviceUtil tokenJson is {"deviceToken":"dd_736a48d9-be80-426a-9c5b-95b6418763ed","activateVersion":"v3.1"}
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> UNI_4MIC_VERSION: UNI_4MIC_HAL_ANDROID_V1.1 
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> use_4mic=1.
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> pcm_card=1
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> pcm_device=0
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> i2s_bits=32
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> linear_4mic=0
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> no_vad=0
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> high_priority=1
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> mic_array_rw_path=/system/usr/uni_4mic_config/
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> aec_enlarge_4mic=2
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> debug_file_path=/sdcard/unidata/
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> mic_array_cfg_path=/system/usr/uni_4mic_config
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> mic_array_rw_path=/system/usr/uni_4mic_config/
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> cfg_path=/system/usr/uni_4mic_config;/system/usr/uni_4mic_config/
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> [uni_hal_4mic_array_init:161] linear=0
+D/UNI_4MIC( 7964): .
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> uni_hal_4mic_array_init sucess 
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> uni_hal_4mic_array_version=v2.3.0
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> [uni_hal_4mic_array_set:240] _type=10
+D/UNI_4MIC( 7964): .
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> [uni_hal_4mic_array_get:223] _type=11
+D/UNI_4MIC( 7964): .
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> mclp_on=-1
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> [uni_hal_4mic_array_get:223] _type=21
+D/UNI_4MIC( 7964): .
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> mic_num=4
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> [uni_hal_4mic_array_get:223] _type=22
+D/UNI_4MIC( 7964): .
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> echo_num=2
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> [uni_hal_4mic_array_get:223] _type=10
+D/UNI_4MIC( 7964): .
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> aec_on=1
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> [uni_hal_4mic_array_get:223] _type=12
+D/UNI_4MIC( 7964): .
+D/UNI_4MIC( 7964): [UNI_4MIC]:<INFO> agc_on=-1
+D/USC     ( 7964): FourMicUtilclose4MicAlgorithm flag = 0
+D/SimpleUserEvent( 7964): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DeviceCenterHandler
+D/DefaultMusicHandler( 7964): [ lineNumber =1272 ] -->>onServiceConnected ComponentName :ComponentInfo{com.phicomm.speaker.device/com.unisound.vui.handler.session.music.MusicService}
+D/USC     ( 7964): AudioSourceImplopenIn uni4micHalJNI status = 0
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/DeviceCenterHandler( 7964): [ lineNumber =457 ] Continues onWakeupEventRecognitionSuccess
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/USC     ( 7964): AudioSourceImplcloseIn uni4micHalJNI stop = 0, close = 0
+D/AudioHardwareTiny(  209): Device     : 0x80402
+D/alsa_route(  209): route_info->sound_card 2, route_info->devices 0  
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/Neptune (  961): [SendSsdpSearchResponse] FINE: Responding to a M-SEARCH request for urn:schemas-upnp-org:device:MediaRenderer:1
+D/AudioHardwareTiny(  209): start_output_stream open hdmi card 0 success
+D/AudioHardwareTiny(  209): start_output_stream open speaker card 2 success
+D/AudioHardwareTiny(  209): start_output_stream open spdif card 3 success
+D/DeviceCenterHandler( 7964): [ lineNumber =415 ] -->>onTTSEventPlayingEnd ctx.engine().getEngineState=0
+D/SimpleUserEvent( 7964): [ lineNumber =-1 ] onTTSEventPlayingEnd:DeviceCenterHandler
+D/PhicommBindStatusHandler( 7964): [ lineNumber =62 ] query device bound status
+D/PhicommBindStatusHandler( 7964): [device is bound]
+I/DeviceInfoUtil( 7964): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_736a48d9-be80-426a-9c5b-95b6418763ed"}]}
+I/DeviceInfoUtil( 7964): getTokenInfo token = dd_736a48d9-be80-426a-9c5b-95b6418763ed
+I/DeviceInfoUtil( 7964): DeviceUtil tokenJson is {"deviceToken":"dd_736a48d9-be80-426a-9c5b-95b6418763ed","activateVersion":"v3.1"}
+D/USC     ( 7964): FourMicUtilclose4MicAlgorithm flag = 0
+D/USC     ( 7964): collected_info = PN=com.phicomm.speaker.device:OS=0:CR=0:NT=1:MD=rk322x-box:SV=v3.10.77-phicomm,c6a7b7c5:RPT=0:SID=:NPT=:IP=192.168.2.5:EC=0	0:0:0
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/USC     ( 7964): AudioSourceImplopenIn uni4micHalJNI status = 0
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/USC     ( 7964): SpeechUnderstanderInterface : recognizeResult.item = { "rc": 0, "text": "请暂停", "service": "cn.yunzhisheng.setting.mp", "code": "SETTING_EXEC", "semantic": { "intent": { "operations": [ { "operator": "ACT_PAUSE", "deviceType": "OBJ_MEDIA_PLAYER" } ] } }, "history": "cn.yunzhisheng.setting.mp" } , times=  0
+D/NativeANTEngine( 7964): [ lineNumber =-1 ] type:1202;onResult:{"local_asr":[{"engine_mode":"mix","result_type":"full","recognition_result":"{ \"rc\": 0, \"text\": \"请暂停\", \"service\": \"cn.yunzhisheng.setting.mp\", \"code\": \"SETTING_EXEC\", \"semantic\": { \"intent\": { \"operations\": [ { \"operator\": \"ACT_PAUSE\", \"deviceType\": \"OBJ_MEDIA_PLAYER\" } ] } }, \"history\": \"cn.yunzhisheng.setting.mp\" }","score":-16.2}]}
+D/NLUDispatcher( 7964): [ lineNumber =311 ] onASRResultLocal:{"local_asr":[{"engine_mode":"mix","result_type":"full","recognition_result":"{ \"rc\": 0, \"text\": \"请暂停\", \"service\": \"cn.yunzhisheng.setting.mp\", \"code\": \"SETTING_EXEC\", \"semantic\": { \"intent\": { \"operations\": [ { \"operator\": \"ACT_PAUSE\", \"deviceType\": \"OBJ_MEDIA_PLAYER\" } ] } }, \"history\": \"cn.yunzhisheng.setting.mp\" }","score":-16.2}]}
+D/AudioHardwareTiny(  209): pcm_close card 0
+D/AudioHardwareTiny(  209): pcm_close card 2
+D/AudioHardwareTiny(  209): pcm_close card 3
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/USC     ( 7964): AudioSourceImplcloseIn uni4micHalJNI stop = 0, close = 0
+I/DeviceInfoUtil( 7964): DeviceUtil getTokenInfo deviceContent = {"deviceInfo":[{"appkey":"rb35fqpoz33hyu56zh4kklgqqwdicqcmbxzwe4qc","udid":"LTEzNDgzNzYzMzgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_52443a88-b516-48c7-a67d-061acb5a2412"},{"appkey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","token":"dd_736a48d9-be80-426a-9c5b-95b6418763ed"}]}
+I/DeviceInfoUtil( 7964): getTokenInfo token = dd_736a48d9-be80-426a-9c5b-95b6418763ed
+I/DeviceInfoUtil( 7964): DeviceUtil tokenJson is {"deviceToken":"dd_736a48d9-be80-426a-9c5b-95b6418763ed","activateVersion":"v3.1"}
+D/USC     ( 7964): FourMicUtilclose4MicAlgorithm flag = 0
+D/SimpleUserEvent( 7964): [ lineNumber =-1 ] onWakeupEventSetWakeupwordDone:DeviceCenterHandler
+D/DeviceCenterHandler( 7964): [ lineNumber =424 ] -->>onTTSEventSynthesizerStart
+D/AudioHardwareTiny(  209): Device     : 0x80402
+D/alsa_route(  209): route_info->sound_card 2, route_info->devices 0  
+D/USC     ( 7964): AudioSourceImplopenIn uni4micHalJNI status = 0
+D/DeviceStateMgr( 7964): [ lineNumber =-1 ] --->>reportLocalAsrLog content:com.unisound.ant.device.bean.VoiceChatMessage@1f4c59d0
+D/AudioHardwareTiny(  209): start_output_stream open hdmi card 0 success
+D/AudioHardwareTiny(  209): start_output_stream open speaker card 2 success
+D/AudioHardwareTiny(  209): start_output_stream open spdif card 3 success
+D/HttpReportUtils( 7964): [ lineNumber =-1 ] httpReportASRLog, url = http://aios-home.hivoice.cn:19999/rest/v1/api/terminal_syslog, params = {"data":{"head":{"udid":"LTEyNDk3MDM4MTgwMDk4QkI5OTM2Q0Q2Qg","appKey":"rwsga7ggzgas2pjj5s4py5o7ro7wlbaqfmx23vq6","timestamp":"1791451673"},"body":{"messageBody":{"dialog":{"dstService":"deviceManagement","dstState":"2","sendToCloudResponse":{"actionTimestamp":1791451673185},"sendToTerminalResponse":{"actionTimestamp":1791451673185}},"dstService":{"accelerate":{"command":"synInfo","valuse":"onlineAsrLog"},"dstServiceName":"deviceManagement","dstState":"settingOver","parameter":{"createTime":"2026-10-08 17:27:53","isUserEdited":false,"logId":"b4fe18cd-2c53-4fcf-ac8b-200a1e9d95a5","msg":"{\"net_asr\":[{\"last_result\":true,\"sessionID\":\"3d3c19c6b9fc211ca61acb100a149f65\",\"engine_mode\":\"mix\",\"recognition_result\":\"{\\\"returnCode\\\":0,\\\"uniCarRet\\\":{\\\"result\\\":{},\\\"returnCode\\\":609,\\\"message\\\":\\\"http post reuqest error\\\"}}现在几点了。\",\"result_type\":\"full\"}],\"net_nlu\":[{\"code\":\"ANSWER\",\"general\":{\"style\":\"calendar\",\"text\":\"当前时间：17点27分\",\"type\":\"T\"},\"history\":\"cn.yunzhisheng.calendar\",\"isLocalNLU\":false,\"isNeedAbandonNlu\":false,\"isQueenMessage\":false,\"rc\":0,\"responseId\":\"9cc9213b91f6432d834087aa1c62661c\",\"service\":\"cn.yunzhisheng.chat\",\"text\":\"现在几点了\",\"time\":0}],\"tts_data\":\"当前时间：17点27分\"}"}}},"messageType":"synInfo","version":"V3.2.5.2-"}},"signature":"E41FBF1B3B9099BD33AAA4D6B6CE4B49"}
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/DeviceCenterHandler( 7964): [ lineNumber =415 ] -->>onTTSEventPlayingEnd ctx.engine().getEngineState=1
+D/SimpleUserEvent( 7964): [ lineNumber =-1 ] onTTSEventPlayingEnd:DeviceCenterHandler
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+D/AudioHardwareTiny(  209): pcm_close card 0
+D/AudioHardwareTiny(  209): pcm_close card 2
+D/AudioHardwareTiny(  209): pcm_close card 3
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission
+W/SharedPreferencesImpl(  817): Attempt to read preferences file /data/data/com.phicomm.speaker.device/shared_prefs/defaultSp.xml without permission

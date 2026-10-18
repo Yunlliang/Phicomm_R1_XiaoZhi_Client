@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1">
+<meta name="theme-color" content="#0a0e16">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="小智">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>R1 小智控制台</title>
+<style>
+:root{
+  --bg:#0a0e16; --card:rgba(255,255,255,.055); --card2:rgba(255,255,255,.085);
+  --line:rgba(255,255,255,.09); --tx:#e9eff8; --tx2:#8d9cb5; --tx3:#5b6a83;
+  --ac:#22d3ee; --ac2:#818cf8; --ok:#34d399; --warn:#fbbf24; --err:#f87171;
+  --grad:linear-gradient(135deg,#22d3ee,#818cf8);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+#updBar{display:none;position:fixed;left:0;right:0;top:env(safe-area-inset-top);z-index:99;background:var(--warn);color:#1a1205;padding:10px 14px;font-size:13px;font-weight:600;text-align:center;cursor:pointer}
+body{
+  background:var(--bg); color:var(--tx); min-height:100vh;
+  font:15px/1.5 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  padding-top:env(safe-area-inset-top);
+  padding-bottom:calc(84px + env(safe-area-inset-bottom));
+  overflow-x:hidden;
+}
+/* 背景光斑 */
+body::before,body::after{content:"";position:fixed;border-radius:50%;filter:blur(90px);z-index:0;pointer-events:none}
+body::before{width:340px;height:340px;top:-120px;left:-90px;background:rgba(34,211,238,.20)}
+body::after{width:300px;height:300px;bottom:-110px;right:-80px;background:rgba(129,140,248,.20)}
+.wrap{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:0 14px}
+
+/* ---------- 顶栏 ---------- */
+.top{
+  position:sticky;top:0;z-index:20;margin:0 -14px 12px;padding:calc(12px + env(safe-area-inset-top)) 16px 12px;
+  background:rgba(10,14,22,.72);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);
+}
+.top .r1{display:flex;align-items:center;gap:9px}
+.top .nm{font-size:16px;font-weight:600;letter-spacing:.2px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--tx3);flex:none}
+.dot.on{background:var(--ok);box-shadow:0 0 9px var(--ok)}
+.dot.warn{background:var(--warn);box-shadow:0 0 9px var(--warn)}
+.top .sub{margin-top:5px;font-size:12px;color:var(--tx2);display:flex;gap:10px;flex-wrap:wrap}
+.top .sub b{font-weight:500;color:var(--tx)}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:2px 8px;border-radius:99px;
+  background:var(--card2);border:1px solid var(--line);color:var(--tx2)}
+
+/* ---------- 卡片 ---------- */
+.card{
+  background:var(--card);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border:1px solid var(--line);border-radius:20px;padding:15px;margin-bottom:12px;
+}
+.card.tight{padding:12px}
+.ttl{font-size:12px;color:var(--tx2);font-weight:600;letter-spacing:.6px;margin:0 0 10px;
+  display:flex;align-items:center;justify-content:space-between}
+.ttl .hint{font-weight:400;color:var(--tx3);font-size:11px;letter-spacing:0}
+.ttl .lnk{float:right;font-weight:400;color:var(--ac);font-size:11px;letter-spacing:0;cursor:pointer;padding:0 2px}
+
+/* ---------- 播放器 ---------- */
+.np{display:flex;gap:14px;align-items:center}
+.cover{
+  width:88px;height:88px;flex:none;border-radius:22px;position:relative;
+  background:conic-gradient(from 0deg,#1e293b,#334155,#1e293b,#0f172a,#1e293b);
+  box-shadow:0 8px 24px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.08);
+  display:grid;place-items:center;overflow:hidden;
+}
+.cover::after{
+  content:"";position:absolute;width:30px;height:30px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#0f172a,#020617);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);
+}
+.cover.spin{animation:spin 7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cover svg{width:26px;height:26px;opacity:.5;position:relative;z-index:2;margin-left:-46px}
+.np .meta{min-width:0;flex:1}
+.np .t{font-size:17px;font-weight:600;line-height:1.3;word-break:break-all;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.np .a{margin-top:4px;font-size:13px;color:var(--tx2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* v1.3.175：实际歌曲信息（专辑 · 时长 · 来源）—— 播翻唱/DJ 版时这里显示真实信息 */
+.np .a2{margin-top:2px;font-size:12px;color:var(--tx3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.np .tag{margin-top:7px;display:inline-block;font-size:11px;padding:2px 9px;border-radius:99px;
+  background:rgba(129,140,248,.16);color:#a5b4fc;border:1px solid rgba(129,140,248,.28)}
+
+/* 进度 */
+.prog{margin-top:14px}
+.bar{height:5px;border-radius:99px;background:rgba(255,255,255,.10);overflow:hidden}
+.bar>i{display:block;height:100%;width:0;border-radius:99px;background:var(--grad);transition:width .5s linear}
+.tm{display:flex;justify-content:space-between;font-size:11px;color:var(--tx3);margin-top:6px;font-variant-numeric:tabular-nums}
+
+/* 控制 */
+.ctl{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:14px}
+.cb{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--card2);
+  display:grid;place-items:center;cursor:pointer;transition:transform .12s,background .2s}
+.cb:active{transform:scale(.9)}
+.cb svg{width:22px;height:22px;fill:var(--tx)}
+.cb.main{width:66px;height:66px;background:var(--grad);border:none;
+  box-shadow:0 8px 22px rgba(34,211,238,.30)}
+.cb.main svg{width:28px;height:28px;fill:#08111c}
+.cb:disabled{opacity:.35}
+
+/* ---------- 行 / 开关 ---------- */
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.055)}
+.row:last-child{border-bottom:none;padding-bottom:0}
+.row:first-child{padding-top:0}
+.row .lb{font-size:14px}
+.row .ds{font-size:11px;color:var(--tx3);margin-top:2px;line-height:1.45}
+.sw{width:46px;height:27px;border-radius:99px;background:rgba(255,255,255,.13);position:relative;
+  flex:none;cursor:pointer;transition:background .22s;border:1px solid var(--line)}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:21px;height:21px;border-radius:50%;
+  background:#fff;transition:transform .22s;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+.sw.on{background:var(--grad);border-color:transparent}
+.sw.on::after{transform:translateX(19px)}
+
+/* ---------- 按钮 ---------- */
+.btns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{flex:1;min-width:88px;padding:10px 12px;border-radius:13px;border:1px solid var(--line);
+  background:var(--card2);color:var(--tx);font-size:13px;cursor:pointer;text-align:center;
+  transition:transform .12s,background .2s;font-family:inherit}
+.btn:active{transform:scale(.96)}
+.btn.pri{background:var(--grad);border-color:transparent;color:#08111c;font-weight:600}
+.btn.dgr{color:var(--err);border-color:rgba(248,113,113,.3)}
+.btn.full{flex-basis:100%}
+.btn.sm{flex:none;min-width:0;padding:7px 12px;font-size:12px}
+
+/* ---------- 输入 ---------- */
+input[type=text],input[type=number],textarea{
+  width:100%;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.06);
+  border:1px solid var(--line);color:var(--tx);font-size:14px;font-family:inherit;outline:none}
+input:focus,textarea:focus{border-color:rgba(34,211,238,.5)}
+textarea{resize:vertical;min-height:74px;line-height:1.5;font-size:13px}
+.inline{display:flex;gap:8px}
+.inline input{flex:1}
+
+/* 音量 */
+input[type=range]{-webkit-appearance:none;width:100%;height:26px;background:transparent;outline:none}
+input[type=range]::-webkit-slider-runnable-track{height:5px;border-radius:99px;background:rgba(255,255,255,.12)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;
+  background:#fff;margin-top:-8px;box-shadow:0 2px 8px rgba(0,0,0,.4)}
+.volrow{display:flex;align-items:center;gap:12px}
+.volrow .v{font-size:13px;color:var(--tx2);min-width:56px;text-align:right;font-variant-numeric:tabular-nums}
+
+/* ---------- 列表 ---------- */
+.li{display:flex;align-items:center;gap:11px;padding:9px 10px;border-radius:12px;cursor:pointer;
+  transition:background .15s}
+.li:active{background:rgba(255,255,255,.06)}
+.li.cur{background:rgba(34,211,238,.10)}
+.li .n{width:26px;flex:none;text-align:center;font-size:12px;color:var(--tx3);font-variant-numeric:tabular-nums}
+.li.cur .n{color:var(--ac)}
+.li .tx{min-width:0;flex:1}
+.li .tx .a{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.li .tx .b{font-size:11px;color:var(--tx3);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.li.cur .tx .a{color:var(--ac);font-weight:600}
+.scroll{max-height:320px;overflow-y:auto;margin:0 -6px;padding:0 6px}
+.scroll::-webkit-scrollbar{width:4px}
+.scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:9px}
+/* 电台：可视区固定 5 行（与「点一下即播」的曲库/队列同一套 .li 观感），
+   多于 5 个台就在框里上下滑。行高写死 44px ⇒ 5 行 = 220px，正好不露半行。 */
+.scroll.r5{max-height:230px}
+.li.rad{height:46px;padding-top:3px;padding-bottom:3px}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{padding:7px 13px;border-radius:99px;background:var(--card2);border:1px solid var(--line);
+  font-size:13px;cursor:pointer;transition:transform .12s}
+.chip:active{transform:scale(.94)}
+.chip.on{background:rgba(34,211,238,.16);border-color:rgba(34,211,238,.4);color:var(--ac)}
+
+/* seg（分段选择） */
+.seg{display:flex;gap:6px;background:rgba(255,255,255,.05);padding:4px;border-radius:13px;border:1px solid var(--line)}
+.seg div{flex:1;text-align:center;padding:7px 0;border-radius:9px;font-size:13px;cursor:pointer;color:var(--tx2)}
+.seg div.on{background:var(--grad);color:#08111c;font-weight:600}
+
+/* 日志 */
+.log{font:12px/1.6 ui-monospace,"SFMono-Regular",Consolas,monospace;white-space:pre-wrap;word-break:break-all;
+  max-height:52vh;overflow-y:auto;background:rgba(0,0,0,.28);border:1px solid var(--line);
+  border-radius:13px;padding:12px;color:#c3d0e0}
+.log::-webkit-scrollbar{width:4px}
+.log::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:9px}
+
+/* ---------- tabbar ---------- */
+.tabbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;
+  background:rgba(10,14,22,.80);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);
+}
+.tabbar div{flex:1;padding:9px 0 8px;text-align:center;color:var(--tx3);cursor:pointer;font-size:11px}
+.tabbar div svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round;display:block;margin:0 auto 3px}
+.tabbar div.on{color:var(--ac)}
+.tabbar div.on svg{stroke:var(--ac)}
+
+section{display:none}
+section.on{display:block;animation:fade .22s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* toast */
+#toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(14px);
+  z-index:60;background:rgba(20,26,38,.95);backdrop-filter:blur(14px);border:1px solid var(--line);
+  color:var(--tx);padding:10px 18px;border-radius:99px;font-size:13px;opacity:0;pointer-events:none;
+  transition:opacity .22s,transform .22s;max-width:88vw;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.foot{text-align:center;font-size:11px;color:var(--tx3);padding:6px 0 18px;line-height:1.7}
+.foot a{color:var(--tx2)}
+.kv{display:flex;justify-content:space-between;font-size:12px;padding:5px 0;color:var(--tx2)}
+.kv b{color:var(--tx);font-weight:500;word-break:break-all;text-align:right;max-width:62%}
+.note{font-size:11px;color:var(--tx3);line-height:1.6;margin-top:8px}
+
+/* v1.3.162：iframe 嵌入模式（?embed=1）—— 被小飞控制页嵌进来时用。
+   宿主页面已有自己的标题栏/页脚，这里把重复的收掉，并让宽度铺满 iframe。 */
+body.embed .top{display:none}
+body.embed .foot{display:none}
+body.embed #updBar{display:none}
+body.embed .wrap{max-width:none;padding:0 8px 8px}
+</style>
+</head>
+<body>
+
+<div id="updBar"></div>
+
+<div class="wrap">
+
+  <div class="top">
+    <div class="r1">
+      <span class="dot" id="dot"></span>
+      <span class="nm" id="dev">R1 小智</span>
+      <span class="pill" id="wsPill">WS …</span>
+    </div>
+    <div class="sub" id="sub">连接中…</div>
+  </div>
+
+  <!-- ================= Tab 1：正在播放 ================= -->
+  <section id="s-play" class="on">
+    <div class="card">
+      <div class="np">
+        <div class="cover" id="cover">
+          <svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+        </div>
+        <div class="meta">
+          <div class="t" id="npT">—</div>
+          <div class="a" id="npA"> </div>
+          <div class="a2" id="npMeta"></div>
+          <span class="tag" id="npTag" style="display:none">本地曲库</span>
+        </div>
+      </div>
+      <div class="prog">
+        <div class="bar"><i id="npBar"></i></div>
+        <div class="tm"><span id="npPos">0:00</span><span id="npDur">0:00</span></div>
+      </div>
+      <div class="ctl">
+        <div class="cb" id="bPrev" onclick="skip(-1)"><svg viewBox="0 0 24 24"><path d="M6 6h2.5v12H6zm3.5 6L18 6v12z"/></svg></div>
+        <div class="cb main" id="bPlay" onclick="togglePlay()"><svg id="icPlay" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="cb" id="bNext" onclick="skip(1)"><svg viewBox="0 0 24 24"><path d="M15.5 6H18v12h-2.5zM6 6l8.5 6L6 18z"/></svg></div>
+      </div>
+      <div class="note" id="npNote"></div>
+    </div>
+
+    <div class="card tight">
+      <div class="ttl">音量 <span class="hint" id="volHint">系统音量</span></div>
+      <div class="volrow">
+        <input type="range" id="vol" min="0" max="15" value="1" oninput="onVol(this.value)">
+        <span class="v" id="volV">1 / 15</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">播放控制</div>
+      <div class="btns">
+        <button class="btn pri" onclick="act('random')">随便听</button>
+        <button class="btn" onclick="playOrRandom()">继续播放</button>
+        <button class="btn" onclick="act('pause')">暂停</button>
+        <button class="btn" onclick="act('stop')">停止</button>
+        <button class="btn" onclick="act('reload')">重载索引</button>
+        <button class="btn" onclick="act('status')">播放在哪</button>
+      </div>
+      <div class="ttl" style="margin-top:14px">循环模式</div>
+      <div class="seg" id="segMode">
+        <div data-v="2" onclick="setMode(2)">顺序播放</div>
+        <div data-v="1" onclick="setMode(1)">随机</div>
+        <div data-v="3" onclick="setMode(3)">单曲循环</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">播放队列 <span class="hint" id="qHint">点一下即播</span><span class="lnk" onclick="jumpCur()">定位当前</span></div>
+      <div class="scroll" id="queue"><div class="note" style="margin:0">—</div></div>
+    </div>
+  </section>
+
+  <!-- ================= Tab 2：音乐 ================= -->
+  <section id="s-music">
+    <div class="card">
+      <div class="ttl">电台 <span class="hint" id="radioHint"></span></div>
+      <div class="inline">
+        <input type="text" id="rKey" placeholder="搜台名（如 新闻 / 音乐）" oninput="filterRadio(this.value)">
+        <button class="btn sm" onclick="clearRadio()">清空</button>
+      </div>
+      <div class="scroll r5" id="radios" style="margin-top:10px"><div class="note" style="margin:0">—</div></div>
+      <div class="btns" style="margin-top:10px">
+        <button class="btn" onclick="act('radio_all')">全部电台连播</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">搜索曲库 <span class="hint">留空点搜索 = 列全部；留空点「在线搜歌」= 随机 100 首；填了词点「在线搜歌」= 搜 NAS 全源</span></div>
+      <div class="inline">
+        <input type="text" id="qKey" placeholder="歌名 / 歌手（搜到的点一下就播）" onkeydown="if(event.key==='Enter')doSearch()">
+        <button class="btn sm" onclick="doSearch()">搜索</button>
+        <button class="btn sm" onclick="doSearchOnline()">在线搜歌</button>
+      </div>
+      <div class="scroll" id="qRes" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">按歌手连播 <span class="hint">数量留空 = 该歌手全部</span></div>
+      <div class="inline">
+        <input type="text" id="qArt" placeholder="歌手名">
+        <input type="number" id="qCnt" value="" min="1" max="50" placeholder="全部" style="max-width:64px">
+        <button class="btn sm" onclick="doArtist()">播放</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">直链播放</div>
+      <div class="inline">
+        <input type="text" id="qUrl" placeholder="http://…/song.mp3">
+        <button class="btn sm" onclick="act('play_url','url='+encodeURIComponent(v('qUrl')))">播放</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Tab 3：日志 ================= -->
+  <section id="s-log">
+    <div class="card tight">
+      <div class="row">
+        <div><div class="lb">仅显示对话</div><div class="ds">只看「我说了什么 / 小智回了什么」</div></div>
+        <div class="sw" id="swChat" onclick="tgChat()"></div>
+      </div>
+      <div class="row">
+        <div><div class="lb">自动刷新</div><div class="ds">每 5 秒拉一次</div></div>
+        <div class="sw" id="swAuto" onclick="tgAuto()"></div>
+      </div>
+      <div class="btns" style="margin-top:10px">
+        <button class="btn pri" onclick="loadLog()">刷新</button>
+        <button class="btn" onclick="loadLog(400)">拉 400 行</button>
+        <button class="btn" onclick="copyLog()">复制</button>
+      </div>
+    </div>
+    <div class="card" style="padding:0;border:none;background:none;backdrop-filter:none">
+      <div class="log" id="logBox">(加载中)</div>
+    </div>
+  </section>
+
+  <!-- ================= Tab 4：设置 ================= -->
+  <section id="s-set">
+    <div class="card">
+      <div class="ttl">音频与行为</div>
+      <div class="ttl" style="margin-top:2px">上行增益 <span class="hint">越大越灵敏</span></div>
+      <div class="seg" id="segGain">
+        <div data-v="1">1</div><div data-v="4">4</div><div data-v="8">8</div>
+        <div data-v="16">16</div><div data-v="32">32</div>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <div><div class="lb">上行 ALC</div><div class="ds">自动补偿原厂 AGC 漂移；与固定增益互斥</div></div>
+        <div class="sw" id="swAlc" onclick="tg('swAlc','alc')"></div>
+      </div>
+      <div class="row">
+        <div><div class="lb">丢弃唤醒词音频</div><div class="ds">不把「小智小智」这截上行发给服务器</div></div>
+        <div class="sw" id="swDw" onclick="tg('swDw','dropWake')"></div>
+      </div>
+      <div class="note" id="chainNote">采集链路：—</div>
+
+      <div class="ttl" style="margin-top:14px">行为</div>
+      <div class="row">
+        <div><div class="lb">提示音</div><div class="ds">唤醒「叮」与断连提示音</div></div>
+        <div class="sw" id="swSnd" onclick="tg('swSnd','sound')"></div>
+      </div>
+      <div class="row">
+        <div><div class="lb">会话日志落盘</div><div class="ds">files/r1client.log，256KB 轮转</div></div>
+        <div class="sw" id="swLog" onclick="tg('swLog','log')"></div>
+      </div>
+      <div class="row">
+        <div><div class="lb">空闲自动断开</div><div class="ds">说完即挂，下次唤醒再连</div></div>
+        <div class="sw" id="swAd" onclick="tg('swAd','autoDisconnect')"></div>
+      </div>
+      <div class="row">
+        <div><div class="lb">音乐为小智让路</div><div class="ds">开口即暂停，说完 2.5s 接回</div></div>
+        <div class="sw" id="swMp" onclick="tg('swMp','musicPause')"></div>
+      </div>
+      <div class="row">
+        <div><div class="lb">自定义音乐库</div><div class="ds">关 = 用小智服务器自带音乐（会断开当前连接）</div></div>
+        <div class="sw" id="swMm" onclick="tg('swMm','myMusic')"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">播放列表 <span class="hint">列表最多显示多少首</span></div>
+      <div class="inline">
+        <input type="number" id="inQlim" min="0" max="5000" placeholder="300">
+        <button class="btn sm" onclick="saveQlim()">应用</button>
+      </div>
+      <div class="note" style="margin-top:6px">影响「播放」页的队列，以及「音乐」页留空搜索时的列表。
+        <b>0 = 不限制</b>（列全部）。曲库 1188 首时全列会比较卡，建议 300 左右。</div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">灯光控制 <span class="hint">三项各自独立</span></div>
+      <div class="row">
+        <div><div class="lb">氛围灯</div><div class="ds">彩色灯效（随音乐频谱变色），跑在 player 里</div></div>
+        <div class="sw" id="swAmb" onclick="ambToggle()"></div>
+      </div>
+      <div class="row">
+        <div><div class="lb">唤醒灯</div><div class="ds">唤醒时亮起，定格在收音方向（24 颗拾音灯）</div></div>
+        <div class="sw" id="swWkL" onclick="tg('swWkL','wakeLight')"></div>
+      </div>
+      <div class="row">
+        <div><div class="lb">播报灯</div><div class="ds">识别中与小智说话期间的蓝色氛围环</div></div>
+        <div class="sw" id="swBsL" onclick="tg('swBsL','busyLight')"></div>
+      </div>
+      <div class="note" style="margin-top:8px">★ 氛围灯的<b>效果模式</b>与<b>自定义颜色</b>已移除：
+        总线 what=4 的 <b>arg1=68</b>（官方/七彩/旋转/单色）与 <b>70</b>（颜色）在
+        <b>原厂 player 里没有接收者</b> —— <code>PlayerVisualizerHelper</code> 的 switch
+        只有 64/65/66/67 四个 case，实测发下去 logcat 一条都没有（亮度/渐变有日志）。
+        那两个是小飞魔改版私有的扩展 ⇒ 换回原厂后自然就没了。<br>
+        开着的形态是：15 颗灯同色，颜色随音乐频谱缓慢推进。</div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">服务器</div>
+      <input type="text" id="inOta" placeholder="OTA 地址（留空 = 官方）">
+      <input type="text" id="inWs" placeholder="WebSocket 地址（留空 = 官方）" style="margin-top:8px">
+      <div class="btns" style="margin-top:10px">
+        <button class="btn pri" onclick="saveServer()">保存并切换</button>
+        <button class="btn" onclick="useOfficial()">用官方</button>
+      </div>
+      <div class="kv" style="margin-top:10px"><span>生效中 OTA</span><b id="curOta">—</b></div>
+      <div class="kv"><span>生效中 WS</span><b id="curWs">—</b></div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">音乐源 <span class="hint">每行一个 index.json</span></div>
+      <textarea id="inIdx" placeholder="http://192.168.2.189:8010/index.json"></textarea>
+      <div class="btns" style="margin-top:10px">
+        <button class="btn pri" onclick="saveIndex()">保存并重载</button>
+        <button class="btn" onclick="act('reload')">仅重载</button>
+      </div>
+      <div id="srcList" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">安装到桌面 <span class="hint">PWA</span></div>
+      <div class="note" id="instNote" style="margin:0">检查中…</div>
+      <div class="btns" style="margin-top:10px">
+        <button class="btn" id="btnInstall" onclick="doInstall()">安装应用</button>
+        <button class="btn" id="btnCopyFlag" onclick="copyFlag()" style="display:none">复制地址</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ttl">设备</div>
+      <div class="kv"><span>激活码</span><b id="kCode">—</b></div>
+      <div class="kv"><span>Device ID</span><b id="kDid">—</b></div>
+      <div class="kv"><span>Client ID</span><b id="kCid">—</b></div>
+      <div class="kv"><span>本机 IP</span><b id="kIp">—</b></div>
+      <div class="kv"><span>会话状态</span><b id="kSt">—</b></div>
+      <div class="kv"><span>上行电平</span><b id="kRaw">—</b></div>
+      <div class="btns" style="margin-top:12px">
+        <button class="btn dgr" onclick="doRestart()">重启小智</button>
+        <button class="btn dgr" onclick="doReboot()">重启音箱</button>
+      </div>
+      <div class="note" style="margin-top:6px">「重启音箱」= 整机重启，约 30s；
+        我们的进程是 u0_a8（没有 REBOOT 权限），靠 adb 回环连 adbd 实现。</div>
+    </div>
+
+    <div class="card">
+      <div class="btns">
+        <button class="btn" onclick="showDonate()">赞赏码</button>
+        <button class="btn" onclick="location.href='/old'">旧版排障页</button>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span id="footVer">—</span> · 仅局域网可达，无鉴权<br>
+      <a href="/old">/old</a> 为旧版页面（字段更全，排障用）
+    </div>
+  </section>
+</div>
+
+<nav class="tabbar">
+  <div class="on" data-t="play" onclick="tab('play')">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5z"/></svg>播放
+  </div>
+  <div data-t="music" onclick="tab('music')">
+    <svg viewBox="0 0 24 24"><path d="M9 18V6l11-2v12"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg>音乐
+  </div>
+  <div data-t="log" onclick="tab('log')">
+    <svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg>日志
+  </div>
+  <div data-t="set" onclick="tab('set')">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7.5 19.4l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.6 1.6 0 0 0 3 14a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 7.5l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.6 1.6 0 0 0 10 3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1A1.6 1.6 0 0 0 21 10a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg>设置
+  </div>
+</nav>
+
+<div id="toast"></div>
+
+<div id="donate" style="display:none;position:fixed;inset:0;z-index:80;background:rgba(3,6,12,.86);
+  backdrop-filter:blur(8px);display:none;place-items:center" onclick="hideDonate()">
+  <div style="text-align:center" onclick="event.stopPropagation()">
+    <img src="/donate.png" alt="赞赏码" style="width:290px;max-width:80vw;border-radius:16px;display:block">
+    <div style="color:var(--tx2);margin-top:12px;font-size:13px">制作不易，谢谢鼓励 · 点空白处关闭</div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   R1 小智控制台 · 现代化 UI
+   双数据源：
+     ① 自有   fetch /api/*    —— 设置、状态、日志、控制、队列 /api/queue（永远可用）
+     ② 音箱   ws://<ip>:8080  —— 播放进度 / 时长 / player 自己的音量（**仅魔改 player**）
+   ② 不可用时自动降级到 ①，控制链路始终走 ①。
+   注意：player 的 WS 零自发推送，全部问了才答 ⇒ 必须轮询。
+   协议里没有 seek ⇒ 进度条只读。
+
+   v1.3.163：player 刷回原厂后 8080 根本不存在（连不上），以前页面会一直显示
+   「正在等 8080… 已等 234s」，队列也一直是空的。现在：
+     · 连续 3 次连不上 ⇒ 认定 8080 缺席，UI 全面走自有链路（不再显示"等"）；
+     · 队列   ⇒ /api/queue（我们 push 进 player 的那张列表，顺序我们自己定的）；
+     · 曲名   ⇒ player 回推到 USER_DATA 总线的「当前曲目」（切歌即推，比轮询还实时）；
+     · 点播   ⇒ /api/act?op=play_at&index=N，走原厂消息总线重推列表 + 指定起始下标；
+     · 音量   ⇒ 系统 STREAM_MUSIC（原厂 player 播的就是这条流，实测有效）；
+     · 唯一拿不到的是总时长/进度（那个只上报原厂云 MQTT），已播时长用本地计时代替。
+   ============================================================ */
+
+var S = {};              // /api/status
+var MI = null;           // music_info（来自 WS）
+var PLIST = [];          // 播放队列（来自 WS）
+var PIDX = -1;
+var SRES = [];           // v1.3.152：搜索结果（含 url，点击即播）
+var SRES_ON = [];        // v1.3.175：在线搜索结果（含 source/rid/album/duration，点击即播）
+var PTYPE = 0;           // play_type：1本地 2DLNA 3AirPlay 4蓝牙
+var PSTATE = false;      // play_state
+var WS = null, wsOK = false, wsTried = false;
+var WSH = (location.hostname || "192.168.2.5") + ":8080";
+var autoLog = false, logTimer = null, chatOnly = false;
+var curTab = "play";
+var volSetTs = 0;
+var wsDownTs = 0;          // WS 断开发生时刻（用于「重启后还没起来」的提示）
+/* v1.3.163：8080 缺席检测 —— 连续 3 次连不上就认定「这台 player 没有 8080」
+   （= 原厂 player），UI 全面切自有链路，后台降频重试。 */
+var wsFail = 0, wsAbsent = false;
+/* v1.3.163：自有队列 —— 我们最后一次 push 进 player 的那张列表（/api/queue） */
+var Q = { total: 0, cur: -1, radio: false, bus: 0, list: [] };
+
+/* 演示模式：?demo=1 —— 不碰真实接口，全部用假数据，用来看 UI 长什么样。
+   装机后正常访问不带这个参数，走真接口。 */
+var DEMO = location.search.indexOf("demo=1") >= 0;
+
+try { chatOnly = localStorage.getItem("r1_chat_only") === "1"; } catch (e) {}
+try { curTab = localStorage.getItem("r1_tab") || "play"; } catch (e) {}
+
+/* ---------- 小工具 ---------- */
+function $(id) { return document.getElementById(id); }
+function v(id) { var e = $(id); return e ? e.value : ""; }
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+  });
+}
+var toastT = null;
+function toast(m) {
+  var t = $("toast"); t.textContent = m; t.className = "show";
+  clearTimeout(toastT); toastT = setTimeout(function () { t.className = ""; }, 2200);
+}
+function fmt(ms) {
+  if (!ms || ms < 0) ms = 0;
+  var s = Math.floor(ms / 1000);
+  return Math.floor(s / 60) + ":" + ("0" + (s % 60)).slice(-2);
+}
+
+/* ---------- 请求 ---------- */
+function post(url, body) {
+  // 演示模式不发真实请求（否则会真的去改设置）
+  if (DEMO) {
+    toast("[演示] " + (body || "").split("&")[0]);
+    return Promise.resolve({ ok: true, msg: "[演示] 未真正执行" });
+  }
+  return fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: body || ""
+  }).then(function (r) { return r.json(); });
+}
+function act(op, extra) {
+  var b = "op=" + encodeURIComponent(op) + (extra ? "&" + extra : "");
+  return post("/api/act", b).then(function (r) {
+    toast((r && r.msg) ? r.msg : "已执行");
+    setTimeout(load, 400);
+    if (op !== "status") wsAsk("get_info");
+    return r;
+  }).catch(function () { toast("请求失败"); });
+}
+function setKV(k, val) {
+  return post("/api/set", k + "=" + encodeURIComponent(val)).then(function (r) {
+    toast((r && r.msg) ? r.msg : "已保存");
+    load();
+  }).catch(function () { toast("保存失败"); });
+}
+function doRestart() {
+  if (!confirm("重启小智进程？约 3 秒后自动恢复")) return;
+  act("restart_app");
+}
+function doReboot() {
+  if (!confirm("整机重启音箱？\n约 30 秒后回来，这期间音箱不可用。")) return;
+  act("reboot").then(function (r) {
+    if (r && r.msg) {
+      alert(r.msg + "\n\n若音箱没动静，说明五条策略都失败了 —— "
+        + "只能从电脑上 adb reboot 或直接断电。");
+      setTimeout(function () { location.reload(); }, 28000);
+    }
+  });
+}
+
+/* ---------- 氛围灯 ----------
+   ★ 2026-10-16 实测（原厂 player）：总线 what=4 只有 arg1=64/65/66/67 有人收
+     —— PlayerVisualizerHelper.notifyMsg() 的 switch 就这四个 case：
+       64 开关 / 65 亮度(0..100) / 66 渐变速度(1..100) / 67 缩放模式(0|1)
+     arg1=68（效果模式：官方·七彩·旋转·单色）与 70（自定义颜色）**没有任何接收者**：
+     实测发 mode/color 后 logcat 一条日志都没有（luma/chroma 有
+     `PlayerVisualizer: set luma gain:50`）。那两个是小飞魔改版私有的扩展
+     （小飞命令表标 min_ver:1848）⇒ 换回原厂就没了，本页已移除这两项。
+     原厂形态 = PlayerVisualizer：15 颗灯同色，色相随音乐频谱缓慢推进。 */
+var AMB = { on: -1 };
+function ambToggle() {
+  var on = AMB.on === 1 ? 0 : 1;
+  AMB.on = on;
+  setSw("swAmb", on === 1);
+  return act("amb", "v=" + (on === 1 ? "on" : "off"));
+}
+function ambFill(a) {
+  a = a || {};
+  AMB.on = a.on != null ? a.on : -1;
+  setSw("swAmb", AMB.on === 1);
+}
+
+/* ---------- Tab ---------- */
+function tab(t) {
+  curTab = t;
+  try { localStorage.setItem("r1_tab", t); } catch (e) {}
+  var secs = document.querySelectorAll("section");
+  for (var i = 0; i < secs.length; i++) secs[i].className = (secs[i].id === "s-" + t) ? "on" : "";
+  var tabs = document.querySelectorAll(".tabbar div");
+  for (var j = 0; j < tabs.length; j++) {
+    tabs[j].className = (tabs[j].getAttribute("data-t") === t) ? "on" : "";
+  }
+  window.scrollTo(0, 0);
+  if (t === "log") loadLog();
+  // 重启后 player 起得晚：进播放/音乐页时立刻重试一次 WS 并补数据，别干等 5s 轮询
+  if (t === "play" || t === "music") { wsInit(); wsAsk("get_info"); wsAsk("list"); }
+}
+
+/* ---------- 开关 ---------- */
+function tg(id, key) {
+  var e = $(id);
+  var on = e.className.indexOf("on") < 0;
+  e.className = "sw" + (on ? " on" : "");
+  setKV(key, on ? "on" : "off");
+}
+function setSw(id, on) { $(id).className = "sw" + (on ? " on" : ""); }
+
+/* 采集链路（只读）：AEC / uscTap 两个 flag 不提供开关 —— 它们只会把链路改坏，
+   这里只如实回显实际值，异常项标黄，方便发现 flag 被手工 touch 过。 */
+function fillChain(a) {
+  var el = $("chainNote");
+  if (!el) return;
+  var warn = [];
+  var src = a.uscTap ? "原厂四麦 tap（波束 + AGC + 硬件 AEC）" : "AudioRecord 直采";
+  if (!a.uscTap) warn.push("未走 tap，收音会明显变差");
+  if (a.aec) warn.push("软件 AEC 开着，实测会把人声一起消掉");
+  el.textContent = "采集链路：" + src + " · 软件 AEC " + (a.aec ? "开" : "关")
+    + (warn.length ? "　⚠ " + warn.join("；") : "");
+  el.style.color = warn.length ? "var(--warn)" : "";
+}
+
+function tgChat() {
+  chatOnly = !chatOnly;
+  setSw("swChat", chatOnly);
+  try { localStorage.setItem("r1_chat_only", chatOnly ? "1" : "0"); } catch (e) {}
+  loadLog();
+}
+function tgAuto() {
+  autoLog = !autoLog;
+  setSw("swAuto", autoLog);
+  if (logTimer) { clearInterval(logTimer); logTimer = null; }
+  if (autoLog) logTimer = setInterval(function () { loadLog(); }, 5000);
+}
+
+/* ---------- 音量 ---------- */
+function onVol(val) {
+  var mv = +($("vol").max || 15);
+  $("volV").textContent = val + " / " + mv;
+  var now = Date.now();
+  if (now - volSetTs < 320) return;      // 拖动节流
+  volSetTs = now;
+  /* ★★ v1.3.155：player 的音量只有 WS {"type":"set_vol","vol":N} 能改（0..max_vol 档位）。
+     以前走 /api/set vol= —— 那是**系统 STREAM_MUSIC 的 0~100 百分比**，量纲完全不同：
+       · 拖到 1~3 档 ⇒ setSystemVolume(1) ⇒ target = 1*15/100 = 0 ⇒ 系统流被设成 0（静音）
+       · 回读 readSystemVolume() = 0 ⇒ 滑块被拽回 0  ← 用户看到的「复位到 0」
+       · 而且 player 播的根本不是那条流 ⇒ 怎么拖都不响  ← 「音量调不了」
+     WS 离线时没法改 player，就退回去改系统流（并把量纲换算对），同时说清楚只改了哪一半。 */
+  if (wsOK) {
+    wsSend({ type: "set_vol", vol: +val });
+    wsAsk("get_info");                   // 小飞版也是发完立刻问一次
+    return;
+  }
+  var pct = Math.round(+val * 100 / (mv || 1));
+  act("vol", "v=" + pct).then(function () {
+    // v1.3.163：原厂 player 用 MediaPlayer 播的就是 STREAM_MUSIC（实测 setStreamVolume
+    // 能改到实际输出设备 spdif 那一路），所以这条**对它有效**；只有魔改 player 才另有一套
+    // 自己的音量（那个必须走 8080 的 set_vol，原厂没有）。
+    toast("已设系统音乐流 " + pct + "%（" + val + "/" + mv + " 档）");
+  });
+}
+
+/* 回填音量：① 值无效(-1)不回填 ② 刚拖过 2.5s 内不回填（否则取整误差会把滑块拽回去） */
+function applyVol(v, mv, hint) {
+  if (v == null || v < 0) return;
+  if (Date.now() - volSetTs < 2500) return;
+  var el = $("vol");
+  if (mv > 0) el.max = mv;
+  el.value = v;
+  $("volV").textContent = v + " / " + (el.max || 15);
+  $("volHint").textContent = hint;
+}
+/* 循环模式：pl-1.2.0 起用**原厂真值** —— AbsPlayer.setPlayMode 只认
+   1/2/3（1=列表随机 2=列表循环/顺序 3=单曲循环，见 Constant.PLAY_MODE_*），
+   传 0 会被打回并 return false，这就是以前「顺序播放」点了没反应的原因。 */
+function setModeUI(m) {
+  var d = $("segMode").children;
+  for (var i = 0; i < d.length; i++) d[i].className = (+d[i].getAttribute("data-v") === m) ? "on" : "";
+}
+function setMode(m) { setModeUI(m); act("mode", "v=" + m); }
+
+/* ---------- 音乐 tab ---------- */
+function doSearch(ol, rnd) {
+  var k = v("qKey").trim();
+  // ★ 关键词留空 = 列全部曲库（服务端 matchTracks 遇到空串返回全部）
+  var box = $("qRes");
+  box.innerHTML = '<div class="note" style="margin:0">搜索中…</div>';
+  if (DEMO) {
+    renderSearch({
+      total: 2,
+      list: [{ index: 1, title: "晴天", artist: "周杰伦", url: "http://192.168.2.189:8010/music/demo1.mp3" },
+             { index: 2, title: "稻香", artist: "周杰伦", url: "http://192.168.2.189:8010/music/demo2.mp3" }]
+    });
+    return;
+  }
+  // v1.3.175：ol=1 ⇒ 带 online=1（池内没搜到时附带 NAS 全源在线结果）
+  // v1.3.178：rnd=1 ⇒ 关键词留空点「在线搜歌」= 从在线随机拉 100 首（每次都是新的一批）
+  var url = "/api/search?k=" + encodeURIComponent(k)
+    + (k ? "" : "&limit=" + (QLIM || 0))
+    + (ol ? "&online=1" : "")
+    + (rnd ? "&random=1&olimit=100" : "");
+  fetch(url)
+    .then(function (r) { return r.json(); })
+    .then(function (o) { renderSearch(o); })
+    .catch(function (e) {
+      box.innerHTML = '<div class="note" style="margin:0">搜索失败：' + esc(String(e)) + "</div>";
+    });
+}
+
+/* v1.3.152：搜索结果渲染成可点列表 —— 点一下走 op=play_url 播那一条的 url */
+function renderSearch(o) {
+  var box = $("qRes");
+  if (o.err) { box.innerHTML = '<div class="note" style="margin:0">' + esc(o.err) + "</div>"; return; }
+  var list = o.list || [];
+  SRES = list;
+  // v1.3.176：online 存在 = 服务端真的去 NAS 搜过（total=0 就是没有，不是没搜）；
+  //   有在线结果时把它排到曲库前面 —— 用户点「在线搜歌」要看的就是这一块。
+  var ol = (o.online && o.online.list) ? o.online.list : [];
+  SRES_ON = ol;
+  var html = "";
+  if (ol.length) {
+    var ont = o.online.total || ol.length;
+    // v1.3.178：random 批（关键词留空点的在线搜歌）vs 关键词在线搜索结果 —— 行为不同：
+    //   随机批点一条 = 播它 **并且**把这一整批排进播放列表；搜索结果点一条只播那一首。
+    var isRnd = !!o.online.random;
+    html += '<div class="note" style="margin:0 0 4px;color:var(--ac)">'
+      + (isRnd
+        ? ("在线随机 " + ont + " 首（每次都是新的一批；点 ▶ 播它，并把这一整批排进播放列表）")
+        : ("在线搜到 " + ont + " 首" + (ont > ol.length ? "，列前 " + ol.length : "")
+           + "（NAS 全源，点 ▶ 播放）"))
+      + "</div>";
+    html += ol.map(function (it, j) {
+      var go = (it.ri === 0 || it.ri > 0) ? ("playRandAt(" + j + ")") : ("playOnlineRes(" + j + ")");
+      return '<div class="li" onclick="' + go + '">'
+        + '<div class="n" style="color:var(--ac)">▶</div>'
+        + '<div class="tx"><div class="a">' + esc(it.title || "") + "</div>"
+        + '<div class="b">' + esc(it.artist || "")
+        + (it.album ? " · " + esc(it.album) : "")
+        + (it.duration ? " · " + esc(it.duration) : "")
+        + "</div></div></div>";
+    }).join("");
+    if (list.length && !isRnd) {
+      html += '<div class="note" style="margin:10px 0 4px">下面是曲库池里的 '
+        + list.length + " 首</div>";
+    }
+  }
+  if (list.length) {
+    html += list.map(function (it, i) {
+      return '<div class="li" onclick="playRes(' + i + ')">'
+        + '<div class="n">' + (it.index || (i + 1)) + "</div>"
+        + '<div class="tx"><div class="a">' + esc(it.title || "") + "</div>"
+        + (it.artist ? '<div class="b">' + esc(it.artist) + "</div>" : "")
+        + "</div></div>";
+    }).join("");
+    if (o.total > list.length) {
+      html += '<div class="note" style="margin:8px 0 0">共 ' + o.total + " 首，只列前 "
+        + list.length + " 首（换个更具体的词再搜）</div>";
+    }
+  } else if (!ol.length) {
+    html += '<div class="note" style="margin:0">'
+      + ((o.online && o.online.random)
+        ? "在线曲库暂时拉不到（NAS mini-lx 起了吗？音乐源配了吗？）"
+        : ("没找到相关的歌" + (o.online ? "（NAS 全源也没搜到）" : "（点「在线搜歌」搜 NAS 全源）")))
+      + "</div>";
+  }
+  box.innerHTML = html;
+}
+
+/* v1.3.178：点「在线随机」批里的一条 ⇒ 播它，同时把这一整批排进播放列表。
+   与 playOnlineRes 的区别：那条走 op=play_online（只播一首，要现取直链）；
+   这条走 op=play_rand_at（整批已经在服务端缓存好，惰性直链，一次全排进去）。 */
+function playRandAt(j) {
+  var it = SRES_ON[j];
+  if (!it || it.ri == null) return;
+  act("play_rand_at", "i=" + it.ri);
+}
+
+/* v1.3.175：点在线结果的一条 ⇒ 拿四件套 + 专辑/时长去播放（op=play_online） */
+function playOnlineRes(j) {
+  var it = SRES_ON[j];
+  if (!it) return;
+  var p = "title=" + encodeURIComponent(it.title || "")
+    + "&artist=" + encodeURIComponent(it.artist || "")
+    + "&source=" + encodeURIComponent(it.source || "")
+    + "&rid=" + encodeURIComponent(it.rid || "")
+    + "&album=" + encodeURIComponent(it.album || "")
+    + "&duration=" + encodeURIComponent(it.duration || "");
+  act("play_online", p);
+}
+
+/* v1.3.175：「在线搜歌」按钮 —— 有关键词就池内+在线一起找。
+   v1.3.178：**什么都不输**直接点 = 从在线随机拉 100 首（每次都是新的一批）。
+   以前留空会弹「先输入歌名/歌手」把人挡回去，而用户要的恰恰是「空着点一下就随机来一批」。 */
+function doSearchOnline() {
+  var k = v("qKey").trim();
+  doSearch(1, k ? 0 : 1);
+}
+
+function playRes(i) {
+  var it = SRES[i];
+  if (!it) return;
+  // 有绝对 url 就直接播它；没有就退化为按歌名播（PlayerBridge 会拿它去曲库里匹配）
+  // v1.3.153：曲库命中就走 play_index（曲库序号，1-based，与 /api/search 的 index 同源）。
+  // player 只有「列表 + index」一种模型 —— 小飞版的「播放歌曲」按钮发的也是
+  // {type:"play",index:N}，压根没有按 url 播单曲这条路。走 play_url 会被当成网络流，
+  // music_info.title 传不过去，界面上就看不到歌名。
+  if (it.index) { act("play_index", "index=" + it.index); return; }
+  var key = it.url || it.title || "";
+  if (!key) { toast("这条没有可播地址"); return; }
+  // 兜底：只有 url 没有曲库序号时才走 play_url，此时把歌名一起带过去
+  // （后端以前死写「网络音频」，player 的 music_info.title 就成了「网络音频」）。
+  var q = "url=" + encodeURIComponent(key);
+  if (it.title) q += "&title=" + encodeURIComponent(it.title);
+  if (it.artist) q += "&artist=" + encodeURIComponent(it.artist);
+  act("play_url", q);
+}
+function doArtist() {
+  var a = v("qArt").trim();
+  if (!a) return;
+  // ★ 数量留空 ⇒ 传 0 = 该歌手的全部歌曲都排进播放列表（服务端 count<=0 = 不限量）。
+  //   以前空着会补 5，用户想要「全部」只能手动填一个很大的数。
+  var c = v("qCnt").trim();
+  act("play_artist", "artist=" + encodeURIComponent(a) + "&count=" + (c ? c : 0));
+}
+/* ---------- 电台列表（v1.3.156） ----------
+   原来是横排 chips，台一多就占满整屏（实测 48 个台）。改成和「搜索曲库 / 播放队列」一样的
+   .li 列表，可视区固定 5 行（.scroll.r5 = 230px，行高 46px），多于 5 个台在框里上下滑；
+   台太多 ⇒ 框上面再加个过滤输入框，边打边筛（不走网络，纯本地字符串匹配）。
+   ⚠ 不要按 url 播：电台是直播流，player 侧 play_radio 按完整台名匹配。 */
+var RADIOS = [], curRadio = "", radioSig = "", radioFilt = "";
+function filterRadio(k) { radioFilt = String(k || "").trim(); renderRadios(); }
+function clearRadio() {
+  var e = $("rKey"); if (e) e.value = "";
+  radioFilt = ""; renderRadios();
+}
+function renderRadios() {
+  var box = $("radios"), hint = $("radioHint");
+  // 名单、选中项、过滤词都没变就别重建 —— load() 每 8 秒一次，重建会把用户滑到第 20 个台的
+  // 滚动位置弹回顶部（这是列表化之后新引入的问题，chips 时代没有）。
+  var sig = RADIOS.map(function (r) { return r.name || r.title || ""; }).join("\u0001")
+    + "\u0002" + curRadio + "\u0003" + radioFilt;
+  if (sig === radioSig) return;
+  radioSig = sig;
+
+  if (!RADIOS.length) {
+    hint.textContent = "";
+    box.innerHTML = '<div class="note" style="margin:0">音乐源未加载或不含电台</div>';
+    return;
+  }
+
+  var kw = radioFilt.toLowerCase(), shown = [];
+  for (var i = 0; i < RADIOS.length; i++) {
+    var nm = RADIOS[i].name || RADIOS[i].title || "";
+    if (!kw || nm.toLowerCase().indexOf(kw) >= 0) shown.push({ i: i, nm: nm });
+  }
+  // 序号保留「在完整名单里的位置」，不随过滤重排（台序是固定的，序号就是它的标识）
+  hint.textContent = radioFilt
+    ? ("匹配 " + shown.length + " / " + RADIOS.length + " 个台")
+    : (RADIOS.length + " 个台 · 点一下收听" + (RADIOS.length > 5 ? "（可上下滑）" : ""));
+  if (!shown.length) {
+    box.innerHTML = '<div class="note" style="margin:0">没有台名含「' + esc(radioFilt) + '」的电台</div>';
+    return;
+  }
+  box.innerHTML = shown.map(function (o) {
+    var on = !!curRadio && curRadio === o.nm;
+    return '<div class="li rad' + (on ? " cur" : "") + '" onclick="playRadioAt(' + o.i + ')">'
+      + '<div class="n">' + (o.i + 1) + "</div>"
+      + '<div class="tx"><div class="a">' + esc(o.nm) + "</div>"
+      + '<div class="b">' + (on ? "正在收听" : "网络直播") + "</div></div></div>";
+  }).join("");
+}
+function playRadioAt(i) {
+  var r = RADIOS[i];
+  if (!r) return;
+  playRadio(r.name || r.title || "");
+}
+function playRadio(n) {
+  if (!n) return;
+  curRadio = n;                 // 先标红再发请求，点完立刻有反馈（取流要等 1~2 秒）
+  renderRadios();
+  act("radio", "name=" + encodeURIComponent(n));
+}
+
+/* ---------- 服务器 / 音乐源 ---------- */
+function saveServer() { setKV2({ otaUrl: v("inOta"), wsUrl: v("inWs") }); }
+function setKV2(o) {
+  var b = [];
+  for (var k in o) if (o.hasOwnProperty(k)) b.push(k + "=" + encodeURIComponent(o[k]));
+  return post("/api/set", b.join("&")).then(function (r) {
+    toast((r && r.msg) ? r.msg : "已保存");
+    load();
+  }).catch(function () { toast("保存失败"); });
+}
+function useOfficial() { $("inOta").value = ""; $("inWs").value = ""; saveServer(); }
+function saveIndex() { setKV2({ musicIndex: v("inIdx") }); }
+
+/* ---------- 赞赏码 ---------- */
+function showDonate() { $("donate").style.display = "grid"; }
+function hideDonate() { $("donate").style.display = "none"; }
+
+/* ---------- 日志 ---------- */
+function loadLog(n) {
+  if (DEMO) {
+    $("logBox").textContent =
+      "（演示模式 · 假数据）\n\n"
+      + "我：今天天气怎么样\n小智：今天晴，26 度，适合出门。\n\n"
+      + "我：放首周杰伦的歌\n小智：好的，为你播放《晴天》。\n\n"
+      + "我：声音小一点\n小智：已将音量调到 7。\n";
+    return;
+  }
+  fetch("/api/log?n=" + (n || 80) + (chatOnly ? "&chat=1" : ""))
+    .then(function (r) { return r.text(); })
+    .then(function (t) {
+      var box = $("logBox");
+      box.textContent = t;
+      box.scrollTop = box.scrollHeight;
+    }).catch(function () { $("logBox").textContent = "(拉取失败)"; });
+}
+function copyLog() {
+  var t = $("logBox").textContent;
+  try {
+    var ta = document.createElement("textarea");
+    ta.value = t; document.body.appendChild(ta); ta.select();
+    document.execCommand("copy"); document.body.removeChild(ta);
+    toast("已复制");
+  } catch (e) { toast("复制失败"); }
+}
+
+/* ============================================================
+   自有状态 /api/status
+   ============================================================ */
+
+/* 演示用假数据（?demo=1）。字段结构与真实 /api/status 一致。 */
+function MOCK_STATUS() {
+  return {
+    ver: "1.3.150", uptimeSec: 3725, port: 8088, ip: "192.168.2.5",
+    activation: { code: "A1B2-C3D4", deviceId: "Phicomm_R1_CD6B", clientId: "8f2c…", otaUrl: "", token: "ab12…(32)" },
+    audio: { gain: 16, alc: false, aec: false, uscTap: true, dropWake: true,
+             log: true, sound: true, autoDisconnect: false, musicPause: false, myMusic: true,
+             wakeLight: true, busyLight: true },
+    ambient: { ready: true, on: 1, mode: 2, luma: 100, chroma: 4,
+               color: 6737151, modeName: "七彩", colorHex: "#66CCFF" },
+    server: { ota: "http://192.168.2.189:8003/xiaozhi/ota/", wsOverride: "" },
+    ws: { url: "ws://192.168.2.189:8000/xiaozhi/v1/", open: true },
+    session: { state: "IDLE", raw: 6, rawPeak: 41 },
+    music: {
+      playing: true, dlnaState: "PLAYING", curTitle: "Make Me Alive",
+      playTs: Date.now() - 42000, volume: 7,
+      radioList: [{ name: "AsiaFM 经典" }, { name: "AsiaFM 音乐" }, { name: "AsiaFM 热歌" },
+                  { name: "AsiaFM 天空" }, { name: "AsiaFM HD" }, { name: "先锋898" }],
+      sources: [{ url: "http://192.168.2.189:8010/index.json", tracks: "1185", radios: "6", err: "" }]
+    }
+  };
+}
+
+/* v1.3.153：页面过时防呆。控制台是长驻 SPA，装机后页面不会自己刷新 ——
+   用户手上那份可能还是旧 HTML（最典型的症状：新按钮点了没反应）。
+   拿 /api/status 的 ver 与 localStorage 记录比对，变了就顶部弹条提示刷新。 */
+function checkVer(o) {
+  if (DEMO || !o || !o.ver) return;
+  var last = null;
+  try { last = localStorage.getItem("r1_ver"); } catch (e) { return; }
+  if (last === null) { try { localStorage.setItem("r1_ver", o.ver); } catch (e) {} return; }
+  if (last !== o.ver) {
+    try { localStorage.setItem("r1_ver", o.ver); } catch (e) {}
+    var b = $("updBar");
+    if (!b) return;
+    b.textContent = "页面已过时（" + last + " → " + o.ver + "），点此刷新";
+    b.style.display = "block";
+    b.onclick = function () { location.reload(true); };
+  }
+}
+
+/* ================= v1.3.154：安装到桌面（PWA） =================
+   Android Chrome 肯给「安装应用」要三条同时满足：
+     ① manifest（name + 192/512 图标 + display standalone）
+     ② 注册过带 fetch handler 的 Service Worker
+     ③ ★ 安全上下文（HTTPS 或 localhost）—— 局域网 http 死在这一条
+   ①② 服务端都给了（/manifest.webmanifest / /sw.js / /icon-*.png），
+   ③ 只能靠用户在 Chrome 里开 flag，所以这里把状态摊开讲清楚，别让人干瞪眼。 */
+var deferredPrompt = null;
+var swState = "unknown";
+
+function instStandalone() {
+  return (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches)
+      || window.navigator.standalone === true;
+}
+
+function instInit() {
+  if (DEMO) { instRender(); return; }
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js").then(function () {
+      swState = "ok"; instRender();
+    })["catch"](function () {
+      swState = "fail"; instRender();
+    });
+  } else {
+    swState = "fail";
+  }
+  window.addEventListener("beforeinstallprompt", function (e) {
+    e.preventDefault(); deferredPrompt = e; instRender();
+  });
+  window.addEventListener("appinstalled", function () {
+    deferredPrompt = null; instRender();
+  });
+  instRender();
+}
+
+function instRender() {
+  var n = $("instNote"), b = $("btnInstall"), c = $("btnCopyFlag");
+  if (!n || !b || !c) return;
+  var sec = (window.isSecureContext === true);
+  b.style.display = ""; c.style.display = "none"; b.disabled = false;
+  b.textContent = "安装应用";
+  n.className = "note"; n.style.margin = "0"; n.style.color = "";
+
+  if (instStandalone()) {
+    n.className = "note"; n.style.color = "var(--ok)";
+    n.innerHTML = "已经在独立窗口里运行（standalone）—— 这就是装好之后的样子。";
+    b.style.display = "none";
+    return;
+  }
+  if (deferredPrompt) {
+    n.innerHTML = "可以安装了：点下面这个按钮，或用浏览器菜单里的「安装应用」。";
+    return;
+  }
+  if (!sec) {
+    b.style.display = "none"; c.style.display = "";
+    n.style.color = "var(--warn)";
+    n.innerHTML = "<b>装不了：当前不是安全上下文。</b><br>"
+      + "局域网 http 天生不算安全上下文（Service Worker 也注册不了），"
+      + "这是 Chrome 的硬门槛，跟我们的页面没关系。<br>"
+      + "安卓 Chrome 的绕法：地址栏进 <b>chrome://flags/#unsafely-treat-insecure-origin-as-secure</b>，"
+      + "填入 <b>" + esc(location.origin) + "</b> → Enabled → Relaunch，回来就能装。<br>"
+      + "iOS Safari 没这限制：分享 → 添加到主屏幕。";
+    return;
+  }
+  n.innerHTML = "没弹安装提示也没关系 —— 直接用浏览器菜单里的"
+    + "「安装应用」/「添加到主屏幕」。"
+    + (swState === "fail" ? "<br><b>Service Worker 注册失败</b>，Chrome 会拒绝安装。" : "");
+  b.disabled = true;
+}
+
+function doInstall() {
+  if (!deferredPrompt) { toast("用浏览器菜单里的「安装应用」/「添加到主屏幕」"); return; }
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(function () { deferredPrompt = null; instRender(); });
+}
+
+function copyFlag() {
+  var t = location.origin;
+  try { navigator.clipboard.writeText(t); toast("已复制：" + t); }
+  catch (e) { toast("复制失败，请手抄：" + t); }
+}
+
+function load() {
+  var p = DEMO ? Promise.resolve(MOCK_STATUS())
+               : fetch("/api/status").then(function (r) { return r.json(); });
+  return p.then(function (s) {
+    S = s || {};
+    checkVer(s);
+    var a = S.audio || {};
+    var m = S.music || {};
+    var actv = S.activation || {};
+
+    $("dev").textContent = "R1 小智";
+    $("kIp").textContent = S.ip || "—";
+    $("kSt").textContent = (S.session && S.session.state) || "—";
+    $("kRaw").textContent = (S.session && S.session.raw != null)
+      ? (S.session.raw + " / 峰值 " + S.session.rawPeak) : "—";
+    $("kCode").textContent = actv.code || "—";
+    $("kDid").textContent = actv.deviceId || "—";
+    $("kCid").textContent = actv.clientId || "—";
+    $("footVer").textContent = "v" + S.ver + " · uptime " + S.uptimeSec + "s · 端口 " + S.port;
+
+    var sv = S.server || {};
+    $("curOta").textContent = sv.ota || "—";
+    $("curWs").textContent = sv.wsOverride || "(官方默认)";
+    if (!$("inOta").value) $("inOta").value = sv.ota || "";
+    if (!$("inWs").value) $("inWs").value = sv.wsOverride || "";
+
+    // 顶栏
+    var st = (S.session && S.session.state) || "-";
+    var wsOpen = S.ws && S.ws.open;
+    var d = $("dot");
+    d.className = "dot" + (wsOpen ? " on" : (st === "-" ? "" : " warn"));
+    var sub = [];
+    sub.push("v" + S.ver);
+    sub.push("up " + Math.floor((S.uptimeSec || 0) / 60) + "m");
+    sub.push(st);
+    sub.push(wsOpen ? "WS 已连" : "WS 未连");
+    $("sub").innerHTML = sub.map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("");
+
+    // 开关
+    setSw("swAlc", !!a.alc);
+    setSw("swDw", !!a.dropWake);
+    setSw("swSnd", !!a.sound);
+    setSw("swLog", !!a.log);
+    setSw("swAd", !!a.autoDisconnect);
+    setSw("swMp", !!a.musicPause);
+    setSw("swMm", !!a.myMusic);
+    ambFill(S.ambient);
+    // 灯光控制（v1.3.168）：唤醒灯 / 播报灯是 device 侧的 files flag，默认都开
+    setSw("swWkL", a.wakeLight !== false);
+    setSw("swBsL", a.busyLight !== false);
+
+    // 增益
+    var gd = $("segGain").children;
+    for (var i = 0; i < gd.length; i++) {
+      gd[i].className = (+gd[i].getAttribute("data-v") === a.gain) ? "on" : "";
+    }
+    fillChain(a);
+
+    // 音量：WS 在线时由 get_info 覆盖；离线才用自有值（自有是 0~100 百分比，要换算成档位）
+    if (!wsOK && m.volume != null && m.volume >= 0) {
+      var mv0 = +($("vol").max || 15);
+      applyVol(Math.round(m.volume * mv0 / 100), 0, "系统音乐流");
+    }
+
+    // 电台（v1.3.156：从横向 chips 改成可滚动列表 —— 可视 5 行，多于 5 台在框内滑；
+    //       台多（实测 48 个）⇒ 上面加了过滤框。hint 一律由 renderRadios() 写，别在这儿设：
+    //       load() 每 8s 一次，在这里设会把「匹配 3 / 48」冲掉，而 renderRadios 又因签名没变而跳过）
+    // 循环模式回显（服务端 status 现在带 mode：1=随机 2=顺序 3=单曲循环）
+    if (m.mode != null && m.mode > 0) setModeUI(m.mode);
+
+    // v1.3.175：实际歌曲信息（专辑 · 时长 · 来源）——播翻唱/DJ 版时显示真实信息。
+    // 每次 status 轮询都刷（WS 的 music_info 不带这些字段，由这边补齐）。
+    fillNpMeta(m);
+
+    RADIOS = m.radioList || [];
+    renderRadios();
+
+    // 源统计
+    var ss = m.sources || [];
+    $("srcList").innerHTML = ss.map(function (x) {
+      return '<div class="kv"><span style="word-break:break-all;max-width:70%">' + esc(x.url)
+        + (x.err ? '<br><span style="color:var(--err)">' + esc(x.err) + "</span>" : "")
+        + "</span><b>" + esc(x.tracks) + " 曲 / " + esc(x.radios) + " 台</b></div>";
+    }).join("");
+
+    // 降级：WS 拿不到时的曲名（v1.3.163：这是**主路径**了 —— 原厂 player 没有 8080，
+    // 曲名/歌手来自 player 回推到总线的「当前曲目」，进度只上报云端所以拿不到总时长）
+    if (!wsOK) {
+      $("npT").textContent = m.curTitle || "未播放";
+      $("npA").textContent = (m.curArtist || " ")
+        + (m.playing ? "　·　播放中" : (m.curTitle ? "　·　空闲" : ""));
+      $("npNote").textContent = m.stale
+        ? "上次播过的曲名（player 重启后列表已空）—— 点 ▶ 会重新播放它"
+        : (m.curTitle ? wsWaitTxt()
+           : "还没播过 —— 去音乐页搜一首点它，或点上面的「随便听」");
+      $("cover").className = "cover" + (m.playing ? " spin" : "");
+      $("qHint").textContent = "点一下即播（自有队列）";
+      $("npTag").style.display = m.qRadio ? "inline-block" : "none";
+      if (m.qRadio) $("npTag").textContent = "电台";
+      var el = m.playTs ? (Date.now() - m.playTs) : 0;
+      $("npPos").textContent = fmt(el);
+      $("npDur").textContent = m.playing ? "已播" : "—";
+      $("npBar").style.width = "0%";
+    }
+  }).catch(function () { toast("状态拉取失败"); });
+}
+
+/* ============================================================
+   音箱 WS（ws://<ip>:8080）—— 进度 / 队列
+   ============================================================ */
+function wsInit() {
+  if (DEMO) { wsDemo(); return; }
+  if (WS && (WS.readyState === 0 || WS.readyState === 1)) return;
+  try { WS = new WebSocket("ws://" + WSH); } catch (e) { wsDown(); return; }
+  WS.onopen = function () {
+    wsOK = true; wsTried = true; wsDownTs = 0; wsFail = 0; wsAbsent = false;
+    $("wsPill").textContent = "WS 8080";
+    $("wsPill").style.color = "var(--ok)";
+    $("npNote").textContent = "";
+    $("qHint").textContent = "点一下即播（来自 8080）";
+    wsAsk("get_info"); wsAsk("list");
+  };
+  // v1.3.163：认定 8080 不存在后把重试降到 20s（还要留着 —— 万一刷回魔改版能自动接上），
+  // 否则 3s 一次的空转会在控制台刷一屏 ERR_CONNECTION_REFUSED。
+  WS.onclose = function () { wsDown(); setTimeout(wsInit, wsAbsent ? 20000 : 3000); };
+  WS.onerror = function () { wsDown(); };
+  WS.onmessage = function (ev) { onWs(ev.data); };
+}
+function wsWaitSec() { return wsDownTs ? Math.round((Date.now() - wsDownTs) / 1000) : 0; }
+/* v1.3.163：8080 是**魔改 player（小飞）**自己开的 WS，原厂 player 根本没有。
+   以前连不上就死等，页面一直显示「正在等 8080… 已等 Ns」。
+   现在：连不上 ⇒ 标记 wsAbsent，队列/曲名/点播全走自有链路（/api/queue + op=play_at），
+   后台仍低频重试（万一哪天刷回魔改版能自动接上），但 UI 不再拿它当错误。 */
+function wsWaitTxt() {
+  if (wsAbsent) {
+    return "自有链路：队列与曲名来自小智自己（原厂 player 不开 8080）";
+  }
+  var s = wsWaitSec();
+  return "音箱播放服务（8080）断了" + (s > 0 ? " " + s + "s" : "") + "，正在重连…（控制不受影响）";
+}
+function wsDown() {
+  if (!wsDownTs) wsDownTs = Date.now();
+  wsOK = false;
+  wsFail++;
+  if (wsFail >= 3) wsAbsent = true;
+  $("wsPill").textContent = wsAbsent ? "8080 无" : "WS 离线";
+  $("wsPill").style.color = wsAbsent ? "var(--tx3)" : "var(--warn)";
+  $("qHint").textContent = wsAbsent ? "点一下即播（自有队列）" : "WS 未连接（点播走自有队列）";
+  $("npNote").textContent = wsWaitTxt();
+}
+function wsSend(o) {
+  if (WS && WS.readyState === 1) { try { WS.send(JSON.stringify(o)); } catch (e) {} }
+}
+function wsAsk(t) { wsSend({ type: t }); }
+function onWs(raw) {
+  var o;
+  try { o = JSON.parse(raw); } catch (e) { return; }
+  var t = o.type || "";
+  var d = o.data;
+  if (typeof d === "string") { try { d = JSON.parse(d); } catch (e) {} }
+  if (!d) return;
+
+  if (t === "get_info") {
+    MI = d.music_info || null;
+    PTYPE = d.play_type || 0;
+    PSTATE = !!d.play_state;
+    renderNp();
+    if (d.vol != null) {
+      applyVol(d.vol, d.max_vol || 0, "音箱实时");
+    }
+  } else if (t === "list") {
+    PLIST = d.playList || [];
+    PIDX = (d.playIndex != null) ? d.playIndex : -1;
+    renderQueue();
+  }
+}
+
+/* 队列上限（存在浏览器 localStorage 里，0 = 不限制）。
+   改完立刻重拉一次列表 —— 不用等下一轮轮询。 */
+var QLIM = 300;
+try {
+  var _q = localStorage.getItem("r1_qlim");
+  if (_q !== null && _q !== "") QLIM = Math.max(0, parseInt(_q, 10) || 0);
+} catch (e) {}
+function saveQlim() {
+  var n = parseInt(v("inQlim"), 10);
+  if (isNaN(n) || n < 0) n = 0;
+  QLIM = n;
+  try { localStorage.setItem("r1_qlim", String(n)); } catch (e) {}
+  toast(n === 0 ? "队列上限：不限制（列全部）" : ("队列上限：" + n + " 首"));
+  loadQueue();
+}
+
+/* v1.3.163：自有队列 —— 8080 缺席时它就是播放页的列表数据源。
+   cur 由 player 回推的「当前曲目」算出来（总线事件），切歌会自动跟着变。 */
+function loadQueue() {
+  if (DEMO) { renderQueue(); return; }
+  return fetch("/api/queue?limit=" + QLIM).then(function (r) { return r.json(); })
+    .then(function (o) {
+      Q = o || Q;
+      if (!wsOK) renderQueue();
+      return Q;
+    }).catch(function () {});
+}
+
+/* v1.3.175：填「正在播放」的实际歌曲信息（专辑 · 时长 · 来源） */
+function fillNpMeta(m) {
+  var el = $("npMeta");
+  if (!el) return;
+  var parts = [];
+  if (m.curAlbum) parts.push(m.curAlbum);
+  if (m.curDuration) parts.push(m.curDuration);
+  if (m.curVia === "online") parts.push("在线搜到的");
+  else if (m.curVia === "rand") parts.push("在线随机");
+  el.textContent = parts.join(" · ");
+}
+
+/* 渲染「正在播放」 */
+var lastTitle = "";
+function renderNp() {
+  var t = (MI && MI.title) ? MI.title : "";
+  var ar = (MI && MI.artist) ? MI.artist : "";
+  if (t !== lastTitle) {
+    lastTitle = t;
+    $("npT").textContent = t || "未播放";
+    $("npA").textContent = ar || " ";
+  }
+  var tag = $("npTag");
+  var names = { 1: "本地曲库", 2: "DLNA 投屏", 3: "AirPlay", 4: "蓝牙" };
+  if (PTYPE && names[PTYPE]) { tag.style.display = "inline-block"; tag.textContent = names[PTYPE]; }
+  else tag.style.display = "none";
+
+  $("cover").className = "cover" + (PSTATE ? " spin" : "");
+  var ic = $("icPlay");
+  ic.innerHTML = PSTATE
+    ? '<path d="M7 5h4v14H7zM13 5h4v14h-4z"/>'
+    : '<path d="M8 5v14l11-7z"/>';
+
+  var dur = (MI && MI.duration) || 0;
+  var pos = (MI && MI.position) || 0;
+  $("npDur").textContent = fmt(dur);
+  $("npPos").textContent = fmt(pos);
+  $("npBar").style.width = (dur > 0 ? Math.min(100, pos / dur * 100) : 0) + "%";
+
+  // 电台高亮跟随：语音换台时 MI.title 会等于台名（不相等多半是 ICY 流标题，就保持原样）
+  if (t && RADIOS.length && t !== curRadio) {
+    for (var i = 0; i < RADIOS.length; i++) {
+      if ((RADIOS[i].name || RADIOS[i].title) === t) { curRadio = t; renderRadios(); break; }
+    }
+  }
+}
+
+/* 渲染队列（v1.3.163：8080 在就用它的 list，不在就用自有 /api/queue） */
+/* 渲染队列（v1.3.163：8080 在就用它的 list，不在就用自有 /api/queue）
+   ★★ 滚动位置必须保住。以前每 8s 轮询都整块 `innerHTML =` 重建 300 条
+      （#queue 是 .scroll 容器，scrollTop 归零）+ 末尾 scrollIntoView 把当前曲
+      拽回可视区 ⇒ 用户往下翻两屏就被弹回顶部。现在四条：
+       ① 列表与当前曲都没变 ⇒ 直接 return（连 DOM 都不碰）；
+       ② 只是当前曲变了 ⇒ 只换高亮 class，不重建（切歌也不打断浏览）；
+       ③ 真要重建 ⇒ 先记 scrollTop 再原样还原；
+       ④ 不再自动滚到当前曲 —— 想跳就点标题右边的「定位当前」。 */
+var qLastSig = "", qLastListSig = "", qLastCur = -2, qLastCurAbs = -2;
+function qName(it, i) { return it.title || it.name || ("曲目 " + (i + 1)); }
+function qListSig(use) {
+  return (wsOK ? "W" : "Q") + use.length + "|" + (Q.total || 0) + "|"
+    + (use.length ? qName(use[0], 0) : "") + "|"
+    + (use.length ? qName(use[use.length - 1], use.length - 1) : "");
+}
+function renderQueue(force) {
+  var box = $("queue");
+  if (!box) { return; }
+  var use = wsOK ? PLIST : (Q.list || []);
+  // ★ 窗口偏移：列表比 limit 长时，服务端会把窗口挪到当前曲附近（Q.start）
+  var qs = wsOK ? 0 : (Q.start || 0);
+  var cur = wsOK ? PIDX : (Q.cur == null ? -1 : (Q.cur - qs));
+  var curAbs = wsOK ? PIDX : (Q.cur == null ? -1 : Q.cur);
+  var lsig = qListSig(use);
+  var sig = lsig + "|" + cur;
+  if (!force && sig === qLastSig) { return; }                 // ①
+  if (!use.length) {
+    box.innerHTML = '<div class="note" style="margin:0">' + (wsOK
+      ? '队列为空（点「随便听」或去音乐页选台）'
+      : '还没推过列表 —— 点上面的 ▶ 就会随机来一批，或去音乐页选一首') + '</div>';
+    qLastSig = sig; qLastListSig = lsig; qLastCur = cur;
+    return;
+  }
+  if (!force && lsig === qLastListSig && box.children.length === use.length) {  // ②
+    var old = box.querySelector(".li.cur");
+    if (old) { old.className = "li"; }
+    if (cur >= 0 && cur < box.children.length) { box.children[cur].className = "li cur"; }
+    // ★ pl-1.1.5：只是当前曲变了（切歌 / 下一首）⇒ 把正在播的那条滚进可视区。
+    //   cur 没变（8s 轮询刷新）⇒ 一动不动 —— 不能把 pl-1.1.2 修好的「翻两屏被弹回顶部」改回去。
+    if (cur >= 0 && curAbs !== qLastCurAbs) { queueScrollTo(box, cur); }
+    qLastSig = sig; qLastCur = cur; qLastCurAbs = curAbs;
+    return;
+  }
+  var st = box.scrollTop;                                     // ③
+  box.innerHTML = use.map(function (it, i) {
+    var nm = qName(it, i);
+    var ar = it.artist || it.singer || "";
+    var real = it.n ? (it.n - 1) : i;      // 真实曲库下标（0-based）
+    return '<div class="li' + (i === cur ? " cur" : "") + '" onclick="playAt(' + i + ',' + real + ')">'
+      + '<div class="n">' + (it.n || (i + 1)) + "</div>"
+      + '<div class="tx"><div class="a">' + esc(nm) + "</div>"
+      + (ar ? '<div class="b">' + esc(ar) + "</div>" : "") + "</div></div>";
+  }).join("");
+  // 列表整张换了：当前曲也变了 ⇒ 定位到当前曲；否则还原原来的滚动位置
+  if (cur >= 0 && curAbs !== qLastCurAbs) { queueScrollTo(box, cur); } else { box.scrollTop = st; }
+  qLastSig = sig; qLastListSig = lsig; qLastCur = cur; qLastCurAbs = curAbs;
+  var tot = (Q.total || use.length);
+  var qs0 = wsOK ? 0 : (Q.start || 0);
+  $("qHint").textContent = "点一下即播 · "
+    + (tot > use.length
+        ? ("第 " + (qs0 + 1) + "–" + (qs0 + use.length) + " 首 / 共 " + tot + " 首")
+        : ("共 " + tot + " 首"));
+}
+/* 把第 i 条滚进可视区（居中）。只动容器滚动条，不动整页 —— 切歌自动定位用这个。 */
+function queueScrollTo(box, i) {
+  var c = box && box.children[i];
+  if (!c) { return; }
+  if (box.scrollHeight > box.clientHeight + 4) {
+    var top = c.getBoundingClientRect().top - box.getBoundingClientRect().top + box.scrollTop;
+    box.scrollTop = Math.max(0, top - box.clientHeight / 2 + c.offsetHeight / 2);
+  }
+}
+/* 「定位当前」：用户主动点 —— 容器本身滚不动（列表短）时才滚整页 */
+function jumpCur() {
+  var box = $("queue");
+  var cur = wsOK ? PIDX : (Q.cur == null ? -1 : (Q.cur - (Q.start || 0)));
+  if (cur < 0 || !box.children[cur]) { toast("还没在播，没法定位"); return; }
+  if (box.scrollHeight <= box.clientHeight + 4) {
+    window.scrollTo(0, box.children[cur].getBoundingClientRect().top
+      + (window.pageYOffset || 0) - 120);
+    return;
+  }
+  queueScrollTo(box, cur);
+}
+
+/* v1.3.152/163：点队列第 i 首。
+   ① 8080 在（魔改 player）⇒ WS {"type":"play","index":i}，单击即播；
+   ② 8080 不在（原厂 player）⇒ 自有通道 /api/act?op=play_at&index=N（1-based），
+      走原厂消息总线重推同一张列表并指定起始下标 —— 这条以前完全没有，
+      所以「WS 断了就没法按索引播」。现在两种 player 都能点播。 */
+/* i = 列表里的位置，real = 真实曲库下标（窗口化后两者不再相等） */
+function playAt(i, real) {
+  var abs = (typeof real === "number") ? real : i;
+  if (DEMO) { toast("演示模式：不真的播放"); return; }
+  if (wsOK && WS && WS.readyState === 1) {
+    if (abs === PIDX) { toast("已经在播这首了"); return; }
+    try {
+      WS.send(JSON.stringify({ type: "play", index: i }));
+    } catch (e) { toast("发送失败：" + e); return; }
+    toast("播放第 " + (i + 1) + " 首…");
+    setTimeout(function () { wsAsk("get_info"); wsAsk("list"); }, 1500);
+    return;
+  }
+  if (abs === (Q.cur == null ? -1 : Q.cur)) { toast("已经在播这首了"); return; }
+  act("play_at", "index=" + (abs + 1)).then(function () {
+    setTimeout(function () { loadQueue(); load(); }, 1500);
+  });
+}
+
+/* v1.3.169：player 只有「列表 + index」一种模型 —— 列表是空的时候发 play
+   没有任何可播的对象（点了没声音）。所以空队列时 ▶ 直接随机来一批。 */
+function playOrRandom() {
+  var n = wsOK ? (PLIST || []).length : ((Q.list || []).length);
+  if (!n) {
+    // ★ player 进程重启后：队列（内存态）空了、但 curTitle 是落盘的还在顶栏显示。
+    //   这时点 ▶ 以前只会 random（顶栏那首点不动）。现在先试 replay ——
+    //   device 用落盘曲名回库反查，找到就整段推回 player 并开播；找不到才退化 random。
+    var last = ((S.music || {}).curTitle || "").trim();
+    if (last) {
+      toast("队列已空 —— 重新播放「" + last + "」");
+      act("replay");
+    } else {
+      toast("队列是空的 —— 随机来一批");
+      act("random");
+    }
+    setTimeout(function () { load(); loadQueue(); }, 1800);
+    setTimeout(function () { load(); loadQueue(); }, 4500);
+    return;
+  }
+  act("play");
+}
+function togglePlay() {
+  if (PSTATE) { act("pause"); return; }
+  playOrRandom();
+}
+/* 上一首/下一首：发完指令主动补一次（play_at/next 都要等 player 回推总线才知道
+   切到哪一首了，原来要等 10s 轮询才更新高亮）。 */
+function skip(dir) {
+  act(dir > 0 ? "next" : "prev");
+  setTimeout(function () { load(); loadQueue(); }, 1200);
+}
+
+/* 演示模式的假 WS：灌一份 music_info + 队列，并让进度走起来 */
+function wsDemo() {
+  wsOK = true;
+  $("wsPill").textContent = "DEMO";
+  $("wsPill").style.color = "var(--warn)";
+  $("npNote").textContent = "演示模式（?demo=1）：数据为假，仅用于看 UI";
+  $("volHint").textContent = "演示";
+  MI = { title: "Make Me Alive", artist: "Landslide Crew", duration: 225071, position: 61000 };
+  PSTATE = true; PTYPE = 1;
+  PLIST = [
+    { title: "Shape of You", artist: "Ed Sheeran" },
+    { title: "Make Me Alive", artist: "Landslide Crew" },
+    { title: "Dangerous", artist: "David Guetta feat. Sam Martin" },
+    { title: "Blinding Lights", artist: "The Weeknd" },
+    { title: "起风了", artist: "买辣椒也用券" },
+    { title: "晴天", artist: "周杰伦" },
+    { title: "稻香", artist: "周杰伦" },
+    { title: "Sunflower", artist: "Post Malone" }
+  ];
+  PIDX = 1;
+  renderNp(); renderQueue();
+  setInterval(function () {
+    if (!MI) return;
+    MI.position = (MI.position + 1000) % MI.duration;
+    renderNp();
+  }, 1000);
+}
+
+/* ---------- 初始化 ---------- */
+(function init() {
+  // 分段选择：增益
+  var gd = $("segGain").children;
+  for (var i = 0; i < gd.length; i++) {
+    (function (el) {
+      el.onclick = function () { setKV("gain", el.getAttribute("data-v")); };
+    })(gd[i]);
+  }
+  setSw("swChat", chatOnly);
+  $("vol").addEventListener("change", function () { onVol(this.value); });
+
+  $("inQlim").value = QLIM;
+  tab(curTab);
+  load();
+  wsInit();
+  loadQueue();
+  instInit();
+
+  // 轮询：音箱 WS 零自发推送，必须问；8080 缺席时改成拉自有状态/队列
+  setInterval(function () {
+    if (curTab === "play" || curTab === "music") {
+      if (wsOK) {
+        wsAsk("get_info");
+      } else if (!DEMO) {
+        load();                       // 自有链路：曲名 / 播放中 / 已播时长
+      }
+    }
+  }, 3000);
+  setInterval(function () {
+    if (curTab === "play") { if (wsOK) wsAsk("list"); else loadQueue(); }
+  }, 10000);
+  setInterval(load, 8000);           // 自有状态
+  setInterval(function () { if (!wsOK && !wsAbsent) wsInit(); }, 5000);
+
+  // 回到前台立刻补一次
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) { load(); wsAsk("get_info"); }
+  });
+})();
+</script>
+</body>
+</html>

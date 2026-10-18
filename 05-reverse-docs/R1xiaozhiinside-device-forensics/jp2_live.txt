@@ -1,0 +1,70 @@
+--------- beginning of system
+--------- beginning of crash
+--------- beginning of main
+I/R1CLIENT(15730): micTelem t=2045s rms[252,236,253,248,218,213,205,208,209,204,207,211,213,219,220,219,215,206,223,206,220,204,210,202,211,208,200,202,207,203] peak=1024
+I/R1CLIENT(15730): micTelem t=2050s rms[295,271,309,537,541,389,252,236,253,248,218,213,205,208,209,204,207,211,213,219,220,219,215,206,223,206,220,204,210,202] peak=1760
+I/R1CLIENT(15730): alive 2060s (tts=true mic=true sess=IDLE)
+I/R1CLIENT(15730): micTelem t=2056s rms[224,246,268,332,363,312,295,271,309,537,541,389,252,236,253,248,218,213,205,208,209,204,207,211,213,219,220,219,215,206] peak=1760
+I/R1CLIENT(15730): micTelem t=2062s rms[208,206,210,215,234,228,224,246,268,332,363,312,295,271,309,537,541,389,252,236,253,248,218,213,205,208,209,204,207,211] peak=1760
+I/XZ      (19881): self-host so: start=6172164 len=312804
+I/XZ      (19881): libr1opus.so self-hosted -> files/ ok=true len=312804
+I/R1CLIENT(19881): loadLibrary r1opus failed, try absolute paths
+I/R1CLIENT(19881): not found: /data/app/cn.workbuddy.r1client-3/lib/libr1opus.so
+I/R1CLIENT(19881): not found: /data/app/cn.workbuddy.r1client-3/lib/armeabi-v7a/libr1opus.so
+W/R1CLIENT(19881): load /data/data/com.phicomm.speaker.device/files/libr1opus.so failed: java.lang.UnsatisfiedLinkError: dlopen failed: couldn't map "/data/data/com.phicomm.speaker.device/files/libr1opus.so" segment 1: Permission denied
+E/R1CLIENT(19881): load r1opus failed (all paths)
+I/XZ      (19881): r1client nativeLibraryDir=/data/app/cn.workbuddy.r1client-1/lib/arm
+E/XZ      (19881): opus init failed (will keep building other parts)
+E/XZ      (19881): java.lang.UnsatisfiedLinkError: No implementation found for long cn.workbuddy.r1client.OpusCodec.nativeEncoderCreate(int, int, int) (tried Java_cn_workbuddy_r1client_OpusCodec_nativeEncoderCreate and Java_cn_workbuddy_r1client_OpusCodec_nativeEncoderCreate__III)
+E/XZ      (19881): 	at cn.workbuddy.r1client.OpusCodec.nativeEncoderCreate(Native Method)
+E/XZ      (19881): 	at cn.workbuddy.r1client.OpusCodec.openEncoder(OpusCodec.java:65)
+E/XZ      (19881): 	at cn.workbuddy.r1client.XzBootstrap.buildPipeline(XzBootstrap.java:221)
+E/XZ      (19881): 	at cn.workbuddy.r1client.XzBootstrap.access$000(XzBootstrap.java:23)
+E/XZ      (19881): 	at cn.workbuddy.r1client.XzBootstrap$1.run(XzBootstrap.java:56)
+E/XZ      (19881): 	at java.lang.Thread.run(Thread.java:818)
+I/R1CLIENT(19881): msgcenter manager class = android.os.MessageDispatchManager
+I/R1CLIENT(19881): receiver iface resolved: android.os.MessageDispatchManager$MessageReceiver
+I/R1CLIENT(19881): wakeup bridge REGISTERED on type=33554432 via public void android.os.MessageDispatchManager.registerMessageReceiver(android.os.MessageDispatchManager$MessageReceiver,int) ret=null
+I/XZ      (19881): WakeupBridge register=true
+I/R1CLIENT(19881): TtsPlayer started, minBuf=4096(fixed) buf=16384
+I/XZ      (19881): tts init ok=true
+I/R1CLIENT(19881): device identity: synthesized esp32-oui mac 24:0a:c4:87:58:29
+I/R1CLIENT(19881): OTA POST https://api.tenclass.net/xiaozhi/ota/
+I/R1CLIENT(19881): OTA req body: {"version":2,"language":"zh-CN","flash_size":8388608,"minimum_free_heap_size":8312316,"mac_address":"24:0a:c4:87:58:29","uuid":"c1545b4c-12ad-42b9-9988-553dd8143598","chip_model_name":"esp32s3","chip_info":{"model":9,"cores":2,"revision":2,"features":18},"application":{"name":"xiaozhi-esp32","version":"2.4.2","compile_time":"2025-09-01T12:00:00Z","idf_version":"v5.4.1","elf_sha256":"ababababababababababababababababababababababababababababababababab"},"partition_table":[{"label":"nvs","type":1,"subtype":2,"address":36864,"size":24576},{"label":"otadata","type":1,"subtype":0,"address":57344,"size":8192},{"label":"app","type":0,"subtype":0,"address":65536,"size":6553600},{"label":"model","type":1,"subtype":1,"address":6619136,"size":10289152}],"ota":{"label":"app"},"board":{"type":"bread-compact-wifi"}}
+I/XZ      (19881): xz audio cfg: aec=false gain=16 src_vrec=false src_uni4mic=true
+I/R1CLIENT(19881): media mute=false (startup reset)
+I/R1CLIENT(19881): OTA resp code=200
+I/R1CLIENT(19881): OTA resp body: {"server_time":{"timestamp":1791458689813,"timezone_offset":480},"firmware":{"version":"2.4.2","url":""},"mqtt":{"endpoint":"api.tenclass.net","client_id":"GID_test@@@24_0a_c4_87_58_29@@@c1545b4c-12ad-42b9-9988-553dd8143598","username":"eyJpcCI6IjM5LjE3Mi4yNDguODYiLCJjIjowfQ==","password":"8Tkf36KL9QdEPx5DxKLGz9fylj6Ce1jZquR+3jHXSbQ=","publish_topic":"device-server","subscribe_topic":"null"},"websocket":{"url":"wss://api.tenclass.net/xiaozhi/v1/","token":"test-token"},"activation":{"code":"394939","message":"xiaozhi.me\n394939","challenge":"065081f1-fab4-4a6d-998b-7a82fb5d9e54"}}
+I/R1CLIENT(19881): OTA ws url: wss://api.tenclass.net/xiaozhi/v1/
+I/R1CLIENT(19881): ws url set from OTA: wss://api.tenclass.net/xiaozhi/v1/
+I/XZ      (19881): got token from OTA: test-token
+I/XZ      (20089): libr1opus.so already self-hosted at files/ (312804B)
+I/R1CLIENT(20089): loadLibrary r1opus failed, try absolute paths
+I/R1CLIENT(20089): not found: /data/app/cn.workbuddy.r1client-3/lib/libr1opus.so
+I/R1CLIENT(20089): not found: /data/app/cn.workbuddy.r1client-3/lib/armeabi-v7a/libr1opus.so
+W/R1CLIENT(20089): load /data/data/com.phicomm.speaker.device/files/libr1opus.so failed: java.lang.UnsatisfiedLinkError: dlopen failed: couldn't map "/data/data/com.phicomm.speaker.device/files/libr1opus.so" segment 1: Permission denied
+E/R1CLIENT(20089): load r1opus failed (all paths)
+I/XZ      (20089): r1client nativeLibraryDir=/data/app/cn.workbuddy.r1client-1/lib/arm
+E/XZ      (20089): opus init failed (will keep building other parts)
+E/XZ      (20089): java.lang.UnsatisfiedLinkError: No implementation found for long cn.workbuddy.r1client.OpusCodec.nativeEncoderCreate(int, int, int) (tried Java_cn_workbuddy_r1client_OpusCodec_nativeEncoderCreate and Java_cn_workbuddy_r1client_OpusCodec_nativeEncoderCreate__III)
+E/XZ      (20089): 	at cn.workbuddy.r1client.OpusCodec.nativeEncoderCreate(Native Method)
+E/XZ      (20089): 	at cn.workbuddy.r1client.OpusCodec.openEncoder(OpusCodec.java:65)
+E/XZ      (20089): 	at cn.workbuddy.r1client.XzBootstrap.buildPipeline(XzBootstrap.java:221)
+E/XZ      (20089): 	at cn.workbuddy.r1client.XzBootstrap.access$000(XzBootstrap.java:23)
+E/XZ      (20089): 	at cn.workbuddy.r1client.XzBootstrap$1.run(XzBootstrap.java:56)
+E/XZ      (20089): 	at java.lang.Thread.run(Thread.java:818)
+I/R1CLIENT(20089): msgcenter manager class = android.os.MessageDispatchManager
+I/R1CLIENT(20089): receiver iface resolved: android.os.MessageDispatchManager$MessageReceiver
+I/R1CLIENT(20089): wakeup bridge REGISTERED on type=33554432 via public void android.os.MessageDispatchManager.registerMessageReceiver(android.os.MessageDispatchManager$MessageReceiver,int) ret=null
+I/XZ      (20089): WakeupBridge register=true
+I/R1CLIENT(20089): TtsPlayer started, minBuf=4096(fixed) buf=16384
+I/XZ      (20089): tts init ok=true
+I/R1CLIENT(20089): OTA POST https://api.tenclass.net/xiaozhi/ota/
+I/R1CLIENT(20089): OTA req body: {"version":2,"language":"zh-CN","flash_size":8388608,"minimum_free_heap_size":8312316,"mac_address":"24:0a:c4:87:58:29","uuid":"c1545b4c-12ad-42b9-9988-553dd8143598","chip_model_name":"esp32s3","chip_info":{"model":9,"cores":2,"revision":2,"features":18},"application":{"name":"xiaozhi-esp32","version":"2.4.2","compile_time":"2025-09-01T12:00:00Z","idf_version":"v5.4.1","elf_sha256":"ababababababababababababababababababababababababababababababababab"},"partition_table":[{"label":"nvs","type":1,"subtype":2,"address":36864,"size":24576},{"label":"otadata","type":1,"subtype":0,"address":57344,"size":8192},{"label":"app","type":0,"subtype":0,"address":65536,"size":6553600},{"label":"model","type":1,"subtype":1,"address":6619136,"size":10289152}],"ota":{"label":"app"},"board":{"type":"bread-compact-wifi"}}
+I/XZ      (20089): xz audio cfg: aec=false gain=16 src_vrec=false src_uni4mic=true
+I/R1CLIENT(20089): media mute=false (startup reset)
+I/R1CLIENT(20089): OTA resp code=200
+I/R1CLIENT(20089): OTA resp body: {"server_time":{"timestamp":1791458723353,"timezone_offset":480},"firmware":{"version":"2.4.2","url":""},"mqtt":{"endpoint":"api.tenclass.net","client_id":"GID_test@@@24_0a_c4_87_58_29@@@c1545b4c-12ad-42b9-9988-553dd8143598","username":"eyJpcCI6IjM5LjE3Mi4yNDguODYiLCJjIjowfQ==","password":"8Tkf36KL9QdEPx5DxKLGz9fylj6Ce1jZquR+3jHXSbQ=","publish_topic":"device-server","subscribe_topic":"null"},"websocket":{"url":"wss://api.tenclass.net/xiaozhi/v1/","token":"test-token"},"activation":{"code":"394939","message":"xiaozhi.me\n394939","challenge":"7f44a472-7def-4126-ac17-68ee00a18c3d"}}
+I/R1CLIENT(20089): OTA ws url: wss://api.tenclass.net/xiaozhi/v1/
+I/R1CLIENT(20089): ws url set from OTA: wss://api.tenclass.net/xiaozhi/v1/
+I/XZ      (20089): got token from OTA: test-token

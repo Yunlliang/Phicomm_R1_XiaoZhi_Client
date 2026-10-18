@@ -1,0 +1,2 @@
+--------- beginning of main
+I/R1CLIENT(11770): alive 10s (tts=true mic=true sess=IDLE)

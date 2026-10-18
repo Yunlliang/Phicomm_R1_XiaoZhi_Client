@@ -1,0 +1,47 @@
+--------- beginning of system
+--------- beginning of main
+I/R1CLIENT(15558): micTelem t=272s rms[206,198,201,202,238,205,205,346,195,201,195,201,203,199,206,202,199,197,202,209,206,206,194,202,199,860,209,394,201,267] peak=4752
+I/R1CLIENT(15558): alive 280s (tts=true mic=true sess=IDLE)
+I/R1CLIENT(15558): micTelem t=277s rms[206,210,207,205,203,204,206,198,201,202,238,205,205,346,195,201,195,201,203,199,206,202,199,197,202,209,206,206,194,202] peak=2960
+I/R1CLIENT(15558): alive 290s (tts=true mic=true sess=IDLE)
+I/R1CLIENT(15558): micTelem t=283s rms[205,202,202,197,202,199,206,210,207,205,203,204,206,198,201,202,238,205,205,346,195,201,195,201,203,199,206,202,199,197] peak=2960
+I/R1CLIENT(15558): micTelem t=289s rms[198,202,204,288,200,207,205,202,202,197,202,199,206,210,207,205,203,204,206,198,201,202,238,205,205,346,195,201,195,201] peak=2960
+I/R1CLIENT(15730): =========== R1ClientService onCreate (mode=2) ===========
+I/R1CLIENT(15730): onCreate: foreground up, spawning pipeline thread
+I/R1CLIENT(15730): onStartCommand: first start
+I/R1CLIENT(15730): opus encoder = -1194895952
+I/R1CLIENT(15730): opus decoder = -1194852432
+I/R1CLIENT(15730): opus enc=true dec=true
+I/R1CLIENT(15730): TtsPlayer started (AudioTrack deferred to first PCM write)
+I/R1CLIENT(15730): tts init ok=true (2ms)
+I/R1CLIENT(15730): OTA POST https://api.tenclass.net/xiaozhi/ota/
+I/R1CLIENT(15730): OTA req body: {"version":2,"language":"zh-CN","flash_size":8388608,"minimum_free_heap_size":8312316,"mac_address":"24:0a:c4:a3:18:a0","uuid":"de58e2c0-37c2-413e-8354-eb9fdf1ddb5f","chip_model_name":"esp32s3","chip_info":{"model":9,"cores":2,"revision":2,"features":18},"application":{"name":"xiaozhi-esp32","version":"2.4.2","compile_time":"2025-09-01T12:00:00Z","idf_version":"v5.4.1","elf_sha256":"ababababababababababababababababababababababababababababababababab"},"partition_table":[{"label":"nvs","type":1,"subtype":2,"address":36864,"size":24576},{"label":"otadata","type":1,"subtype":0,"address":57344,"size":8192},{"label":"app","type":0,"subtype":0,"address":65536,"size":6553600},{"label":"model","type":1,"subtype":1,"address":6619136,"size":10289152}],"ota":{"label":"app"},"board":{"type":"bread-compact-wifi"}}
+I/R1CLIENT(15730): audio cfg: src=UNI4MIC-HAL aec=false gain=16 duck=100% sessBind=false (flags: src_bridge=false src_uni4mic=true uni_ch0=false src_vrec=false aec_on=false sess_bind=false gainFlag=none(default16))
+I/R1CLIENT(15730): media mute=false (startup reset)
+I/R1CLIENT(15730): idle close delay = 90000ms
+I/R1CLIENT(15730): idle close delay = 86400000ms
+I/R1CLIENT(15730): settings applied: farewell_voice=true idle_offline=true listenIdle=60s
+I/R1CLIENT(15730): conv cfg: listenIdle=60s (ui-settings) farewell=35s (default(35)) localAlert=true sound=true bargeInUplink=false prewake=17f (default(17)) wakeProbe=3s (default(3)) wakeAck=true ackDrop=0ms (default(0)) detect=false kwsGain=1.0 (default(1)) kwsThr=0.05 (default(5)) kwsScore=6.0 (default(60)) kwsPaths=8 (default(8)) kwsBlank=2 (default(2)) kwsDump=false (flags: idle_alert_off=false wakeack_off=false detect_on=false bargein_on=false)
+I/R1CLIENT(15730): mic DEFERRED (session-on-demand; unisound KWS owns idle mic)
+I/R1CLIENT(15730): =========== R1ClientService ready (mic=ondemand tts=true kws=on opus=true) ===========
+I/R1CLIENT(15730): assets/kws = [decoder-epoch-12-avg-2-chunk-16-left-64.int8.onnx encoder-epoch-12-avg-2-chunk-16-left-64.int8.onnx joiner-epoch-12-avg-2-chunk-16-left-64.int8.onnx keywords.txt tokens.txt]
+I/R1CLIENT(15730): OTA resp code=200
+I/R1CLIENT(15730): OTA resp body: {"server_time":{"timestamp":1791456612911,"timezone_offset":480},"firmware":{"version":"2.4.2","url":""},"mqtt":{"endpoint":"api.tenclass.net","client_id":"GID_test@@@24_0a_c4_a3_18_a0@@@de58e2c0-37c2-413e-8354-eb9fdf1ddb5f","username":"eyJpcCI6IjM5LjE3Mi4yNDguODYiLCJjIjowfQ==","password":"FKjC13+TiqpFUuQmnYGNoDia9Ptv9sb2thYDfHusMnc=","publish_topic":"device-server","subscribe_topic":"null"},"websocket":{"url":"wss://api.tenclass.net/xiaozhi/v1/","token":"test-token"}}
+I/R1CLIENT(15730): OTA ws url: wss://api.tenclass.net/xiaozhi/v1/
+I/R1CLIENT(15730): ws url set from OTA: wss://api.tenclass.net/xiaozhi/v1/
+I/R1CLIENT(15730): got token from OTA: test-token...
+I/R1CLIENT(15730): KwsEngine ready (assets mode) gain=1.0 thr=0.05 score=6.0 paths=8 blank=2 dump=false
+I/R1CLIENT(15730): kws init=true (6785ms)
+I/R1CLIENT(15730): setKws: enabled
+I/R1CLIENT(15730): kws wired to session: true (mic -> always-on)
+I/R1CLIENT(15730): always-on mic: acquiring for KWS duty
+I/R1CLIENT(15730): uni4mic init(1) -> 0
+I/R1CLIENT(15730): uni4mic board=UNI_4MIC_HAL_ANDROID_V1.1 dbg=0 closeAlgo=0 wakeUp=0
+I/R1CLIENT(15730): uni4mic openAudioIn(2) -> handle=0 (0x0)
+W/R1CLIENT(15730): uni4mic openAudioIn returned NULL -> fallback AudioRecord
+I/R1CLIENT(15730): AudioRecord session=74 (TtsPlayer 共用此 session 以获得 AEC 参考信号)
+I/R1CLIENT(15730): AEC disabled (v1.3.10 default; touch files/aec_on to enable) src=VOICE_COMMUNICATION
+I/R1CLIENT(15730): AudioCapture started: 16000Hz/mono src=VOICE_COMMUNICATION aec=false gain=16 sessBind=false, 60ms mono, minBuf=4096(fixed)
+I/R1CLIENT(15730): always-on mic ACQUIRED (attempt=1) -> KWS on duty, unisound starved
+I/R1CLIENT(15730): alive 10s (tts=true mic=true sess=IDLE)
+I/R1CLIENT(15730): micTelem t=7s rms[299,196,205,203,198,209,201] peak=1136
